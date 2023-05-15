@@ -5,11 +5,10 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
-    'plugin:import/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  plugins: ['react-refresh', 'react', '@typescript-eslint', 'prettier', 'react-hooks', 'import'],
+  plugins: ['react-refresh', 'react', '@typescript-eslint', 'prettier', 'react-hooks'],
   rules: {
     indent: ['off', 2, { SwitchCase: 1 }], // 들여쓰기 몇 칸? 기본 2칸으로 하되, switch문에서는 1칸으로 지정
     quotes: ['off', 'single'], // 쌍따옴표가 아닌 홑따옴표를 사용
@@ -32,28 +31,10 @@ module.exports = {
     'object-shorthand': ['error', 'always'], // const obj = {a, b} 가능
     'arrow-parens': ['error', 'always'], // arrow-function 인자가 2개 이상이면 괄호 필수
     'no-multi-spaces': 'error', // 스페이스 여러개 금지
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', ['parent', 'sibling'], 'index'], // import 되는 순서 정의
-        pathGroups: [
-          {
-            pattern: 'react*', // path가 react로 시작하면
-            group: 'external', // external 앞에
-            position: 'before',
-          },
-        ],
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-        'newlines-between': 'always', // group들 사이마다 개행 적용 (group 내부에서 개행 적용 불가)
-      },
-    ],
-    settings: {
-      react: {
-        version: 'detect',
-      },
+  },
+  settings: {
+    react: {
+      version: 'detect',
     },
   },
 };
