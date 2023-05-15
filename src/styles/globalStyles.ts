@@ -142,7 +142,7 @@ export const GlobalStyle = createGlobalStyle`
 ${reset}
 
 *{
-    font-family : 'Noto Sans KR'
+    font-family : 'Noto Sans KR';
     box-sizing: border-box;
 }
 
