@@ -30,6 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/react", "npm:18.2.6"],\
             ["@types/react-dom", "npm:18.2.4"],\
+            ["@types/styled-components", "npm:5.1.26"],\
             ["@typescript-eslint/eslint-plugin", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.59.5"],\
             ["@typescript-eslint/parser", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.59.5"],\
             ["@vitejs/plugin-react", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:4.0.0"],\
@@ -2978,6 +2979,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/hoist-non-react-statics", [\
+        ["npm:3.3.1", {\
+          "packageLocation": "./.yarn/cache/@types-hoist-non-react-statics-npm-3.3.1-c0081332b2-2c0778570d.zip/node_modules/@types/hoist-non-react-statics/",\
+          "packageDependencies": [\
+            ["@types/hoist-non-react-statics", "npm:3.3.1"],\
+            ["@types/react", "npm:18.2.6"],\
+            ["hoist-non-react-statics", "npm:3.3.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/json-schema", [\
         ["npm:7.0.11", {\
           "packageLocation": "./.yarn/cache/@types-json-schema-npm-7.0.11-79462ae5ca-527bddfe62.zip/node_modules/@types/json-schema/",\
@@ -3032,6 +3044,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-semver-npm-7.5.0-4823ff34be-0a64b9b9c7.zip/node_modules/@types/semver/",\
           "packageDependencies": [\
             ["@types/semver", "npm:7.5.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/styled-components", [\
+        ["npm:5.1.26", {\
+          "packageLocation": "./.yarn/cache/@types-styled-components-npm-5.1.26-aabda06611-84f53b3101.zip/node_modules/@types/styled-components/",\
+          "packageDependencies": [\
+            ["@types/styled-components", "npm:5.1.26"],\
+            ["@types/hoist-non-react-statics", "npm:3.3.1"],\
+            ["@types/react", "npm:18.2.6"],\
+            ["csstype", "npm:3.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3660,6 +3684,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cds-client", "workspace:."],\
             ["@types/react", "npm:18.2.6"],\
             ["@types/react-dom", "npm:18.2.4"],\
+            ["@types/styled-components", "npm:5.1.26"],\
             ["@typescript-eslint/eslint-plugin", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.59.5"],\
             ["@typescript-eslint/parser", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.59.5"],\
             ["@vitejs/plugin-react", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:4.0.0"],\
@@ -4613,6 +4638,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/has-unicode-npm-2.0.1-893adb4747-1eab07a743.zip/node_modules/has-unicode/",\
           "packageDependencies": [\
             ["has-unicode", "npm:2.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["hoist-non-react-statics", [\
+        ["npm:3.3.2", {\
+          "packageLocation": "./.yarn/cache/hoist-non-react-statics-npm-3.3.2-e7b709e6c1-b153827042.zip/node_modules/hoist-non-react-statics/",\
+          "packageDependencies": [\
+            ["hoist-non-react-statics", "npm:3.3.2"],\
+            ["react-is", "npm:16.13.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5684,6 +5719,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/react",\
             "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-is", [\
+        ["npm:16.13.1", {\
+          "packageLocation": "./.yarn/cache/react-is-npm-16.13.1-a9b9382b4f-f7a19ac349.zip/node_modules/react-is/",\
+          "packageDependencies": [\
+            ["react-is", "npm:16.13.1"]\
           ],\
           "linkType": "HARD"\
         }]\
