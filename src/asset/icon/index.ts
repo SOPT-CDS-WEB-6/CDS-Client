@@ -71,6 +71,7 @@ export { ReactComponent as IcPlusButton } from './ic_PlusButton.svg';
 export { ReactComponent as IcPoint1Img } from './ic_Point1Img.svg';
 export { ReactComponent as IcPoint2Img } from './ic_Point2Img.svg';
 export { ReactComponent as IcPreeggImg } from './ic_PreeggImg.svg';
+export { ReactComponent as IcProfileImg } from './ic_ProfileImg.svg';
 export { ReactComponent as IcRightarrowIcon } from './ic_RightarrowIcon.svg';
 export { ReactComponent as IcTrailer1Img } from './ic_Trailer1Img.svg';
 export { ReactComponent as IcTrailer2Img } from './ic_Trailer2Img.svg';
