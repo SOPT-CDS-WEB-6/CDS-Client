@@ -31,18 +31,16 @@ export default UserInfo;
 
 const StUserInfo = styled.nav`
   display: grid;
-
   width: 19.6rem;
-`;
-
-const StUserProfile = styled.div`
-  display: grid;
-
-  width: 19.6rem;
-  height: 28rem;
 
   margin-top: 23.4rem;
   margin-left: 35.9rem;
+`;
+
+const StUserProfile = styled.div`
+  justify-content: center;
+  width: 19.6rem;
+  height: 28rem;
 
   border: 0.1rem solid ${({ theme }) => theme.colors.gray40};
   border-radius: 0.5rem;
@@ -78,7 +76,6 @@ const StInfoWrapper = styled.div`
   height: 10.4rem;
 
   margin-top: 1rem;
-  margin-left: 35.9rem;
 
   border: 0.1rem solid ${({ theme }) => theme.colors.gray40};
   border-radius: 0.5rem;
