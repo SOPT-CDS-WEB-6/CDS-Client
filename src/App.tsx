@@ -1,9 +1,11 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components';
+import UserInfo from './components/UserInfo';
 
 function App() {
   return (
     <>
-      <StHeading>Vite + React</StHeading>
+      {/*<StHeading>Vite + React</StHeading> */}
+      <UserInfo />
     </>
   );
 }
