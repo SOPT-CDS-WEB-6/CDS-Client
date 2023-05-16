@@ -2,7 +2,8 @@ import { styled } from 'styled-components';
 import { dummyUser } from '../constants/dummyUser';
 import { dummyData } from '../constants/dummyUser';
 
-import { IcPencilImg, IcProfileImg } from '../asset/icon';
+import IcPencilImg from '../asset/icon/ic_PencilImg.svg';
+import IcProfileImg from '../asset/icon/ic_ProfileImg.svg';
 
 const UserInfo = () => {
   return (
@@ -14,12 +15,12 @@ const UserInfo = () => {
         </StUserName>
       </StUserProfile>
 
-      {dummyData.map((it) => {
+      {dummyData.map((it, idx) => {
         return (
-          <StWanted className={it.class}>
-            <StWantedNum>{it.num}</StWantedNum>
-            <StWantedText>{it.text}</StWantedText>
-          </StWanted>
+          <StInfoWrapper className={it.class} key={idx}>
+            <StNumInfo>{it.num}</StNumInfo>
+            <StTextInfo>{it.text}</StTextInfo>
+          </StInfoWrapper>
         );
       })}
     </StUserInfo>
@@ -28,7 +29,11 @@ const UserInfo = () => {
 
 export default UserInfo;
 
-const StUserInfo = styled.nav``;
+const StUserInfo = styled.nav`
+  display: grid;
+
+  width: 19.6rem;
+`;
 
 const StUserProfile = styled.div`
   display: grid;
@@ -66,7 +71,7 @@ const StPencilImg = styled.img`
   height: 2.3rem;
 `;
 
-const StWanted = styled.div`
+const StInfoWrapper = styled.div`
   display: grid;
 
   width: 19.6rem;
@@ -84,7 +89,7 @@ const StWanted = styled.div`
   }
 `;
 
-const StWantedNum = styled.p`
+const StNumInfo = styled.p`
   display: flex;
   justify-content: center;
 
@@ -93,7 +98,7 @@ const StWantedNum = styled.p`
   font-size: ${({ theme }) => theme.fonts.Title};
 `;
 
-const StWantedText = styled.p`
+const StTextInfo = styled.p`
   display: flex;
   justify-content: center;
 
