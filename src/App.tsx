@@ -1,9 +1,13 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components';
+import MovieInfo from './components/MovieInfo';
+import { GlobalStyle } from './styles/globalStyles';
 
 function App() {
   return (
     <>
+      <GlobalStyle />
       <StHeading>Vite + React</StHeading>
+      <MovieInfo />
     </>
   );
 }
