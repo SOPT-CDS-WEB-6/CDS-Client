@@ -46,8 +46,7 @@ const StSection = styled.section`
 const StImg = styled.img`
   width: 199px;
   height: 304px;
-  margin-right: 28px;
-  margin-left: 2px;
+  margin: 0 28px 0 2px;
 `;
 
 const StArticle = styled.article`
@@ -60,22 +59,23 @@ const StArticle = styled.article`
 `;
 
 const StTitle = styled.h1`
+  margin-bottom: 35px;
+
   ${({ theme }) => theme.fonts.Title};
   color: ${({ theme }) => theme.colors.black};
-  margin-bottom: 35px;
 `;
 
 const StNowShowingBox = styled.em`
-  width: 89px;
-  height: 31px;
-  margin-left: 10px;
-
   display: inline-block;
   position: relative;
   text-align: center;
   vertical-align: middle;
 
+  width: 89px;
+  height: 31px;
+  margin-left: 10px;
   border: 1px solid #0076b1;
+
   color: #0076b1;
 `;
 
@@ -86,24 +86,26 @@ const StNowShowingText = styled.span`
 const StBody3 = styled.h3`
   ${({ theme }) => theme.fonts.Body3};
   color: ${({ theme }) => theme.colors.gray70};
+
   &.rate {
     width: 967px;
-    border-bottom: 0.063em solid #e3e3e3;
     padding-bottom: 20px;
     margin-bottom: 44px;
+    border-bottom: 0.063em solid #e3e3e3;
 
     color: ${({ theme }) => theme.colors.gray90};
   }
+
   &.engTitle {
     margin-bottom: 39px;
   }
 `;
 
 const StBody5 = styled.h5`
+  margin-bottom: 25px;
+
   ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray90};
-
-  margin-bottom: 25px;
 `;
 
 const StButton = styled.button`
@@ -116,21 +118,21 @@ const StButton = styled.button`
     border: 1px solid ${({ theme }) => theme.colors.gray90};
     border-radius: 5px;
 
-    ${({ theme }) => theme.fonts.Body3};
-
     background-color: ${({ theme }) => theme.colors.white};
+
+    ${({ theme }) => theme.fonts.Body3};
     color: ${({ theme }) => theme.colors.gray90};
   }
 
   &.reserve {
     width: 269px;
 
-    ${({ theme }) => theme.fonts.Body3};
-
     border: none;
     border-radius: 5px;
 
     background-color: ${({ theme }) => theme.colors.red2};
+
+    ${({ theme }) => theme.fonts.Body3};
     color: ${({ theme }) => theme.colors.white};
   }
 `;
