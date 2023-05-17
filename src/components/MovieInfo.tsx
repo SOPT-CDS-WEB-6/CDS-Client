@@ -27,7 +27,7 @@ function MovieInfo() {
           <StButton className="reserve">특별한 영화 경험 시작하기 🎬</StButton>
         </span>
         <StDiv>
-          <StP>프리에그란(Pre Egg)?</StP>
+          <StP>프리에그(Pre Egg)란?</StP>
           <StP>개봉 전 영화에 대한 기대 수치를 의미합니다.</StP>
         </StDiv>
       </StArticle>
@@ -40,13 +40,13 @@ export default MovieInfo;
 const StSection = styled.section`
   display: flex;
 
-  margin: 49px 361px;
+  margin: 4.9rem 36.1rem;
 `;
 
 const StImg = styled.img`
-  width: 199px;
-  height: 304px;
-  margin: 0 28px 0 2px;
+  width: 19.9rem;
+  height: 30.4rem;
+  margin: 0 2.8rem 0 0.2rem;
 `;
 
 const StArticle = styled.article`
@@ -54,12 +54,12 @@ const StArticle = styled.article`
   flex-direction: column;
   justify-content: flex-start;
 
-  width: 967px;
-  margin-top: 21px;
+  width: 96.7rem;
+  margin-top: 2.1rem;
 `;
 
 const StTitle = styled.h1`
-  margin-bottom: 35px;
+  margin-bottom: 3.5rem;
 
   ${({ theme }) => theme.fonts.Title};
   color: ${({ theme }) => theme.colors.black};
@@ -71,10 +71,10 @@ const StNowShowingBox = styled.em`
   text-align: center;
   vertical-align: middle;
 
-  width: 89px;
-  height: 31px;
-  margin-left: 10px;
-  border: 1px solid #0076b1;
+  width: 8.9rem;
+  height: 3.1rem;
+  margin-left: 1rem;
+  border: 0.1rem solid #0076b1;
 
   color: #0076b1;
 `;
@@ -88,35 +88,35 @@ const StBody3 = styled.h3`
   color: ${({ theme }) => theme.colors.gray70};
 
   &.rate {
-    width: 967px;
-    padding-bottom: 20px;
-    margin-bottom: 44px;
-    border-bottom: 0.063em solid #e3e3e3;
+    width: 96.7rem;
+    padding-bottom: 2rem;
+    margin-bottom: 4.4rem;
+    border-bottom: 0.1rem solid #e3e3e3;
 
     color: ${({ theme }) => theme.colors.gray90};
   }
 
   &.engTitle {
-    margin-bottom: 39px;
+    margin-bottom: 3.9rem;
   }
 `;
 
 const StBody5 = styled.h5`
-  margin-bottom: 25px;
+  margin-bottom: 2.5rem;
 
   ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray90};
 `;
 
 const StButton = styled.button`
-  width: 131px;
-  height: 41px;
+  width: 13.1rem;
+  height: 4.1rem;
 
   &.freeEgg {
-    margin-right: 6px;
+    margin-right: 0.6rem;
 
-    border: 1px solid ${({ theme }) => theme.colors.gray90};
-    border-radius: 5px;
+    border: 0.1rem solid ${({ theme }) => theme.colors.gray90};
+    border-radius: 0.5rem;
 
     background-color: ${({ theme }) => theme.colors.white};
 
@@ -125,10 +125,10 @@ const StButton = styled.button`
   }
 
   &.reserve {
-    width: 269px;
+    width: 26.9rem;
 
     border: none;
-    border-radius: 5px;
+    border-radius: 0.5rem;
 
     background-color: ${({ theme }) => theme.colors.red2};
 
@@ -138,11 +138,11 @@ const StButton = styled.button`
 `;
 
 const StDiv = styled.div`
-  margin-top: 26px;
+  margin-top: 2.6rem;
 `;
 
 const StP = styled.p`
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
 
   ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray70};
