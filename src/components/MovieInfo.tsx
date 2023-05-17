@@ -16,7 +16,7 @@ function MovieInfo() {
         <StTitle>
           가디언즈 오브 갤럭시-Volume 3
           <StNowShowingBox>
-            <StNowShowingText className="now">현재상영중</StNowShowingText>
+            <StNowShowingText>현재상영중</StNowShowingText>
           </StNowShowingBox>
         </StTitle>
         <StBody3 className="engTitle">Guardians of the Galaxy Volume 3</StBody3>
@@ -129,6 +129,9 @@ const StMovieInfo = styled.article`
 const StTitle = styled.h1`
   /* margin-bottom: 3.5rem; */
   //피그마 상 간격
+  display: flex;
+  align-items: center;
+
   margin-bottom: 1rem;
 
   ${({ theme }) => theme.fonts.Title};
@@ -136,11 +139,12 @@ const StTitle = styled.h1`
 `;
 
 const StNowShowingBox = styled.em`
-  display: inline;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  width: 8.9rem;
+  height: 3.1rem;
   margin-left: 1rem;
   padding: 0.4rem;
 
