@@ -19,6 +19,7 @@ function PreferenceNav(props: PreferenceNavProps) {
 
 const StInfoWrapper = styled.div`
   display: grid;
+  align-items: center;
 
   width: 19.6rem;
   height: 10.4rem;
