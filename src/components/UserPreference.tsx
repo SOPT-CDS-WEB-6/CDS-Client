@@ -34,14 +34,15 @@ const StUserInfo = styled.nav`
 
 const StUserProfile = styled.div`
   justify-content: center;
+
   width: 19.6rem;
   height: 28rem;
-
   border: 0.1rem solid ${({ theme }) => theme.colors.gray40};
   border-radius: 0.5rem;
 
   > svg {
     justify-content: center;
+
     width: 17rem;
     height: 17rem;
     margin: 1.7rem 1.3rem 9.3rem;
@@ -55,9 +56,8 @@ const StUserName = styled.p`
 
   margin-top: -5.5rem;
 
-  color: ${({ theme }) => theme.colors.gray90};
-
   font-size: ${({ theme }) => theme.fonts.Body3};
+  color: ${({ theme }) => theme.colors.gray90};
 
   > svg {
     width: 1.6rem;

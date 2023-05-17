@@ -31,19 +31,16 @@ const WatchedMovieCard = styled.div`
 
   width: 43.4rem;
   height: 24.8rem;
-
+  margin: 1.25rem;
   border-radius: 2rem;
 
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0.375552rem 0.375552rem 1.87776rem rgba(102, 128, 153, 0.2);
-
-  margin: 1.25rem;
 `;
 
 const MoviePoster = styled.img`
   width: 13.7rem;
   height: 19.3rem;
-
   margin-left: 2.7rem;
 `;
 
@@ -55,18 +52,18 @@ const WatchedMovieInfo = styled.div`
 const WatchedMovieName = styled.p`
   margin: 0;
 
-  color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fonts.Body1};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 const WatchedMovieSubName = styled.p`
-  color: ${({ theme }) => theme.colors.gray70};
   font-size: ${({ theme }) => theme.fonts.Body5};
+  color: ${({ theme }) => theme.colors.gray70};
 `;
 
 const WatchedInfo = styled.p`
-  color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fonts.Body5};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 const ReviewBtn = styled.img`

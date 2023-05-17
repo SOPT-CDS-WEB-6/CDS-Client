@@ -22,9 +22,7 @@ const StInfoWrapper = styled.div`
 
   width: 19.6rem;
   height: 10.4rem;
-
   margin-top: 1rem;
-
   border: 0.1rem solid ${({ theme }) => theme.colors.gray40};
   border-radius: 0.5rem;
 
@@ -45,12 +43,10 @@ const StNumInfo = styled.p`
 
 const StPointerIcon = styled.p`
   position: absolute;
-
   margin-left: 2.4rem;
 
-  color: ${({ theme }) => theme.colors.white};
-
   font-size: ${({ theme }) => theme.fonts.Title};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const StTextInfo = styled.p`

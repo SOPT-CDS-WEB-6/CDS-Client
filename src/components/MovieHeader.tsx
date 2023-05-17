@@ -39,27 +39,25 @@ const MyMovieHeader = styled.header`
 const HeaderTextWrapper = styled.div`
   display: flex;
 `;
-const MyMovieTitle = styled.p`
-  display: flex;
 
+const MyMovieTitle = styled.p`
   font-size: ${({ theme }) => theme.fonts.Body2};
 `;
 
 const MyMovieNum = styled.p`
-  margin-top: 2.45rem;
-  margin-left: 0.9rem;
+  margin: 2.45rem 0 0 1rem;
 
-  color: ${({ theme }) => theme.colors.gray70};
   font-size: ${({ theme }) => theme.fonts.Body5};
+  color: ${({ theme }) => theme.colors.gray70};
 `;
 
 const HeaderBtnWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  gap: 1rem;
-
   margin-right: 46.5rem;
+
+  gap: 1rem;
 `;
 
 const DropDownBtn = styled.img`

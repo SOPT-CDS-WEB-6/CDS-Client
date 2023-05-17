@@ -21,7 +21,6 @@ const MyMovieSection = styled.section`
   display: grid;
 
   width: 136.5rem;
-
   margin: -64rem 41.4rem 0rem 60rem;
 `;
 
