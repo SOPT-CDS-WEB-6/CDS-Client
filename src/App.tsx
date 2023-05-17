@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 import MovieInfo from './components/MovieInfo';
 import { GlobalStyle } from './styles/globalStyles';
 import MovieDetail from './components/MovieDetail';
+import TrailerBox from './components/TrailerBox';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <StHeading>Vite + React</StHeading>
       <MovieInfo />
       <MovieDetail />
+      <TrailerBox />
     </>
   );
 }
