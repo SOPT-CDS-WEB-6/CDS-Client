@@ -1,11 +1,16 @@
 import styled from 'styled-components';
-//svg import use 어떻게??
+import { IcAd1Img } from '../asset/icon';
+import { IcAd2Img } from '../asset/icon';
 
 function SideAdBanner() {
   return (
     <StSection>
-      <StImg></StImg>
-      <StImg></StImg>
+      <StDiv>
+        <IcAd1Img />
+      </StDiv>
+      <StDiv>
+        <IcAd2Img />
+      </StDiv>
     </StSection>
   );
 }
@@ -20,8 +25,6 @@ const StSection = styled.section`
   margin-left: 2.7rem;
 `;
 
-const StImg = styled.img`
-  width: 20rem;
-  height: 37.9rem;
+const StDiv = styled.div`
   margin-bottom: 0.7rem;
 `;
