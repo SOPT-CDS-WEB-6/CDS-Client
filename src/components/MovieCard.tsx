@@ -16,8 +16,10 @@ function MovieCard(props: MovieCardProps) {
       <WatchedMovieInfo>
         <WatchedMovieName>{data.name}</WatchedMovieName>
         <WatchedMovieSubName>{data.subName}</WatchedMovieSubName>
+
         <WatchedInfo>{data.date}</WatchedInfo>
         <WatchedInfo>{data.cinemaInfo}</WatchedInfo>
+
         <ReviewBtn src={data.reviewBtn ? data.reviewBtn : data.editBtn} id={data.editBtn ? 'edit' : ''} />
         {data.deleteBtn ? <ReviewDelBtn src={data.deleteBtn} /> : <></>}
       </WatchedMovieInfo>
