@@ -4,13 +4,13 @@ import IcReviewwriteButton from '../asset/icon/ic_ReviewwriteButton.svg';
 import IcRevieweditButton from '../asset/icon/ic_RevieweditButton.svg';
 import IcReviewdeleteButton from '../asset/icon/ic_ReviewdeleteButton.svg';
 
-export const dummyUser = [
+export const DUMMY_USER = [
   {
     name: '김나현',
   },
 ] as const;
 
-export const dummyData = [
+export const DUMMY_NAV_DATA = [
   {
     num: 0,
     text: '기대되는 영화',
@@ -18,6 +18,7 @@ export const dummyData = [
   {
     num: 8,
     text: '내가 본 영화',
+    content: '☞',
     class: 'selected',
   },
   {
@@ -26,7 +27,7 @@ export const dummyData = [
   },
 ];
 
-export const dummyMovieData = [
+export const DUMMY_MOVIE_DATA = [
   {
     imgSrc: IcMoviecard1Img,
     name: '헌트',
