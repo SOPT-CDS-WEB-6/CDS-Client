@@ -22,7 +22,7 @@ const StSection = styled.section`
   flex-direction: column;
   align-items: center;
 
-  margin-left: 2.7rem;
+  width: 20rem;
 `;
 
 const StDiv = styled.div`
