@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 import MovieInfo from './components/MovieInfo';
 import { GlobalStyle } from './styles/globalStyles';
+import MovieDetail from './components/MovieDetail';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <GlobalStyle />
       <StHeading>Vite + React</StHeading>
       <MovieInfo />
+      <MovieDetail />
     </>
   );
 }
