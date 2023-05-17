@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import { IcImaxImg } from '../asset/icon';
+import { Ic4dxLogoImg } from '../asset/icon';
+import { IcEggIcon } from '../asset/icon';
+import { IcInfoIcon } from '../asset/icon';
+import { IcQuestionEgg } from '../asset/icon';
 
 function MovieInfo() {
   return (
@@ -14,20 +19,39 @@ function MovieInfo() {
           </StNowShowingBox>
         </StTitle>
         <StBody3 className="engTitle">Guardians of the Galaxy Volume 3</StBody3>
-        <StBody3 className="rate">예매율 38.0% 98%</StBody3>
+        <StBody3 className="rate">
+          예매율 38.0%
+          <StEggIcon>
+            <IcEggIcon />
+          </StEggIcon>
+          98%
+        </StBody3>
         <StBody5>
           감독 : 제임스 건 / 배우 : 크리스 프랫 , 조 샐다나 , 데이브 바티스타 , 카렌 길런 , 폼 클레멘티에프 , 빈 디젤 ,
           브래들리 쿠퍼 , 윌 폴터
         </StBody5>
         <StBody5>장르 : 엑션 / 기본 : 12, 150분, 미국</StBody5>
         <StBody5>개봉 : 2023.05.03</StBody5>
-        <span></span>
-        <span>
-          <StButton className="freeEgg">프리에그</StButton>
+        <StMovieTypeSpan>
+          <IcImaxImg />
+          <Ic4dxLogoImg />
+        </StMovieTypeSpan>
+        <StButtonSpan>
+          <StButton className="freeEgg">
+            <StQuestionEggIcon>
+              <IcQuestionEgg />
+            </StQuestionEggIcon>
+            프리에그
+          </StButton>
           <StButton className="reserve">특별한 영화 경험 시작하기 🎬</StButton>
-        </span>
+        </StButtonSpan>
         <StDiv>
-          <StP>프리에그(Pre Egg)란?</StP>
+          <StP>
+            <StInfoIcon>
+              <IcInfoIcon />
+            </StInfoIcon>
+            프리에그(Pre Egg)란?
+          </StP>
           <StP>개봉 전 영화에 대한 기대 수치를 의미합니다.</StP>
         </StDiv>
       </StArticle>
@@ -36,6 +60,11 @@ function MovieInfo() {
 }
 
 export default MovieInfo;
+
+const StMovieTypeSpan = styled.span`
+  display: flex;
+  margin-left: 78.6rem;
+`;
 
 const StSection = styled.section`
   display: flex;
@@ -88,6 +117,8 @@ const StBody3 = styled.h3`
   color: ${({ theme }) => theme.colors.gray70};
 
   &.rate {
+    display: flex;
+    align-items: center;
     width: 96.7rem;
     padding-bottom: 2rem;
     margin-bottom: 4.4rem;
@@ -113,6 +144,10 @@ const StButton = styled.button`
   height: 4.1rem;
 
   &.freeEgg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     margin-right: 0.6rem;
 
     border: 0.1rem solid ${({ theme }) => theme.colors.gray90};
@@ -142,8 +177,28 @@ const StDiv = styled.div`
 `;
 
 const StP = styled.p`
+  display: flex;
+  align-items: center;
+
   margin-bottom: 2.4rem;
 
   ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray70};
+`;
+
+const StEggIcon = styled.div`
+  margin: 0 0.5rem 0 1rem;
+`;
+
+const StInfoIcon = styled.div`
+  margin-right: 0.8rem;
+`;
+
+const StQuestionEggIcon = styled.div`
+  margin-right: 0.2rem;
+`;
+
+const StButtonSpan = styled.span`
+  display: flex;
+  align-items: center;
 `;
