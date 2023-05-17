@@ -1,10 +1,10 @@
 import MyMovie from './components/MyMovie';
-import UserInfo from './components/UserInfo';
+import UserPreference from './components/UserPreference';
 
 function App() {
   return (
     <>
-      <UserInfo />
+      <UserPreference />
       <MyMovie />
     </>
   );
