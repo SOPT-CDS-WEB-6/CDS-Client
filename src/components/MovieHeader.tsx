@@ -1,9 +1,7 @@
 import { styled } from 'styled-components';
-
-import IcAllDropdown from '../asset/icon/ic_AllDropdown.svg';
-import IcGoButton from '../asset/icon/ic_GoButton.svg';
-import ICAddAudience from '../asset/icon/ic_AddAudience.svg';
-
+import { IcAllDropdown } from '../asset/icon';
+import { IcGoButton } from '../asset/icon';
+import { ICAddAudience } from '../asset/icon';
 import { MovieDataInfo } from '../types/MovieData';
 
 export interface MyMovieProps {
@@ -21,9 +19,9 @@ function MovieHeader(props: MyMovieProps) {
       </HeaderTextWrapper>
 
       <HeaderBtnWrapper>
-        <DropDownBtn src={IcAllDropdown} />
-        <GoBtn src={IcGoButton} />
-        <AddAudienceBtn src={ICAddAudience} />
+        <IcAllDropdown className="dropDown" />
+        <IcGoButton className="go" />
+        <ICAddAudience className="addAudience" />
       </HeaderBtnWrapper>
     </MyMovieHeader>
   );
@@ -58,21 +56,22 @@ const HeaderBtnWrapper = styled.div`
   margin-right: 46.5rem;
 
   gap: 1rem;
-`;
 
-const DropDownBtn = styled.img`
-  width: 7rem;
-  height: 3.7rem;
-`;
+  > svg {
+    height: 3.7rem;
+  }
 
-const GoBtn = styled.img`
-  width: 4.9rem;
-  height: 3.7rem;
-`;
+  > .dropDown {
+    width: 7rem;
+  }
 
-const AddAudienceBtn = styled.img`
-  width: 11.7rem;
-  height: 3.7rem;
+  > .go {
+    width: 4.9rem;
+  }
+
+  > .addAudience {
+    width: 11.7rem;
+  }
 `;
 
 export default MovieHeader;
