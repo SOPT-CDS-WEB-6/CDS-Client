@@ -62,7 +62,7 @@ const StTrailerBox = styled.section`
   align-items: center;
 
   width: 96.7rem;
-  height: 31.2rem;
+  height: 35rem;
 `;
 
 const StTrailerBar = styled.div`
