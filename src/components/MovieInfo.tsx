@@ -4,14 +4,15 @@ import { Ic4dxLogoImg } from '../asset/icon';
 import { IcEggIcon } from '../asset/icon';
 import { IcInfoIcon } from '../asset/icon';
 import { IcQuestionEgg } from '../asset/icon';
+import { IcMovieImg } from '../asset/icon';
 
 function MovieInfo() {
   return (
-    <StSection>
-      <StImg
-        src="https://m.media-amazon.com/images/M/MV5BMDgxOTdjMzYtZGQxMS00ZTAzLWI4Y2UtMTQzN2VlYjYyZWRiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg"
-        alt="guardians of the galaxy vol 3 영화 포스터"></StImg>
-      <StArticle>
+    <StMovieInfoBox>
+      <StMoviePoster>
+        <IcMovieImg />
+      </StMoviePoster>
+      <StMovieInfo>
         <StTitle>
           가디언즈 오브 갤럭시-Volume 3
           <StNowShowingBox>
@@ -32,11 +33,35 @@ function MovieInfo() {
         </StBody5>
         <StBody5>장르 : 엑션 / 기본 : 12, 150분, 미국</StBody5>
         <StBody5>개봉 : 2023.05.03</StBody5>
-        <StMovieTypeSpan>
-          <IcImaxImg />
-          <Ic4dxLogoImg />
-        </StMovieTypeSpan>
-        <StButtonSpan>
+
+        <StMovieInfoDetailBox>
+          <StMovieTypeSpan>
+            <StButtonSpan>
+              <StButton className="freeEgg">
+                <StQuestionEggIcon>
+                  <IcQuestionEgg />
+                </StQuestionEggIcon>
+                프리에그
+              </StButton>
+              <StButton className="reserve">특별한 영화 경험 시작하기 🎬</StButton>
+            </StButtonSpan>
+            <StImaxIcon>
+              <IcImaxImg />
+            </StImaxIcon>
+            <Ic4dxLogoImg />
+          </StMovieTypeSpan>
+          <StPreEgg>
+            <StPreEggText>
+              <StInfoIcon>
+                <IcInfoIcon />
+              </StInfoIcon>
+              프리에그(Pre Egg)란?
+            </StPreEggText>
+            <StPreEggText>개봉 전 영화에 대한 기대 수치를 의미합니다.</StPreEggText>
+          </StPreEgg>
+        </StMovieInfoDetailBox>
+
+        {/* <StButtonSpan>
           <StButton className="freeEgg">
             <StQuestionEggIcon>
               <IcQuestionEgg />
@@ -44,8 +69,8 @@ function MovieInfo() {
             프리에그
           </StButton>
           <StButton className="reserve">특별한 영화 경험 시작하기 🎬</StButton>
-        </StButtonSpan>
-        <StDiv>
+        </StButtonSpan> */}
+        {/* <StDiv>
           <StP>
             <StInfoIcon>
               <IcInfoIcon />
@@ -53,56 +78,72 @@ function MovieInfo() {
             프리에그(Pre Egg)란?
           </StP>
           <StP>개봉 전 영화에 대한 기대 수치를 의미합니다.</StP>
-        </StDiv>
-      </StArticle>
-    </StSection>
+        </StDiv> */}
+      </StMovieInfo>
+    </StMovieInfoBox>
   );
 }
 
 export default MovieInfo;
 
-const StMovieTypeSpan = styled.span`
+const StMovieInfoDetailBox = styled.div`
   display: flex;
-  margin-left: 78.6rem;
+  flex-direction: column;
+  position: absolute;
+  top: 24rem;
 `;
 
-const StSection = styled.section`
+const StMovieInfoBox = styled.section`
   display: flex;
 
+  width: 119.4rem;
   margin: 4.9rem 36.1rem;
 `;
 
-const StImg = styled.img`
-  width: 19.9rem;
-  height: 30.4rem;
+const StMoviePoster = styled.div`
   margin: 0 2.8rem 0 0.2rem;
 `;
 
-const StArticle = styled.article`
+const StMovieTypeSpan = styled.span`
+  display: flex;
+
+  /* margin-left: 75.8rem; */
+  /* margin-left: 1.4rem; */
+`;
+
+const StButtonSpan = styled.span`
+  display: flex;
+  align-items: center;
+
+  margin: 7rem 33.6rem 0 0;
+`;
+
+const StMovieInfo = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
-  width: 96.7rem;
   margin-top: 2.1rem;
 `;
 
 const StTitle = styled.h1`
-  margin-bottom: 3.5rem;
+  /* margin-bottom: 3.5rem; */
+  //피그마 상 간격
+  margin-bottom: 1rem;
 
   ${({ theme }) => theme.fonts.Title};
   color: ${({ theme }) => theme.colors.black};
 `;
 
 const StNowShowingBox = styled.em`
-  display: inline-block;
+  display: inline;
   position: relative;
   text-align: center;
   vertical-align: middle;
 
-  width: 8.9rem;
-  height: 3.1rem;
   margin-left: 1rem;
+  padding: 0.4rem;
+
   border: 0.1rem solid #0076b1;
 
   color: #0076b1;
@@ -119,21 +160,32 @@ const StBody3 = styled.h3`
   &.rate {
     display: flex;
     align-items: center;
+
     width: 96.7rem;
-    padding-bottom: 2rem;
-    margin-bottom: 4.4rem;
+    /* padding-bottom: 2rem; */
+    //피그마 상 간격
+    padding-bottom: 0.3rem;
+
+    /* margin-bottom: 4.4rem; */
+    //피그마 상 간격
+    margin-bottom: 4rem;
+
     border-bottom: 0.1rem solid #e3e3e3;
 
     color: ${({ theme }) => theme.colors.gray90};
   }
 
   &.engTitle {
-    margin-bottom: 3.9rem;
+    /* margin-bottom: 3.9rem; */
+    //피그마 상 간격
+    margin-bottom: 1.5rem;
   }
 `;
 
 const StBody5 = styled.h5`
-  margin-bottom: 2.5rem;
+  /* margin-bottom: 2.5rem; */
+  //피그마 상 간격
+  margin-bottom: 1rem;
 
   ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray90};
@@ -172,15 +224,20 @@ const StButton = styled.button`
   }
 `;
 
-const StDiv = styled.div`
-  margin-top: 2.6rem;
+const StPreEgg = styled.div`
+  /* margin-top: 2.6rem; */
+  //피그마 상 간격
+
+  margin-top: 1.5rem;
 `;
 
-const StP = styled.p`
+const StPreEggText = styled.p`
   display: flex;
   align-items: center;
 
-  margin-bottom: 2.4rem;
+  /* margin-bottom: 2.5rem; */
+  //피그마 상 간격
+  margin-bottom: 1rem;
 
   ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray70};
@@ -198,7 +255,6 @@ const StQuestionEggIcon = styled.div`
   margin-right: 0.2rem;
 `;
 
-const StButtonSpan = styled.span`
-  display: flex;
-  align-items: center;
+const StImaxIcon = styled.div`
+  margin-right: 0.6rem;
 `;
