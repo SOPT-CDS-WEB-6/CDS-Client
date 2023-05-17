@@ -38,6 +38,7 @@ export { ReactComponent as IcTicketImg1 } from './ic_TicketImg1.svg';
 export { ReactComponent as IcTicketImg2 } from './ic_TicketImg2.svg';
 export { ReactComponent as IcTicketImg3 } from './ic_TicketImg3.svg';
 export { ReactComponent as IcWhiteallButton } from './ic_WhiteallButton.svg';
+export { ReactComponent as IcEggImg } from './ic_EggImg.svg';
 // inquiry
 export { ReactComponent as IcAddfileButton } from './ic_AddfileButton.svg';
 export { ReactComponent as IcAddfileImg } from './ic_AddfileImg.svg';
