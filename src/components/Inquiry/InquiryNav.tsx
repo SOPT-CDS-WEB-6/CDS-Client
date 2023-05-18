@@ -1,10 +1,10 @@
 import { css, styled } from 'styled-components';
-import { INQUIRY_NAV_MENU_LIST } from '../../constants/inquiry';
+import { INQUIRY_NAV_MENUS } from '../../constants/inquiry';
 
 const InquiryNav = () => {
   return (
     <StNavBar>
-      {INQUIRY_NAV_MENU_LIST.map((menu, idx) => (
+      {INQUIRY_NAV_MENUS.map((menu, idx) => (
         <StNavMenu idx={idx} key={idx}>
           {menu}
         </StNavMenu>
