@@ -38,6 +38,7 @@ const StStillCutBox = styled.section`
   align-items: center;
 
   width: 96.7rem;
+  margin-bottom: 5rem;
 `;
 
 const StStillCutBar = styled.div`
