@@ -57,7 +57,7 @@ const StFooterTopContents = styled.section`
   gap: 2.4rem;
 `;
 
-const StFooterTextWrapper = styled.article`
+const StFooterDataWrapper = styled.article`
   font-size: 1.4rem;
   color: ${({ theme }) => theme.colors.gray70};
   letter-spacing: 0.2rem;
