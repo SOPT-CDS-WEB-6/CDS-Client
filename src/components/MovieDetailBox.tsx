@@ -8,33 +8,33 @@ import ScoreBox from './ScoreBox';
 function MovieDetailBox() {
   return (
     <StMovieDetailBox>
-      <StDiv>
+      <StTopBox>
         <MovieDetail />
         <SideAdBanner />
-      </StDiv>
-      <StDiv2>
+      </StTopBox>
+      <StBottomBox>
         <TrailerBox />
         <StillCutBox />
         <ScoreBox />
-      </StDiv2>
+      </StBottomBox>
     </StMovieDetailBox>
   );
 }
 
 export default MovieDetailBox;
 
-const StMovieDetailBox = styled.div`
+const StMovieDetailBox = styled.section`
   display: flex;
   flex-direction: column;
 
-  margin: 14.7rem 36.3rem 0 36.3rem;
+  margin: 14.2rem 36.3rem 0 36.3rem;
 `;
 
-const StDiv = styled.div`
+const StTopBox = styled.section`
   display: flex;
 `;
 
-const StDiv2 = styled.div`
+const StBottomBox = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
