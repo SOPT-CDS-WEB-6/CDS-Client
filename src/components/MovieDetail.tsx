@@ -106,6 +106,7 @@ const StP = styled.p`
 
 const StChartSection = styled.section`
   display: flex;
+  position: relative;
 
   width: 96.7rem;
   height: 28.6rem;
@@ -126,7 +127,9 @@ const StChartImg = styled.div`
 `;
 
 const StChartBar = styled.div`
-  z-index: 2;
+  position: absolute;
+  left: 48.4rem;
+
   width: 0.1rem;
   height: 23.3rem;
 
