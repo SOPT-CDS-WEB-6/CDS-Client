@@ -26,7 +26,7 @@ const MovieChartBox = () => {
         </StButtonWrapper>
         <StChartCardWrapper>
           {movieChart.map((movieData) => {
-            return <MovieChartCard {...movieData} />;
+            return <MovieChartCard {...movieData} key={movieData.chartRank} />;
           })}
         </StChartCardWrapper>
       </StMovieChartWrapper>
