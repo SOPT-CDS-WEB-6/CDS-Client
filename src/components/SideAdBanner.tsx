@@ -4,20 +4,20 @@ import { IcAd2Img } from '../asset/icon';
 
 function SideAdBanner() {
   return (
-    <StSection>
-      <StDiv>
+    <StAdBanner>
+      <StAd>
         <IcAd1Img />
-      </StDiv>
-      <StDiv>
+      </StAd>
+      <StAd>
         <IcAd2Img />
-      </StDiv>
-    </StSection>
+      </StAd>
+    </StAdBanner>
   );
 }
 
 export default SideAdBanner;
 
-const StSection = styled.section`
+const StAdBanner = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,6 +25,6 @@ const StSection = styled.section`
   width: 20rem;
 `;
 
-const StDiv = styled.div`
+const StAd = styled.article`
   margin-bottom: 0.7rem;
 `;
