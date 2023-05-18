@@ -35,22 +35,62 @@ function Footer() {
   );
 }
 
-const FooterWrapper = styled.footer``;
+const FooterWrapper = styled.footer`
+  display: grid;
+  justify-content: center;
+  align-items: center;
 
-const FooterTopContents = styled.div``;
+  width: 192rem;
 
-const FooterTextWrapper = styled.div``;
+  background-color: #f8f8f8;
+`;
+
+const FooterTopContents = styled.div`
+  display: flex;
+
+  padding-top: 3.6rem;
+  border-bottom: 0.1rem solid ${({ theme }) => theme.colors.gray20};
+
+  font-size: ${({ theme }) => theme.fonts.Body5};
+  color: ${({ theme }) => theme.colors.gray70};
+
+  gap: 2.4rem;
+`;
+
+const FooterTextWrapper = styled.div`
+  font-size: 1.4rem;
+  color: ${({ theme }) => theme.colors.gray70};
+  letter-spacing: 0.2rem;
+  line-height: 0%;
+`;
 
 const EachContent = styled.p`
-  &.underline {
-  }
+  margin-bottom: 4rem;
 
   &.bottom {
+    margin-bottom: 0rem;
+  }
+
+  &.underline {
+    font-weight: 700;
+    color: ${({ theme }) => theme.colors.gray90};
+    letter-spacing: 0.2rem;
+    text-decoration-line: underline;
   }
 `;
 
-const FooterBottomContents = styled.div``;
+const FooterBottomContents = styled.div`
+  display: flex;
+  justify-content: space-between;
 
-const FooterBtnWrapper = styled.div``;
+  padding: 4rem 0rem;
+`;
+
+const FooterBtnWrapper = styled.div`
+  display: flex;
+  align-items: end;
+
+  gap: 0.5rem;
+`;
 
 export default Footer;
