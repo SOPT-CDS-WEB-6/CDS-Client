@@ -4,38 +4,38 @@ import { IcFooterDropDown, IcFooterGo } from '../asset/icon';
 
 function Footer() {
   return (
-    <FooterWrapper>
-      <FooterTopContents>
+    <StFooterWrapper>
+      <StFooterTopContents>
         {FOOTER_TOP_DATA.map((data, idx) => {
           return (
-            <EachContent className={data.attr ? data.attr : ''} key={idx}>
+            <StEachContent className={data.attr ? data.attr : ''} key={idx}>
               {data.content}
-            </EachContent>
+            </StEachContent>
           );
         })}
-      </FooterTopContents>
+      </StFooterTopContents>
 
-      <FooterBottomContents>
-        <FooterTextWrapper>
+      <StFooterBottomContents>
+        <StFooterTextWrapper>
           {FOOTER_BOTTOM_DATA.map((data, idx) => {
             return (
-              <EachContent className="bottom" key={idx}>
+              <StEachContent className="bottom" key={idx}>
                 {data.content}
-              </EachContent>
+              </StEachContent>
             );
           })}
-        </FooterTextWrapper>
+        </StFooterTextWrapper>
 
-        <FooterBtnWrapper>
+        <StFooterBtnWrapper>
           <IcFooterDropDown />
           <IcFooterGo />
-        </FooterBtnWrapper>
-      </FooterBottomContents>
-    </FooterWrapper>
+        </StFooterBtnWrapper>
+      </StFooterBottomContents>
+    </StFooterWrapper>
   );
 }
 
-const FooterWrapper = styled.footer`
+const StFooterWrapper = styled.footer`
   display: grid;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@ const FooterWrapper = styled.footer`
   background-color: #f8f8f8;
 `;
 
-const FooterTopContents = styled.div`
+const StFooterTopContents = styled.div`
   display: flex;
 
   padding-top: 3.6rem;
@@ -57,14 +57,14 @@ const FooterTopContents = styled.div`
   gap: 2.4rem;
 `;
 
-const FooterTextWrapper = styled.div`
+const StFooterTextWrapper = styled.div`
   font-size: 1.4rem;
   color: ${({ theme }) => theme.colors.gray70};
   letter-spacing: 0.2rem;
   line-height: 0%;
 `;
 
-const EachContent = styled.p`
+const StEachContent = styled.p`
   margin-bottom: 4rem;
 
   &.bottom {
@@ -79,14 +79,14 @@ const EachContent = styled.p`
   }
 `;
 
-const FooterBottomContents = styled.div`
+const StFooterBottomContents = styled.div`
   display: flex;
   justify-content: space-between;
 
   padding: 4rem 0rem;
 `;
 
-const FooterBtnWrapper = styled.div`
+const StFooterBtnWrapper = styled.div`
   display: flex;
   align-items: end;
 
