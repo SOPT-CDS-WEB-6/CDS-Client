@@ -24,9 +24,10 @@ function TrailerBox() {
 
             <IcTrailer1Img />
           </StTrailerVid>
-          <StVidTitle>
-            <StHdBox>HD</StHdBox>전 세계 최초 개봉!
-          </StVidTitle>
+          <StVidTitleBox>
+            <StHdBox>HD</StHdBox>
+            <StVidTitle>전 세계 최초 개봉!</StVidTitle>
+          </StVidTitleBox>
           <StVidDate>2023.05.03</StVidDate>
         </StEachTrailer>
 
@@ -37,9 +38,10 @@ function TrailerBox() {
             </StPlayButton>
             <IcTrailer2Img />
           </StTrailerVid>
-          <StVidTitle>
-            <StHdBox>HD</StHdBox>전 세계 최초 개봉!
-          </StVidTitle>
+          <StVidTitleBox>
+            <StHdBox>HD</StHdBox>
+            <StVidTitle>전 세계 최초 개봉!</StVidTitle>
+          </StVidTitleBox>
           <StVidDate>2023.05.03</StVidDate>
         </StEachTrailer>
 
@@ -50,9 +52,10 @@ function TrailerBox() {
             </StPlayButton>
             <IcTrailer3Img />
           </StTrailerVid>
-          <StVidTitle>
-            <StHdBox>HD</StHdBox>전 세계 최초 개봉!
-          </StVidTitle>
+          <StVidTitleBox>
+            <StHdBox>HD</StHdBox>
+            <StVidTitle>전 세계 최초 개봉!</StVidTitle>
+          </StVidTitleBox>
           <StVidDate>2023.05.03</StVidDate>
         </StEachTrailer>
       </StVidBox>
@@ -106,9 +109,9 @@ const StPlusButton = styled.div`
 const StVidBox = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 
   width: 100%;
-  padding: 0;
   margin-top: 1.5rem;
 `;
 
@@ -123,12 +126,27 @@ const StTrailerVid = styled.div`
   position: relative;
 `;
 
-const StVidTitle = styled.div`
+const StVidTitleBox = styled.div`
   display: flex;
   align-items: center;
 
   margin-top: 1rem;
+`;
 
+const StHdBox = styled.div`
+  text-align: center;
+  width: 3.9rem;
+  height: 2.3rem;
+  margin-right: 1rem;
+  padding: 0.6rem 0.8rem 0.7rem 0.9rem;
+
+  border: 0.1rem solid #0076b1;
+
+  ${({ theme }) => theme.fonts.Body5};
+  color: #0076b1;
+`;
+
+const StVidTitle = styled.p`
   ${({ theme }) => theme.fonts.Body3};
   color: ${({ theme }) => theme.colors.gray90};
 `;
@@ -140,23 +158,8 @@ const StVidDate = styled.p`
   color: ${({ theme }) => theme.colors.gray40};
 `;
 
-const StHdBox = styled.div`
-  text-align: center;
-  width: 3.9rem;
-  height: 2.3rem;
-  margin-right: 1rem;
-  padding: 0.4rem;
-
-  border: 0.1rem solid #0076b1;
-
-  ${({ theme }) => theme.fonts.Body5};
-  color: #0076b1;
-`;
-
 const StPlayButton = styled.div`
   position: absolute;
   top: 10.9rem;
   left: 24.9rem;
-  /* right: 1rem;
-  bottom: 1rem; */
 `;
