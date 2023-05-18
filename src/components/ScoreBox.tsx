@@ -1,20 +1,23 @@
 import styled from 'styled-components';
 import { IcPreeggImg } from '../asset/icon';
 import { IcGoldeggImg } from '../asset/icon';
+import { IcBrownTextBox } from '../asset/icon';
 
 function ScoreBox() {
   return (
     <StScoreBox>
       <StTextBox>
-        스토리가 탄탄하고
-        <br />
-        기분이 좋아지는 영화
+        <StText>스토리가 탄탄하고</StText>
+        <StText>기분이 좋아지는 영화</StText>
       </StTextBox>
       <StEggBox>
         <StEggIcon>
           <IcPreeggImg />
         </StEggIcon>
         <StIconTextBox>
+          <IcBrownTextBox />
+          <StTextBoxText>사전기대지수</StTextBoxText>
+
           <StIconText className="title">Pre Egg</StIconText>
           <StIconText className="score">99%</StIconText>
         </StIconTextBox>
@@ -23,6 +26,9 @@ function ScoreBox() {
           <IcGoldeggImg />
         </StEggIcon>
         <StIconTextBox>
+          <IcBrownTextBox />
+          <StTextBoxText>실관람평지수</StTextBoxText>
+
           <StIconText className="title">Golden Egg</StIconText>
           <StIconText className="score">98%</StIconText>
         </StIconTextBox>
@@ -37,6 +43,7 @@ const StScoreBox = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   width: 100%;
   height: 18.5rem;
 
@@ -44,12 +51,23 @@ const StScoreBox = styled.section`
 `;
 
 const StTextBox = styled.article`
+  display: flex;
+  flex-direction: column;
+
+  margin: 1.9rem 0 0 0.4rem;
+`;
+
+const StText = styled.p`
+  margin-bottom: 1.7rem;
+
   ${({ theme }) => theme.fonts.Title};
   color: ${({ theme }) => theme.colors.black};
 `;
 
 const StEggBox = styled.article`
   display: flex;
+  align-items: center;
+
   margin-left: 1rem;
 `;
 
@@ -64,6 +82,8 @@ const StIconTextBox = styled.div`
 
 const StIconText = styled.p`
   &.title {
+    margin: 0.5rem 0 0.6rem 0;
+
     ${({ theme }) => theme.fonts.Body3};
     color: ${({ theme }) => theme.colors.red};
   }
@@ -72,6 +92,15 @@ const StIconText = styled.p`
     ${({ theme }) => theme.fonts.Title};
     color: ${({ theme }) => theme.colors.gray90};
   }
+`;
+
+const StTextBoxText = styled.p`
+  position: absolute;
+
+  margin: 0.6rem 0.5rem 1.4rem 0.7rem;
+
+  ${({ theme }) => theme.fonts.Body5};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const StBar = styled.div`
