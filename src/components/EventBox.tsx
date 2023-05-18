@@ -49,21 +49,24 @@ const StEventCardPeriodText = styled.span`
 const StEventCardTitleText = styled.span`
   margin-top: 1.1rem;
   margin-bottom: 1.1rem;
+
   font: ${({ theme }) => theme.fonts.Body1};
 `;
 
 const StEventCard = styled.article`
+  display: flex;
+  flex-direction: column;
+
   width: 37.8rem;
   height: 32.4rem;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
 `;
 
 const StEventButtonWrapper = styled.div`
-  height: 3.5rem;
   display: flex;
+
+  height: 3.5rem;
 
   & > * {
     margin-left: 0.7rem;
@@ -75,11 +78,12 @@ const StEventTopBarText = styled.div`
 `;
 
 const StEventTopBar = styled.div`
+  display: flex;
+  justify-content: space-between;
+
   width: 100%;
   height: 3.5rem;
   margin-bottom: 3.3rem;
-  display: flex;
-  justify-content: space-between;
 `;
 
 const StEventBoxWrapper = styled.div`
@@ -90,9 +94,10 @@ const StEventBoxWrapper = styled.div`
 `;
 
 const StEventBoxSection = styled.div`
+  display: flex;
+  justify-content: center;
+
   width: 100%;
   height: 38.5rem;
   padding: 0;
-  display: flex;
-  justify-content: center;
 `;

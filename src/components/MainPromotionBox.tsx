@@ -18,11 +18,12 @@ const StContent = styled.div`
 `;
 
 const StMoviePromotionWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+
   width: 100%;
   height: 59.9rem;
   padding: 0;
   margin: 0;
   background-color: ${({ theme }) => theme.colors.black};
-  display: flex;
-  justify-content: center;
 `;
