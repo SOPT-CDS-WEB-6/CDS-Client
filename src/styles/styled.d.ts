@@ -10,6 +10,7 @@ declare module "styled-components" {
       gray70: string;
       gray40: string;
       gray20: string;
+      gray10: string;
       white: string;
     };
     fonts: {
