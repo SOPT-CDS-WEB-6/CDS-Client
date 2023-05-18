@@ -19,9 +19,9 @@ function StillCutBox() {
         <StArrow className="left">
           <IcLeftarrowIcon />
         </StArrow>
-        <StStillCut>
+        <article>
           <IcStillCutImg />
-        </StStillCut>
+        </article>
         <StArrow className="right">
           <IcRightarrowIcon />
         </StArrow>
@@ -76,15 +76,15 @@ const StPlusButton = styled.div`
 const StStillCutGallery = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 4.5rem;
-`;
 
-const StStillCut = styled.div``;
+  margin-top: 5rem;
+`;
 
 const StArrow = styled.div`
   &.left {
     margin-right: 26.7rem;
   }
+
   &.right {
     margin-left: 26.6rem;
   }
