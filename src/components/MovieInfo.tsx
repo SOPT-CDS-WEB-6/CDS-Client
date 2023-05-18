@@ -20,13 +20,15 @@ function MovieInfo() {
           </StNowShowingBox>
         </StTitle>
         <StBody3 className="engTitle">Guardians of the Galaxy Volume 3</StBody3>
-        <StBody3 className="rate">
-          예매율 38.0%
+        <StRateBox>
+          <StBody3 className="rate">예매율 38.0%</StBody3>
           <StEggIcon>
             <IcEggIcon />
           </StEggIcon>
-          98%
-        </StBody3>
+
+          <StBody3 className="eggRate">98%</StBody3>
+        </StRateBox>
+        <StRowBar />
         <StBody5>
           감독 : 제임스 건 / 배우 : 크리스 프랫 , 조 샐다나 , 데이브 바티스타 , 카렌 길런 , 폼 클레멘티에프 , 빈 디젤 ,
           브래들리 쿠퍼 , 윌 폴터
@@ -36,32 +38,14 @@ function MovieInfo() {
 
         <StMovieInfoDetailBox>
           <StMovieTypeSpan>
-            <StButtonSpan>
-              <StButton className="freeEgg">
-                <StQuestionEggIcon>
-                  <IcQuestionEgg />
-                </StQuestionEggIcon>
-                프리에그
-              </StButton>
-              <StButton className="reserve">특별한 영화 경험 시작하기 🎬</StButton>
-            </StButtonSpan>
             <StImaxIcon>
               <IcImaxImg />
             </StImaxIcon>
             <Ic4dxLogoImg />
           </StMovieTypeSpan>
-          <StPreEgg>
-            <StPreEggText>
-              <StInfoIcon>
-                <IcInfoIcon />
-              </StInfoIcon>
-              프리에그(Pre Egg)란?
-            </StPreEggText>
-            <StPreEggText>개봉 전 영화에 대한 기대 수치를 의미합니다.</StPreEggText>
-          </StPreEgg>
         </StMovieInfoDetailBox>
 
-        {/* <StButtonSpan>
+        <StButtonSpan>
           <StButton className="freeEgg">
             <StQuestionEggIcon>
               <IcQuestionEgg />
@@ -69,16 +53,16 @@ function MovieInfo() {
             프리에그
           </StButton>
           <StButton className="reserve">특별한 영화 경험 시작하기 🎬</StButton>
-        </StButtonSpan> */}
-        {/* <StDiv>
-          <StP>
+        </StButtonSpan>
+        <StPreEgg>
+          <StPreEggText>
             <StInfoIcon>
               <IcInfoIcon />
             </StInfoIcon>
             프리에그(Pre Egg)란?
-          </StP>
-          <StP>개봉 전 영화에 대한 기대 수치를 의미합니다.</StP>
-        </StDiv> */}
+          </StPreEggText>
+          <StPreEggText>개봉 전 영화에 대한 기대 수치를 의미합니다.</StPreEggText>
+        </StPreEgg>
       </StMovieInfo>
     </StMovieInfoBox>
   );
@@ -86,18 +70,32 @@ function MovieInfo() {
 
 export default MovieInfo;
 
-const StMovieInfoDetailBox = styled.div`
+const StRateBox = styled.article`
+  display: flex;
+  align-items: center;
+`;
+
+const StRowBar = styled.div`
+  width: 96.7rem;
+  height: 0.1rem;
+  margin: 0 0 3.9rem 2.8rem;
+
+  background-color: ${({ theme }) => theme.colors.gray20};
+`;
+
+const StMovieInfoDetailBox = styled.section`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 24rem;
+  top: 25rem;
+  left: 134.8rem;
 `;
 
 const StMovieInfoBox = styled.section`
   display: flex;
 
   width: 119.4rem;
-  margin: 4.9rem 36.1rem;
+  margin: 4.9rem 36.3rem 0 36.3rem;
 `;
 
 const StMoviePoster = styled.div`
@@ -106,33 +104,26 @@ const StMoviePoster = styled.div`
 
 const StMovieTypeSpan = styled.span`
   display: flex;
-
-  /* margin-left: 75.8rem; */
-  /* margin-left: 1.4rem; */
 `;
 
 const StButtonSpan = styled.span`
   display: flex;
   align-items: center;
 
-  margin: 7rem 33.6rem 0 0;
+  margin: 2.4rem 0 1.7rem 4.4rem;
 `;
 
 const StMovieInfo = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
-  margin-top: 2.1rem;
 `;
 
 const StTitle = styled.h1`
-  /* margin-bottom: 3.5rem; */
-  //피그마 상 간격
   display: flex;
   align-items: center;
 
-  margin-bottom: 1rem;
+  margin: 1rem 0 1.7rem 4.9rem;
 
   ${({ theme }) => theme.fonts.Title};
   color: ${({ theme }) => theme.colors.black};
@@ -146,7 +137,7 @@ const StNowShowingBox = styled.em`
   width: 8.9rem;
   height: 3.1rem;
   margin-left: 1rem;
-  padding: 0.4rem;
+  padding: 1rem 1rem 1.1rem 1rem;
 
   border: 0.1rem solid #0076b1;
 
@@ -158,38 +149,29 @@ const StNowShowingText = styled.span`
 `;
 
 const StBody3 = styled.h3`
+  margin-left: 4.9rem;
+
   ${({ theme }) => theme.fonts.Body3};
   color: ${({ theme }) => theme.colors.gray70};
 
   &.rate {
-    display: flex;
-    align-items: center;
+    margin-bottom: 1.3rem;
 
-    width: 96.7rem;
-    /* padding-bottom: 2rem; */
-    //피그마 상 간격
-    padding-bottom: 0.3rem;
-
-    /* margin-bottom: 4.4rem; */
-    //피그마 상 간격
-    margin-bottom: 4rem;
-
-    border-bottom: 0.1rem solid #e3e3e3;
+    color: ${({ theme }) => theme.colors.gray90};
+  }
+  &.eggRate {
+    margin: 0 0 1.3rem 0;
 
     color: ${({ theme }) => theme.colors.gray90};
   }
 
   &.engTitle {
-    /* margin-bottom: 3.9rem; */
-    //피그마 상 간격
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.6rem;
   }
 `;
 
 const StBody5 = styled.h5`
-  /* margin-bottom: 2.5rem; */
-  //피그마 상 간격
-  margin-bottom: 1rem;
+  margin: 0 0 1.5rem 4.4rem;
 
   ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray90};
@@ -229,26 +211,20 @@ const StButton = styled.button`
 `;
 
 const StPreEgg = styled.div`
-  /* margin-top: 2.6rem; */
-  //피그마 상 간격
-
-  margin-top: 1.5rem;
+  margin-left: 4.4rem;
 `;
 
 const StPreEggText = styled.p`
   display: flex;
   align-items: center;
-
-  /* margin-bottom: 2.5rem; */
-  //피그마 상 간격
-  margin-bottom: 1rem;
+  margin: 0 0 1.4rem 0.4rem;
 
   ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray70};
 `;
 
 const StEggIcon = styled.div`
-  margin: 0 0.5rem 0 1rem;
+  margin: 0 0.5rem 0.4rem 1rem;
 `;
 
 const StInfoIcon = styled.div`
