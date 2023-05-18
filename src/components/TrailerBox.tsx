@@ -32,6 +32,9 @@ function TrailerBox() {
 
         <StEachTrailer>
           <StTrailerVid>
+            <StPlayButton>
+              <IcPlayButton />
+            </StPlayButton>
             <IcTrailer2Img />
           </StTrailerVid>
           <StVidTitle>
@@ -42,6 +45,9 @@ function TrailerBox() {
 
         <StEachTrailer>
           <StTrailerVid>
+            <StPlayButton>
+              <IcPlayButton />
+            </StPlayButton>
             <IcTrailer3Img />
           </StTrailerVid>
           <StVidTitle>
