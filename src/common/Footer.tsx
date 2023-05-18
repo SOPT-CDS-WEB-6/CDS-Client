@@ -16,7 +16,7 @@ function Footer() {
       </StFooterTopContents>
 
       <StFooterBottomContents>
-        <StFooterTextWrapper>
+        <StFooterDataWrapper>
           {FOOTER_BOTTOM_DATA.map((data, idx) => {
             return (
               <StEachContent className="bottom" key={idx}>
@@ -24,7 +24,7 @@ function Footer() {
               </StEachContent>
             );
           })}
-        </StFooterTextWrapper>
+        </StFooterDataWrapper>
 
         <StFooterBtnWrapper>
           <IcFooterDropDown />
@@ -45,7 +45,7 @@ const StFooterWrapper = styled.footer`
   background-color: #f8f8f8;
 `;
 
-const StFooterTopContents = styled.div`
+const StFooterTopContents = styled.section`
   display: flex;
 
   padding-top: 3.6rem;
@@ -57,7 +57,7 @@ const StFooterTopContents = styled.div`
   gap: 2.4rem;
 `;
 
-const StFooterTextWrapper = styled.div`
+const StFooterTextWrapper = styled.article`
   font-size: 1.4rem;
   color: ${({ theme }) => theme.colors.gray70};
   letter-spacing: 0.2rem;
@@ -79,14 +79,14 @@ const StEachContent = styled.p`
   }
 `;
 
-const StFooterBottomContents = styled.div`
+const StFooterBottomContents = styled.section`
   display: flex;
   justify-content: space-between;
 
   padding: 4rem 0rem;
 `;
 
-const StFooterBtnWrapper = styled.div`
+const StFooterBtnWrapper = styled.article`
   display: flex;
   align-items: end;
 
