@@ -1,19 +1,16 @@
 export const FOOTER_TOP_DATA = [
-  { content: '회사소개' },
-  { content: '지속가능경영' },
-  { content: 'IR' },
-  { content: '채용정보' },
-  { content: '광고/제휴/출점문의' },
-  { content: '이용약관' },
-  { content: '편성기준' },
-  {
-    content: '개인정보처리방침',
-    attr: 'underline',
-  },
-  { content: '법적고지' },
-  { content: '이메일주소무단수집거부' },
-  { content: '윤리경영' },
-  { content: '사이버감사실' },
+  '회사소개',
+  '지속가능경영',
+  'IR',
+  '채용정보',
+  '광고/제휴/출점문의',
+  '이용약관',
+  '편성기준',
+  '개인정보처리방침',
+  '법적고지',
+  '이메일주소무단수집거부',
+  '윤리경영',
+  '사이버감사실',
 ];
 
 export const FOOTER_BOTTOM_DATA = [
