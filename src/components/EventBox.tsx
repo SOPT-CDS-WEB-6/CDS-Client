@@ -1,7 +1,24 @@
 import { styled } from 'styled-components';
-import { IcEvent1Img, IcGrayallButton, IcStopButton } from '../asset/icon';
+import { IcEvent1Img, IcEvent2Img, IcEvent3Img, IcGrayallButton, IcStopButton } from '../asset/icon';
 
 const EventBox = () => {
+  const data = [
+    {
+      img: IcEvent1Img,
+      title: '[CGV]5월엔 네모행 event',
+      period: '2023.05.02~2023.05.07',
+    },
+    {
+      img: IcEvent2Img,
+      title: '[극장판짱구는못말려]닌자 피규어',
+      period: '2023.04.20~2023.05.04',
+    },
+    {
+      img: IcEvent3Img,
+      title: '[슈퍼 마리오 브라더스]현장 이벤트',
+      period: '2023.04.20~2023.05.04',
+    },
+  ];
   return (
     <StEventBoxSection>
       <StEventBoxWrapper>
@@ -13,21 +30,15 @@ const EventBox = () => {
           </StEventButtonWrapper>
         </StEventTopBar>
         <StEventCardWrapper>
-          <StEventCard>
-            <IcEvent1Img></IcEvent1Img>
-            <StEventCardTitleText>[CGV]5월엔 네모행 event</StEventCardTitleText>
-            <StEventCardPeriodText>2023.05.02~2023.05.07</StEventCardPeriodText>
-          </StEventCard>
-          <StEventCard>
-            <IcEvent1Img></IcEvent1Img>
-            <StEventCardTitleText>[CGV]5월엔 네모행 event</StEventCardTitleText>
-            <StEventCardPeriodText>2023.05.02~2023.05.07</StEventCardPeriodText>
-          </StEventCard>
-          <StEventCard>
-            <IcEvent1Img></IcEvent1Img>
-            <StEventCardTitleText>[CGV]5월엔 네모행 event</StEventCardTitleText>
-            <StEventCardPeriodText>2023.05.02~2023.05.07</StEventCardPeriodText>
-          </StEventCard>
+          {data.map((item) => {
+            return (
+              <StEventCard>
+                <item.img />
+                <StEventCardTitleText>{item.title}</StEventCardTitleText>
+                <StEventCardPeriodText>{item.period}</StEventCardPeriodText>
+              </StEventCard>
+            );
+          })}
         </StEventCardWrapper>
       </StEventBoxWrapper>
     </StEventBoxSection>
@@ -51,6 +62,10 @@ const StEventCardTitleText = styled.span`
   margin-bottom: 1.1rem;
 
   font: ${({ theme }) => theme.fonts.Body1};
+  color: ${({ theme }) => theme.colors.gray90};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const StEventCard = styled.article`
