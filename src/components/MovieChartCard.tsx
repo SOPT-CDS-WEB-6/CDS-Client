@@ -1,33 +1,44 @@
 import { styled } from 'styled-components';
-import { IcEggImg, IcInfoHover, IcMovie1Img, IcTicketingHover } from '../asset/icon';
-import { useState } from 'react';
+import {
+  IcEggImg,
+  IcInfoHover,
+  IcMovie1Img,
+  IcMovie2Img,
+  IcMovie3Img,
+  IcMovie4Img,
+  IcTicketingHover,
+} from '../asset/icon';
+import React, { FunctionComponent, SVGProps, useState } from 'react';
 
 const MovieChartCard = ({
+  svgImg,
   chartRank,
   movieTitle,
   EggScore,
   ticketRatio,
 }: {
+  svgImg: FunctionComponent<SVGProps<SVGSVGElement>>;
   chartRank: number;
   movieTitle: string;
   EggScore: number;
   ticketRatio: number;
 }) => {
-  const [isHover, setIsHover] = useState(false);
-
+  const [isHovered, setisHovered] = useState(false);
+  const svgImageList = [IcMovie1Img, IcMovie2Img, IcMovie3Img, IcMovie4Img];
   const toggleHover = () => {
-    setIsHover(!isHover);
+    setisHovered(!isHovered);
   };
+  const matchingSvgComponent = svgImageList.find((svgImage) => svgImage === svgImg);
 
   return (
     <StMovieChartCard>
       <StDiv>
-        <StPosterWrapper isHover={isHover} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-          <StMovieButtonWrapper isHover={isHover}>
+        <StPosterWrapper className={isHovered ? 'hover' : ''} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+          {matchingSvgComponent ? React.createElement(matchingSvgComponent) : <IcMovie1Img />}
+          <StMovieButtonWrapper className={isHovered ? 'hover' : ''}>
             <IcInfoHover />
             <IcTicketingHover />
           </StMovieButtonWrapper>
-          <IcMovie1Img></IcMovie1Img>
           <StShadowCard>
             <StChartNumberText>{chartRank}</StChartNumberText>
           </StShadowCard>
@@ -47,14 +58,18 @@ const MovieChartCard = ({
 
 export default MovieChartCard;
 
-const StMovieButtonWrapper = styled.div<{ isHover: boolean }>`
-  display: ${({ isHover }) => (isHover ? 'flex' : 'none')};
+const StMovieButtonWrapper = styled.div`
+  display: none;
   flex-direction: column;
 
   position: absolute;
   top: 13rem;
   left: 7rem;
   z-index: 99;
+
+  &.hover {
+    display: flex;
+  }
 `;
 
 const StMovieInfoVerticalBar = styled.div`
@@ -116,21 +131,24 @@ const StMovieChartCard = styled.article`
   height: 44.3rem;
 `;
 
-const StPosterWrapper = styled.div<{ isHover: boolean }>`
+const StPosterWrapper = styled.div`
   position: relative;
   width: 26rem;
   height: 35.5rem;
-  transform-origin: bottom left;
-  transform: scaleY(${(props) => (props.isHover ? '1.05' : '1')}) scaleX(${(props) => (props.isHover ? '1.05' : '1')});
-  & > svg {
-    filter: ${(props) => (props.isHover ? 'brightness(0.5)' : 'brightness(1)')};
-    transition: transform 0.3s;
+
+  &.hover {
     transform-origin: bottom left;
-    transform: scaleY(${(props) => (props.isHover ? '1.05' : '1')}) scaleX(${(props) => (props.isHover ? '1.05' : '1')});
-  }
-  & > ${StShadowCard} {
-    transition: transform 0.3s;
-    transform-origin: bottom left;
-    transform: scaleY(${(props) => (props.isHover ? '1.05' : '1')}) scaleX(${(props) => (props.isHover ? '1.05' : '1')});
+    transform: scaleY(1.05) scaleX(1.05);
+    & > svg {
+      filter: brightness(0.5);
+      transition: transform 0.3s;
+      transform-origin: bottom left;
+      transform: scaleY(1.05) scaleX(1.05);
+    }
+    & > ${StShadowCard} {
+      transition: transform 0.3s;
+      transform-origin: bottom left;
+      transform: scaleY(1.05) scaleX(1.05);
+    }
   }
 `;

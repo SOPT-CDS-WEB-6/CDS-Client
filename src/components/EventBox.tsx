@@ -32,7 +32,7 @@ const EventBox = () => {
         <StEventCardWrapper>
           {data.map((item) => {
             return (
-              <StEventCard>
+              <StEventCard key={item.title}>
                 <item.img />
                 <StEventCardTitleText>{item.title}</StEventCardTitleText>
                 <StEventCardPeriodText>{item.period}</StEventCardPeriodText>
