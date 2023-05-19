@@ -20,7 +20,7 @@ function Footer() {
           {FOOTER_BOTTOM_DATA.map((data, idx) => {
             return (
               <StEachContent key={idx} idx={idx}>
-                {data.content}
+                {data}
               </StEachContent>
             );
           })}
@@ -38,17 +38,17 @@ function Footer() {
 const StFooterWrapper = styled.footer`
   display: grid;
   justify-content: center;
-  align-items: center;
 
-  width: 192rem;
+  width: 100%;
 
   background-color: #f8f8f8;
 `;
 
 const StFooterTopContents = styled.section`
   display: flex;
+  align-items: center;
+  height: 7.6rem;
 
-  padding-top: 3.6rem;
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.gray20};
 
   font-size: ${({ theme }) => theme.fonts.Body5};
@@ -57,7 +57,29 @@ const StFooterTopContents = styled.section`
   gap: 2.4rem;
 `;
 
+const StEachContent = styled.p<{ idx: number }>`
+  ${({ idx, theme }) =>
+    idx === 7
+      ? `
+      text-decoration: underline;
+      font-weight: 700;
+      color: ${theme.colors.gray90};
+      letter-spacing: 0.2rem;
+    `
+      : 'text-decoration: none;'}
+`;
+
+const StFooterBottomContents = styled.section`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const StFooterDataWrapper = styled.article`
+  align-items: center;
+
+  height: 10.6rem;
+  padding-top: 4rem;
+
   font-size: 1.4rem;
   color: ${({ theme }) => theme.colors.gray70};
   letter-spacing: 0.2rem;
@@ -68,29 +90,11 @@ const StFooterDataWrapper = styled.article`
   }
 `;
 
-const StEachContent = styled.p<{ idx: number }>`
-  margin-bottom: 4rem;
-
-  ${({ idx }) => (idx === 5 ? 'text-decoration : underline' : 'text-decoration : none')}
-
-  &.underline {
-    font-weight: 700;
-    color: ${({ theme }) => theme.colors.gray90};
-    letter-spacing: 0.2rem;
-    text-decoration-line: underline;
-  }
-`;
-
-const StFooterBottomContents = styled.section`
-  display: flex;
-  justify-content: space-between;
-
-  padding: 4rem 0rem;
-`;
-
 const StFooterBtnWrapper = styled.article`
   display: flex;
   align-items: end;
+
+  padding-bottom: 1.9rem;
 
   gap: 0.5rem;
 `;
