@@ -8,8 +8,8 @@ function Footer() {
       <StFooterTopContents>
         {FOOTER_TOP_DATA.map((data, idx) => {
           return (
-            <StEachContent className={data.attr ? data.attr : ''} key={idx}>
-              {data.content}
+            <StEachContent key={idx} idx={idx}>
+              {data}
             </StEachContent>
           );
         })}
@@ -19,7 +19,7 @@ function Footer() {
         <StFooterDataWrapper>
           {FOOTER_BOTTOM_DATA.map((data, idx) => {
             return (
-              <StEachContent className="bottom" key={idx}>
+              <StEachContent key={idx} idx={idx}>
                 {data.content}
               </StEachContent>
             );
@@ -62,14 +62,16 @@ const StFooterDataWrapper = styled.article`
   color: ${({ theme }) => theme.colors.gray70};
   letter-spacing: 0.2rem;
   line-height: 0%;
-`;
 
-const StEachContent = styled.p`
-  margin-bottom: 4rem;
-
-  &.bottom {
+  > p {
     margin-bottom: 0rem;
   }
+`;
+
+const StEachContent = styled.p<{ idx: number }>`
+  margin-bottom: 4rem;
+
+  ${({ idx }) => (idx === 5 ? 'text-decoration : underline' : 'text-decoration : none')}
 
   &.underline {
     font-weight: 700;
