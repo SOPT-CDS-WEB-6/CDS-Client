@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import { IcMidadImg } from '../asset/icon';
-import { IcChart1Img } from '../asset/icon';
-import { IcChart2Img } from '../asset/icon';
+import { IcMidadImg, IcChart1Img, IcChart2Img } from '../asset/icon';
 
 function MovieDetail() {
   return (

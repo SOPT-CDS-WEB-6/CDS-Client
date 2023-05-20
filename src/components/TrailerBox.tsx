@@ -1,9 +1,5 @@
 import styled from 'styled-components';
-import { IcPlusButton } from '../asset/icon';
-import { IcTrailer1Img } from '../asset/icon';
-import { IcTrailer2Img } from '../asset/icon';
-import { IcTrailer3Img } from '../asset/icon';
-import { IcPlayButton } from '../asset/icon';
+import { IcPlusButton, IcTrailer1Img, IcTrailer2Img, IcTrailer3Img, IcPlayButton } from '../asset/icon';
 
 function TrailerBox() {
   return (

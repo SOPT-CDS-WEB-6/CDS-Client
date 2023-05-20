@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { IcAd1Img } from '../asset/icon';
-import { IcAd2Img } from '../asset/icon';
+import { IcAd1Img, IcAd2Img } from '../asset/icon';
 
 function SideAdBanner() {
   return (

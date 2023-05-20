@@ -1,10 +1,5 @@
 import styled from 'styled-components';
-import { IcImaxImg } from '../asset/icon';
-import { Ic4dxLogoImg } from '../asset/icon';
-import { IcEggIcon } from '../asset/icon';
-import { IcInfoIcon } from '../asset/icon';
-import { IcQuestionEgg } from '../asset/icon';
-import { IcMovieImg } from '../asset/icon';
+import { IcImaxImg, Ic4dxLogoImg, IcEggIcon, IcInfoIcon, IcQuestionEgg, IcMovieImg } from '../asset/icon';
 
 function MovieInfo() {
   return (

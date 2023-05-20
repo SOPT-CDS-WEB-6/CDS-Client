@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import { IcPlusButton } from '../asset/icon';
-import { IcStillCutImg } from '../asset/icon';
-import { IcLeftarrowIcon } from '../asset/icon';
-import { IcRightarrowIcon } from '../asset/icon';
+import { IcPlusButton, IcStillCutImg, IcLeftarrowIcon, IcRightarrowIcon } from '../asset/icon';
 
 function StillCutBox() {
   return (

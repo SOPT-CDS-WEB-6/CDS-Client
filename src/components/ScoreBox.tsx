@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import { IcPreeggImg } from '../asset/icon';
-import { IcGoldeggImg } from '../asset/icon';
-import { IcBrownTextBox } from '../asset/icon';
+import { IcPreeggImg, IcGoldeggImg, IcBrownTextBox } from '../asset/icon';
 
 function ScoreBox() {
   return (
