@@ -46,7 +46,7 @@ const StStillCutBar = styled.div`
   width: 100%;
   height: 3.8rem;
 
-  background-color: #f6f6f6;
+  background-color: ${({ theme }) => theme.colors.gray10};
 
   ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray90};

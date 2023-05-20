@@ -78,7 +78,7 @@ const StTrailerBar = styled.div`
   width: 100%;
   height: 3.8rem;
 
-  background-color: #f6f6f6;
+  background-color: ${({ theme }) => theme.colors.gray10};
 
   ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray90};
@@ -136,10 +136,10 @@ const StHdBox = styled.div`
   margin-right: 1rem;
   padding: 0.6rem 0.8rem 0.7rem 0.9rem;
 
-  border: 0.1rem solid #0076b1;
+  border: 0.1rem solid ${({ theme }) => theme.colors.blue};
 
   ${({ theme }) => theme.fonts.Body5};
-  color: #0076b1;
+  color: ${({ theme }) => theme.colors.blue};
 `;
 
 const StVidTitle = styled.p`

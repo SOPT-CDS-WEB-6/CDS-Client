@@ -69,7 +69,7 @@ const StLi = styled.li`
   margin: 0 1.5rem 0 1.5rem;
 
   ${({ theme }) => theme.fonts.Body3};
-  color: #454545;
+  color: ${({ theme }) => theme.colors.gray80};
 
   &.arrow {
     margin: 0 0 0 1.5rem;

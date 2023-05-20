@@ -134,9 +134,9 @@ const StNowShowingBox = styled.em`
   margin-left: 1rem;
   padding: 1rem 1rem 1.1rem 1rem;
 
-  border: 0.1rem solid #0076b1;
+  border: 0.1rem solid ${({ theme }) => theme.colors.blue};
 
-  color: #0076b1;
+  color: ${({ theme }) => theme.colors.blue};
 `;
 
 const StNowShowingText = styled.span`
