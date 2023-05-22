@@ -12,48 +12,45 @@ function MovieHeader(props: MyMovieProps) {
   const { dummyData } = props;
 
   return (
-    <MyMovieHeader>
-      <HeaderTextWrapper>
-        <MyMovieTitle>내가 본 영화</MyMovieTitle>
-        <MyMovieNum>{dummyData.length}건</MyMovieNum>
-      </HeaderTextWrapper>
+    <StMyMovieHeader>
+      <StHeaderTextWrapper>
+        <StMyMovieTitle>내가 본 영화</StMyMovieTitle>
+        <StMyMovieNum>{dummyData.length}건</StMyMovieNum>
+      </StHeaderTextWrapper>
 
-      <HeaderBtnWrapper>
+      <StHeaderBtnWrapper>
         <IcAllDropdown className="dropDown" />
         <IcGoButton className="go" />
         <ICAddAudience className="addAudience" />
-      </HeaderBtnWrapper>
-    </MyMovieHeader>
+      </StHeaderBtnWrapper>
+    </StMyMovieHeader>
   );
 }
 
-const MyMovieHeader = styled.header`
+const StMyMovieHeader = styled.header`
   display: flex;
   justify-content: space-between;
-
-  margin-left: 1.25rem;
+  width: 89.3rem;
 `;
 
-const HeaderTextWrapper = styled.div`
+const StHeaderTextWrapper = styled.div`
   display: flex;
 `;
 
-const MyMovieTitle = styled.p`
+const StMyMovieTitle = styled.p`
   font-size: ${({ theme }) => theme.fonts.Body2};
 `;
 
-const MyMovieNum = styled.p`
-  margin: 2.45rem 0 0 1rem;
+const StMyMovieNum = styled.p`
+  margin: 0.3rem 0 0 0.9rem;
 
   font-size: ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray70};
 `;
 
-const HeaderBtnWrapper = styled.div`
+const StHeaderBtnWrapper = styled.div`
   display: flex;
   align-items: center;
-
-  margin-right: 46.5rem;
 
   gap: 1rem;
 

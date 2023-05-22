@@ -25,7 +25,8 @@ const UserPreference = () => {
 export default UserPreference;
 
 const StUserInfo = styled.nav`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   width: 19.6rem;
 
   margin-top: 23.4rem;

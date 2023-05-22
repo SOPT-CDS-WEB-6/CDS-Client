@@ -2,33 +2,53 @@ import { styled } from 'styled-components';
 import { DUMMY_MOVIE_DATA } from '../constants/dummyData';
 import MovieHeader from './MovieHeader';
 import MovieCard from './MovieCard';
+import UserPreference from './UserPreference';
 
 function MyMovie() {
   return (
-    <MyMovieSection>
-      <MovieHeader dummyData={DUMMY_MOVIE_DATA} />
+    <StTopWrapper>
+      <UserPreference />
+      <StMyMovieSection>
+        <MovieHeader dummyData={DUMMY_MOVIE_DATA} />
 
-      <MovieCardWrapper>
-        {DUMMY_MOVIE_DATA.map((data, idx) => {
-          return <MovieCard data={data} key={idx} />;
-        })}
-      </MovieCardWrapper>
-    </MyMovieSection>
+        <StMovieCardWrapper>
+          {DUMMY_MOVIE_DATA.map((data, idx) => {
+            return <MovieCard data={data} key={idx} />;
+          })}
+        </StMovieCardWrapper>
+      </StMyMovieSection>
+
+      <StSideDiv></StSideDiv>
+    </StTopWrapper>
   );
 }
 
-const MyMovieSection = styled.section`
-  display: grid;
-
-  width: 136.5rem;
-  margin: -64rem 41.4rem 0rem 60rem;
+const StSideDiv = styled.div`
+  width: 5.5rem;
+  height: 100vh;
 `;
 
-const MovieCardWrapper = styled.article`
+const StTopWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+`;
+
+const StMyMovieSection = styled.section`
+  display: grid;
+  justify-content: center;
+
+  /* margin: 24.6rem 41.4rem 0rem 5.8rem; */
+  margin: 24.6rem 41.4rem 0rem 5.8rem;
+`;
+
+const StMovieCardWrapper = styled.article`
   display: flex;
   flex-wrap: wrap;
-
+  width: 89.3rem;
   margin-top: 1.85rem;
+
+  gap: 2.5rem;
 `;
 
 export default MyMovie;

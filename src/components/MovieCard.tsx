@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 
 import { MovieDataInfo } from '../types/MovieData';
+import { IcDeleteButton } from '../asset/icon';
 
 export interface MovieCardProps {
   data: MovieDataInfo;
@@ -10,60 +11,71 @@ function MovieCard(props: MovieCardProps) {
   const { data } = props;
 
   return (
-    <WatchedMovieCard>
-      <MoviePoster src={data.imgSrc} />
+    <StWatchedMovieCard>
+      <StMoviePoster src={data.imgSrc} />
 
-      <WatchedMovieInfo>
-        <WatchedMovieName>{data.name}</WatchedMovieName>
-        <WatchedMovieSubName>{data.subName}</WatchedMovieSubName>
+      <StWatchedMovieInfo>
+        <StWatchedMovieName>
+          {data.name}
+          <IcDeleteButton className="deleteBtn" />
+        </StWatchedMovieName>
+        <StWatchedMovieSubName>{data.subName}</StWatchedMovieSubName>
 
-        <WatchedInfo>{data.date}</WatchedInfo>
-        <WatchedInfo>{data.cinemaInfo}</WatchedInfo>
+        <StWatchedInfo>{data.date}</StWatchedInfo>
+        <StWatchedInfo>{data.cinemaInfo}</StWatchedInfo>
 
         <ReviewBtn src={data.reviewBtn ? data.reviewBtn : data.editBtn} id={data.editBtn ? 'edit' : ''} />
         {data.deleteBtn ? <ReviewDelBtn src={data.deleteBtn} /> : <></>}
-      </WatchedMovieInfo>
-    </WatchedMovieCard>
+      </StWatchedMovieInfo>
+    </StWatchedMovieCard>
   );
 }
 
-const WatchedMovieCard = styled.div`
+const StWatchedMovieCard = styled.div`
   display: flex;
   align-items: center;
 
   width: 43.4rem;
   height: 24.8rem;
-  margin: 1.25rem;
+
   border-radius: 2rem;
 
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0.375552rem 0.375552rem 1.87776rem rgba(102, 128, 153, 0.2);
 `;
 
-const MoviePoster = styled.img`
+const StMoviePoster = styled.img`
   width: 13.7rem;
   height: 19.3rem;
   margin-left: 2.7rem;
 `;
 
-const WatchedMovieInfo = styled.div`
+const StWatchedMovieInfo = styled.div`
   height: 19.3rem;
   margin: 0rem 2.7rem;
 `;
 
-const WatchedMovieName = styled.p`
-  margin: 0;
-
+const StWatchedMovieName = styled.p`
   font-size: ${({ theme }) => theme.fonts.Body1};
   color: ${({ theme }) => theme.colors.black};
+
+  .deleteBtn {
+    position: relative;
+    left: 15.2rem;
+  }
 `;
 
-const WatchedMovieSubName = styled.p`
+const StWatchedMovieSubName = styled.p`
+  margin-top: 1.1rem;
+  margin-bottom: 3rem;
+
   font-size: ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray70};
 `;
 
-const WatchedInfo = styled.p`
+const StWatchedInfo = styled.p`
+  margin-bottom: 2rem;
+
   font-size: ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.black};
 `;
@@ -72,13 +84,18 @@ const ReviewBtn = styled.img`
   width: 9.9rem;
   height: 3.7rem;
 
+  margin-top: 1rem;
+
   &.edit {
     width: 9.1rem;
+
+    margin-top: 1rem;
   }
 `;
 const ReviewDelBtn = styled.img`
   width: 9.1rem;
   height: 3.7rem;
+  margin-top: 1rem;
   margin-left: 1rem;
 `;
 
