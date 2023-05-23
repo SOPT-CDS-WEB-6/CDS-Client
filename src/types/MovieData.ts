@@ -1,18 +1,22 @@
 export type NavDataInfo = {
-  num: number;
   text: string;
   content?: string;
   class?: string;
-  idx?: number;
-  // data?: {
-  //   page?: object;
-  // }[];
+  key?: number;
+  data?: {
+    pageInfoRes?: {
+      totalElements?: number;
+    };
+  };
+  numData?: object;
 };
 
 export type MovieDataInfo = {
-  // data?: {
-  //   page?: object;
-  // }[];
+  data?: {
+    pageInfoRes?: {
+      totalElements?: number;
+    };
+  };
 
   title?: string;
   originTitle?: string;
