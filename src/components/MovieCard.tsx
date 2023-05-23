@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 import { MovieDataInfo } from '../types/MovieData';
-import { IcDeleteButton } from '../asset/icon';
+import { IcDeleteButton, IcReviewdeleteButton, IcRevieweditButton, IcReviewwriteButton } from '../asset/icon';
 
 export interface MovieCardProps {
   data: MovieDataInfo;
@@ -24,8 +24,8 @@ function MovieCard(props: MovieCardProps) {
         <StWatchedInfo>{data.date}</StWatchedInfo>
         <StWatchedInfo>{data.cinemaInfo}</StWatchedInfo>
 
-        <ReviewBtn src={data.reviewBtn ? data.reviewBtn : data.editBtn} id={data.editBtn ? 'edit' : ''} />
-        {data.deleteBtn ? <ReviewDelBtn src={data.deleteBtn} /> : <></>}
+        {data.reviewBtn ? <IcReviewwriteButton /> : <IcRevieweditButton />}
+        {data.deleteBtn ? <IcReviewdeleteButton className="deleteReviewBtn" /> : <></>}
       </StWatchedMovieInfo>
     </StWatchedMovieCard>
   );
@@ -52,7 +52,11 @@ const StMoviePoster = styled.img`
 
 const StWatchedMovieInfo = styled.div`
   height: 19.3rem;
-  margin: 0rem 2.7rem;
+  margin: 0rem 2.7rem 0rem 2.4rem;
+
+  & > .deleteReviewBtn {
+    margin-left: 1rem;
+  }
 `;
 
 const StWatchedMovieName = styled.p`
@@ -78,25 +82,6 @@ const StWatchedInfo = styled.p`
 
   font-size: ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.black};
-`;
-
-const ReviewBtn = styled.img`
-  width: 9.9rem;
-  height: 3.7rem;
-
-  margin-top: 1rem;
-
-  &.edit {
-    width: 9.1rem;
-
-    margin-top: 1rem;
-  }
-`;
-const ReviewDelBtn = styled.img`
-  width: 9.1rem;
-  height: 3.7rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
 `;
 
 export default MovieCard;
