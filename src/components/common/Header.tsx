@@ -26,17 +26,19 @@ const Header = () => {
           </StMyPageButtonWrapper>
         </StHeaderTobBarLeftSection>
       </StHeaderTobBar>
-      <StHeaderNavBar>
-        <StHeaderNavButtonWrapper>
-          {nav.map((item) => {
-            return <StHeaderNavButton key={item}>{item}</StHeaderNavButton>;
-          })}
-        </StHeaderNavButtonWrapper>
-        <StHeaderNavSearchBar>
-          <StHeaderNavSearchInput placeholder="짱구는 못말려" />
-          <IcSearchButton />
-        </StHeaderNavSearchBar>
-      </StHeaderNavBar>
+      <StHeaderNavBox>
+        <StHeaderNavBar>
+          <StHeaderNavButtonWrapper>
+            {nav.map((item) => {
+              return <StHeaderNavButton key={item}>{item}</StHeaderNavButton>;
+            })}
+          </StHeaderNavButtonWrapper>
+          <StHeaderNavSearchBar>
+            <StHeaderNavSearchInput placeholder="짱구는 못말려" />
+            <IcSearchButton />
+          </StHeaderNavSearchBar>
+        </StHeaderNavBar>
+      </StHeaderNavBox>
     </StHeader>
   );
 };
@@ -85,6 +87,18 @@ const StHeaderNavBar = styled.nav`
 
   width: 118.3rem;
   height: 2.4rem;
+`;
+
+const StHeaderNavBox = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 6.5rem;
+
+  border-top: 1px solid ${({ theme }) => theme.colors.gray40};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray40};
 `;
 
 const StMyPageButton = styled.article`
