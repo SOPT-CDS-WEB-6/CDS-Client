@@ -1,8 +1,10 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components';
+import RadarChart from './components/movieInfo/RadarChart';
 
 function App() {
   return (
     <>
+      <RadarChart />
       <StHeading>Vite + React</StHeading>
     </>
   );
