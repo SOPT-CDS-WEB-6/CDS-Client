@@ -2,18 +2,21 @@ import styled from 'styled-components';
 import { IcMidadImg, IcChart1Img, IcChart2Img } from '../asset/icon';
 
 function MovieDetail() {
+  const ButtonList = ['주요정보', '트레일러', '스틸컷', '평점/리뷰'];
+
   return (
     <StMovieDetail>
       <StUl>
         <StLi className="arrow">☞</StLi>
-        <StLi>주요정보</StLi>
-        <StBar />
-        <StLi>트레일러</StLi>
-        <StBar />
-        <StLi>스틸컷</StLi>
-        <StBar />
-        <StLi>평점/리뷰</StLi>
-        <StBar />
+        {ButtonList.map((eachButton) => {
+          return (
+            <>
+              <StLi>{eachButton}</StLi>
+              <StBar />
+            </>
+          );
+        })}
+
         <StLi>상영시간표</StLi>
       </StUl>
       <article>
