@@ -16,8 +16,8 @@ function ScoreBox() {
           <IcBrownTextBox />
           <StTextBoxText>사전기대지수</StTextBoxText>
 
-          <StIconText className="title">Pre Egg</StIconText>
-          <StIconText className="score">99%</StIconText>
+          <StTitleText>Pre Egg</StTitleText>
+          <StScoreText>99%</StScoreText>
         </StIconTextBox>
         <StBar />
         <StEggIcon>
@@ -27,8 +27,8 @@ function ScoreBox() {
           <IcBrownTextBox />
           <StTextBoxText>실관람평지수</StTextBoxText>
 
-          <StIconText className="title">Golden Egg</StIconText>
-          <StIconText className="score">98%</StIconText>
+          <StTitleText>Golden Egg</StTitleText>
+          <StScoreText>98%</StScoreText>
         </StIconTextBox>
       </StEggBox>
     </StScoreBox>
@@ -78,18 +78,16 @@ const StIconTextBox = styled.div`
   flex-direction: column;
 `;
 
-const StIconText = styled.p`
-  &.title {
-    margin: 0.5rem 0 0.6rem 0;
+const StTitleText = styled.p`
+  margin: 0.5rem 0 0.6rem 0;
 
-    ${({ theme }) => theme.fonts.Body3};
-    color: ${({ theme }) => theme.colors.red};
-  }
+  ${({ theme }) => theme.fonts.Body3};
+  color: ${({ theme }) => theme.colors.red};
+`;
 
-  &.score {
-    ${({ theme }) => theme.fonts.Title};
-    color: ${({ theme }) => theme.colors.gray90};
-  }
+const StScoreText = styled.p`
+  ${({ theme }) => theme.fonts.Title};
+  color: ${({ theme }) => theme.colors.gray90};
 `;
 
 const StTextBoxText = styled.p`
