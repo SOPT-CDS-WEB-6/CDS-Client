@@ -38,8 +38,8 @@ const StMyMovieSection = styled.section`
   display: grid;
   justify-content: center;
 
-  /* margin: 24.6rem 41.4rem 0rem 5.8rem; */
-  margin: 24.6rem 41.4rem 0rem 5.8rem;
+  /* 푸터 위에까지의 마진 */
+  margin: 24.6rem 41.4rem 30.2rem 5.8rem;
 `;
 
 const StMovieCardWrapper = styled.article`
