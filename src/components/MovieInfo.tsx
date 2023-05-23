@@ -65,6 +65,14 @@ function MovieInfo() {
 
 export default MovieInfo;
 
+const StMovieInfoBox = styled.section`
+  display: flex;
+  justify-content: center;
+
+  width: 119.4rem;
+  margin-top: 4.9rem;
+`;
+
 const StRateBox = styled.article`
   display: flex;
   align-items: center;
@@ -82,15 +90,8 @@ const StMovieInfoDetailBox = styled.section`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 25rem;
-  left: 134.8rem;
-`;
-
-const StMovieInfoBox = styled.section`
-  display: flex;
-
-  width: 119.4rem;
-  margin: 4.9rem 36.3rem 0 36.3rem;
+  top: 30rem;
+  left: 113rem;
 `;
 
 const StMoviePoster = styled.div`

@@ -41,8 +41,6 @@ const StMovieInfoBox = styled.section`
 const StFirstBox = styled.section`
   display: flex;
   flex-direction: column;
-
-  width: 119.6em;
 `;
 
 const StSecondBox = styled.section`
