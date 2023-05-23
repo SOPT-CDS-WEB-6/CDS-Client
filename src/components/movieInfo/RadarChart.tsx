@@ -9,7 +9,10 @@ ChartJS.register(RadialLinearScale);
 const RadarChart = () => {
   const { charmingPointInfo, emotionPointInfo, isError, isLoading } = useGetRadarInfo(1);
 
-  if (isError) console.log('error');
+  if (isError) {
+    //404페이지 만들어서 넣을 예정
+    console.log('error');
+  }
 
   if (!isError && !isLoading) {
     const chartDataList = [
