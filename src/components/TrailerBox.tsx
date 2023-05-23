@@ -2,6 +2,24 @@ import styled from 'styled-components';
 import { IcPlusButton, IcTrailer1Img, IcTrailer2Img, IcTrailer3Img, IcPlayButton } from '../asset/icon';
 
 function TrailerBox() {
+  const TrailerList = [
+    {
+      title: '전 세계 최초 개봉!',
+      date: '2023.05.03',
+      trailer: <IcTrailer1Img />,
+    },
+    {
+      title: '전 세계 최초 개봉!',
+      date: '2023.06.03',
+      trailer: <IcTrailer2Img />,
+    },
+    {
+      title: '전 세계 최초 개봉!',
+      date: '2023.07.03',
+      trailer: <IcTrailer3Img />,
+    },
+  ];
+
   return (
     <StTrailerBox>
       <StTrailerBar>
@@ -12,48 +30,23 @@ function TrailerBox() {
         </StPlusButton>
       </StTrailerBar>
       <StVidBox>
-        <StEachTrailer>
-          <StTrailerVid>
-            <StPlayButton>
-              <IcPlayButton />
-            </StPlayButton>
-
-            <IcTrailer1Img />
-          </StTrailerVid>
-          <StVidTitleBox>
-            <StHdBox>HD</StHdBox>
-            <StVidTitle>전 세계 최초 개봉!</StVidTitle>
-          </StVidTitleBox>
-          <StVidDate>2023.05.03</StVidDate>
-        </StEachTrailer>
-
-        <StEachTrailer>
-          <StTrailerVid>
-            <StPlayButton>
-              <IcPlayButton />
-            </StPlayButton>
-            <IcTrailer2Img />
-          </StTrailerVid>
-          <StVidTitleBox>
-            <StHdBox>HD</StHdBox>
-            <StVidTitle>전 세계 최초 개봉!</StVidTitle>
-          </StVidTitleBox>
-          <StVidDate>2023.05.03</StVidDate>
-        </StEachTrailer>
-
-        <StEachTrailer>
-          <StTrailerVid>
-            <StPlayButton>
-              <IcPlayButton />
-            </StPlayButton>
-            <IcTrailer3Img />
-          </StTrailerVid>
-          <StVidTitleBox>
-            <StHdBox>HD</StHdBox>
-            <StVidTitle>전 세계 최초 개봉!</StVidTitle>
-          </StVidTitleBox>
-          <StVidDate>2023.05.03</StVidDate>
-        </StEachTrailer>
+        {TrailerList.map((eachTrailer) => {
+          return (
+            <StEachTrailer>
+              <StTrailerVid>
+                <StPlayButton>
+                  <IcPlayButton />
+                </StPlayButton>
+                {eachTrailer.trailer}
+              </StTrailerVid>
+              <StVidTitleBox>
+                <StHdBox>HD</StHdBox>
+                <StVidTitle>{eachTrailer.title}</StVidTitle>
+              </StVidTitleBox>
+              <StVidDate>{eachTrailer.date}</StVidDate>
+            </StEachTrailer>
+          );
+        })}
       </StVidBox>
     </StTrailerBox>
   );
