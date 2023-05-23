@@ -87,6 +87,10 @@ const StWatchedMovieName = styled.p`
 `;
 
 const StWatchedMovieSubName = styled.p`
+  width: 18rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   margin-top: -1.1rem;
   margin-bottom: 3rem;
 
