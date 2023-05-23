@@ -14,41 +14,41 @@ function MovieInfo() {
             <StNowShowingText>현재상영중</StNowShowingText>
           </StNowShowingBox>
         </StTitle>
-        <StBody3 className="engTitle">Guardians of the Galaxy Volume 3</StBody3>
+        <StEngTitle>Guardians of the Galaxy Volume 3</StEngTitle>
         <StRateBox>
-          <StBody3 className="rate">예매율 38.0%</StBody3>
+          <StRate>예매율 38.0%</StRate>
           <StEggIcon>
             <IcEggIcon />
           </StEggIcon>
 
-          <StBody3 className="eggRate">98%</StBody3>
+          <StEggRate>98%</StEggRate>
         </StRateBox>
         <StRowBar />
-        <StBody5>
+        <StMovieDetail>
           감독 : 제임스 건 / 배우 : 크리스 프랫 , 조 샐다나 , 데이브 바티스타 , 카렌 길런 , 폼 클레멘티에프 , 빈 디젤 ,
           브래들리 쿠퍼 , 윌 폴터
-        </StBody5>
-        <StBody5>장르 : 엑션 / 기본 : 12, 150분, 미국</StBody5>
-        <StBody5>개봉 : 2023.05.03</StBody5>
+        </StMovieDetail>
+        <StMovieDetail>장르 : 엑션 / 기본 : 12, 150분, 미국</StMovieDetail>
+        <StMovieDetail>개봉 : 2023.05.03</StMovieDetail>
 
         <StMovieInfoDetailBox>
-          <StMovieTypeSpan>
+          <StMovieTypeWrapper>
             <StImaxIcon>
               <IcImaxImg />
             </StImaxIcon>
             <Ic4dxLogoImg />
-          </StMovieTypeSpan>
+          </StMovieTypeWrapper>
         </StMovieInfoDetailBox>
 
-        <StButtonSpan>
-          <StButton className="freeEgg">
+        <StButtonWrapper>
+          <StFreeEggBtn>
             <StQuestionEggIcon>
               <IcQuestionEgg />
             </StQuestionEggIcon>
             프리에그
-          </StButton>
-          <StButton className="reserve">특별한 영화 경험 시작하기 🎬</StButton>
-        </StButtonSpan>
+          </StFreeEggBtn>
+          <StReserveBtn>특별한 영화 경험 시작하기 🎬</StReserveBtn>
+        </StButtonWrapper>
         <StPreEgg>
           <StPreEggText>
             <StInfoIcon>
@@ -98,11 +98,11 @@ const StMoviePoster = styled.div`
   margin: 0 2.8rem 0 0.2rem;
 `;
 
-const StMovieTypeSpan = styled.span`
+const StMovieTypeWrapper = styled.span`
   display: flex;
 `;
 
-const StButtonSpan = styled.span`
+const StButtonWrapper = styled.span`
   display: flex;
   align-items: center;
 
@@ -144,29 +144,30 @@ const StNowShowingText = styled.span`
   ${({ theme }) => theme.fonts.Body5};
 `;
 
-const StBody3 = styled.h3`
+const StInfoText = styled.h3`
   margin-left: 4.9rem;
 
   ${({ theme }) => theme.fonts.Body3};
   color: ${({ theme }) => theme.colors.gray70};
-
-  &.rate {
-    margin-bottom: 1.3rem;
-
-    color: ${({ theme }) => theme.colors.gray90};
-  }
-  &.eggRate {
-    margin: 0 0 1.3rem 0;
-
-    color: ${({ theme }) => theme.colors.gray90};
-  }
-
-  &.engTitle {
-    margin-bottom: 2.6rem;
-  }
 `;
 
-const StBody5 = styled.h5`
+const StRate = styled(StInfoText)`
+  margin-bottom: 1.3rem;
+
+  color: ${({ theme }) => theme.colors.gray90};
+`;
+
+const StEggRate = styled(StInfoText)`
+  margin: 0 0 1.3rem 0;
+
+  color: ${({ theme }) => theme.colors.gray90};
+`;
+
+const StEngTitle = styled(StInfoText)`
+  margin-bottom: 2.6rem;
+`;
+
+const StMovieDetail = styled.h5`
   margin: 0 0 1.5rem 4.4rem;
 
   ${({ theme }) => theme.fonts.Body5};
@@ -176,34 +177,34 @@ const StBody5 = styled.h5`
 const StButton = styled.button`
   width: 13.1rem;
   height: 4.1rem;
+`;
 
-  &.freeEgg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+const StFreeEggBtn = styled(StButton)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    margin-right: 0.6rem;
+  margin-right: 0.6rem;
 
-    border: 0.1rem solid ${({ theme }) => theme.colors.gray90};
-    border-radius: 0.5rem;
+  border: 0.1rem solid ${({ theme }) => theme.colors.gray90};
+  border-radius: 0.5rem;
 
-    background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
 
-    ${({ theme }) => theme.fonts.Body3};
-    color: ${({ theme }) => theme.colors.gray90};
-  }
+  ${({ theme }) => theme.fonts.Body3};
+  color: ${({ theme }) => theme.colors.gray90};
+`;
 
-  &.reserve {
-    width: 26.9rem;
+const StReserveBtn = styled(StButton)`
+  width: 26.9rem;
 
-    border: none;
-    border-radius: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
 
-    background-color: ${({ theme }) => theme.colors.red2};
+  background-color: ${({ theme }) => theme.colors.red2};
 
-    ${({ theme }) => theme.fonts.Body3};
-    color: ${({ theme }) => theme.colors.white};
-  }
+  ${({ theme }) => theme.fonts.Body3};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const StPreEgg = styled.div`
