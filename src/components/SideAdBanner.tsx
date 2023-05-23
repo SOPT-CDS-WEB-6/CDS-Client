@@ -19,7 +19,6 @@ export default SideAdBanner;
 const StAdBanner = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   width: 20rem;
 `;
