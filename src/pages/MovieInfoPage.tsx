@@ -8,29 +8,29 @@ import MovieInfo from '../components/MovieInfo';
 
 function MovieInfoPage() {
   return (
-    <StMovieInfoBox>
-      <StFirstBox>
+    <StMovieInfoPage>
+      <StInfoBox>
         <MovieInfo />
-        <StSecondBox>
+        <StDetailBox>
           <MovieDetail />
           <SideAdBanner />
-        </StSecondBox>
-      </StFirstBox>
-      <StFourthBox>
-        <StThirdBox>
+        </StDetailBox>
+      </StInfoBox>
+      <StMediaBox>
+        <StPreviewBox>
           <TrailerBox />
           <StillCutBox />
           <ScoreBox />
-        </StThirdBox>
+        </StPreviewBox>
         <StBlankBox />
-      </StFourthBox>
-    </StMovieInfoBox>
+      </StMediaBox>
+    </StMovieInfoPage>
   );
 }
 
 export default MovieInfoPage;
 
-const StMovieInfoBox = styled.section`
+const StMovieInfoPage = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,19 +38,19 @@ const StMovieInfoBox = styled.section`
   margin-top: 4.9rem;
 `;
 
-const StFirstBox = styled.section`
+const StInfoBox = styled.section`
   display: flex;
   flex-direction: column;
 `;
 
-const StSecondBox = styled.section`
+const StDetailBox = styled.section`
   display: flex;
   justify-content: center;
 
   margin-top: 14.2rem;
 `;
 
-const StThirdBox = styled.section`
+const StPreviewBox = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,7 +58,7 @@ const StThirdBox = styled.section`
   width: 99.4rem;
 `;
 
-const StFourthBox = styled.section`
+const StMediaBox = styled.section`
   display: flex;
 `;
 
