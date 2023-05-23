@@ -12,7 +12,7 @@ function MyMovie() {
 
   return (
     <StTopWrapper>
-      <UserPreference data_1 = {data} />
+      <UserPreference data_1={data} />
       <StMyMovieSection>
         <MovieHeader data={data} />
 
