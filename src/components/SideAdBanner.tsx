@@ -2,14 +2,13 @@ import styled from 'styled-components';
 import { IcAd1Img, IcAd2Img } from '../asset/icon';
 
 function SideAdBanner() {
+  const SideAd = [<IcAd1Img />, <IcAd2Img />];
+
   return (
     <StAdBanner>
-      <StAd>
-        <IcAd1Img />
-      </StAd>
-      <StAd>
-        <IcAd2Img />
-      </StAd>
+      {SideAd.map((eachAd) => {
+        return <StAd>{eachAd}</StAd>;
+      })}
     </StAdBanner>
   );
 }
