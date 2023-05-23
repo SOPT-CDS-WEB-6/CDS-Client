@@ -9,6 +9,8 @@ export interface MovieCardProps {
 
 function MovieCard(props: MovieCardProps) {
   const { data } = props;
+  const startTime = data.startDate?.slice(0, -3);
+  const endTime = data.endDate?.split(' ')[1].slice(0, 5);
 
   return (
     <StWatchedMovieCard>
@@ -23,20 +25,20 @@ function MovieCard(props: MovieCardProps) {
         <StWatchedMovieSubName>{data.originTitle ? data.originTitle : '-'}</StWatchedMovieSubName>
 
         <StWatchedInfo>
-          {data.startDate?.slice(0, -3)} ~ {data.endDate?.split(' ')[1].slice(0, 5)}
+          {startTime} ~ {endTime}
         </StWatchedInfo>
         <StWatchedInfo>
           {data.theaterName} / {data.headcount}명
         </StWatchedInfo>
 
         {data.reviewed ? <IcRevieweditButton /> : <IcReviewwriteButton />}
-        {data.reviewed ? <IcReviewdeleteButton className="deleteReviewBtn" /> : <></>}
+        {data.reviewed && <IcReviewdeleteButton style={{ marginLeft: '1rem' }} />}
       </StWatchedMovieInfo>
     </StWatchedMovieCard>
   );
 }
 
-const StWatchedMovieCard = styled.div`
+const StWatchedMovieCard = styled.article`
   display: flex;
   align-items: center;
 
@@ -55,7 +57,7 @@ const StMoviePoster = styled.img`
   margin-left: 2.7rem;
 `;
 
-const StBtnWrapper = styled.div`
+const StBtnWrapper = styled.span`
   display: flex;
   justify-content: flex-end;
   width: 22.1rem;
@@ -66,13 +68,9 @@ const StBtnWrapper = styled.div`
   }
 `;
 
-const StWatchedMovieInfo = styled.div`
+const StWatchedMovieInfo = styled.span`
   height: 19.3rem;
   margin: 0rem 2.7rem 0rem 2.4rem;
-
-  & > .deleteReviewBtn {
-    margin-left: 1rem;
-  }
 `;
 
 const StWatchedMovieName = styled.p`

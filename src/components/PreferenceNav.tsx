@@ -12,10 +12,12 @@ function PreferenceNav(props: PreferenceNavProps) {
   const { numData } = props;
   const { idx } = props;
 
+  const watchedMoviesNum = numData?.data?.pageInfoRes?.totalElements;
+
   return (
     <StInfoWrapper className={data.class}>
-      <StNumInfo>{idx === 1 ? numData?.data?.pageInfoRes?.totalElements : 0}</StNumInfo>
-      {data.content ? <StPointerIcon>{data.content}</StPointerIcon> : <></>}
+      <StNumInfo>{idx === 1 ? watchedMoviesNum : 0}</StNumInfo>
+      {data.content && <StPointerIcon>{data.content}</StPointerIcon>}
       <StTextInfo>{data.text}</StTextInfo>
     </StInfoWrapper>
   );
