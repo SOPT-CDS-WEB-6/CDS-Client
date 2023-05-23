@@ -7,12 +7,12 @@ export type NavDataInfo = {
 };
 
 export type MovieDataInfo = {
-  imgSrc: string;
+  imgSrc?: string;
   name: string;
   subName: string;
   date: string;
   cinemaInfo: string;
-  reviewBtn?: string;
-  editBtn?: string;
-  deleteBtn?: string;
+  reviewBtn?: boolean;
+  editBtn?: boolean;
+  deleteBtn?: boolean;
 };
