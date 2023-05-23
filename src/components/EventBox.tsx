@@ -49,11 +49,10 @@ export default EventBox;
 
 const StEventCardWrapper = styled.section`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 `;
 
-const StEventCardPeriodText = styled.span`
+const StEventCardPeriodText = styled.time`
   font: ${({ theme }) => theme.fonts.Body5};
 `;
 
@@ -74,8 +73,6 @@ const StEventCard = styled.article`
 
   width: 37.8rem;
   height: 32.4rem;
-  padding: 0;
-  margin: 0;
 `;
 
 const StEventButtonWrapper = styled.div`
@@ -88,11 +85,11 @@ const StEventButtonWrapper = styled.div`
   }
 `;
 
-const StEventTopBarText = styled.div`
+const StEventTopBarText = styled.p`
   font: ${({ theme }) => theme.fonts.Title};
 `;
 
-const StEventTopBar = styled.div`
+const StEventTopBar = styled.header`
   display: flex;
   justify-content: space-between;
 
@@ -104,15 +101,12 @@ const StEventTopBar = styled.div`
 const StEventBoxWrapper = styled.div`
   width: 118.4rem;
   height: 55.4rem;
-  padding: 0;
-  margin: 0;
 `;
 
-const StEventBoxSection = styled.div`
+const StEventBoxSection = styled.section`
   display: flex;
   justify-content: center;
 
   width: 100%;
   height: 38.5rem;
-  padding: 0;
 `;

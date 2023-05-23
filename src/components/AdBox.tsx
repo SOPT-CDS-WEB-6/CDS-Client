@@ -25,6 +25,7 @@ const StAdBoxSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 100%;
   height: 22.2rem;
   margin-top: 13.5rem;

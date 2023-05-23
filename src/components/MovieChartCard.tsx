@@ -75,6 +75,7 @@ const StMovieButtonWrapper = styled.div`
 const StMovieInfoVerticalBar = styled.div`
   width: 0.1rem;
   height: 1.2rem;
+
   margin-left: 1.4rem;
   margin-right: 1.4rem;
   border: 0.1rem solid ${({ theme }) => theme.colors.gray40};
@@ -121,6 +122,7 @@ const StShadowCard = styled.div`
   z-index: 2;
   left: 0;
   top: 0;
+
   width: 26rem;
   height: 35.5rem;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.09) 35%, rgba(0, 0, 0, 0.85));
@@ -133,18 +135,21 @@ const StMovieChartCard = styled.article`
 
 const StPosterWrapper = styled.div`
   position: relative;
+
   width: 26rem;
   height: 35.5rem;
 
   &.hover {
     transform-origin: bottom left;
     transform: scaleY(1.05) scaleX(1.05);
+
     & > svg {
       filter: brightness(0.5);
       transition: transform 0.3s;
       transform-origin: bottom left;
       transform: scaleY(1.05) scaleX(1.05);
     }
+
     & > ${StShadowCard} {
       transition: transform 0.3s;
       transform-origin: bottom left;

@@ -69,6 +69,7 @@ const StButtonWrapper = styled.div`
 const StBar = styled.div`
   width: 0.1rem;
   height: 1.8rem;
+
   margin-left: 1.7rem;
   margin-right: 1.7rem;
   border: 0.1rem solid;
@@ -78,11 +79,12 @@ const StBar = styled.div`
 const StMovieChartWrapper = styled.div`
   width: 118.4rem;
   height: 55.4rem;
+
   margin: 0;
   padding: 0;
 `;
 
-const StMovieChartSection = styled.div`
+const StMovieChartSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
