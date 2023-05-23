@@ -7,7 +7,7 @@ function MovieDetail() {
   return (
     <StMovieDetail>
       <StUl>
-        <StLi className="arrow">☞</StLi>
+        <StArrowLi>☞</StArrowLi>
         {ButtonList.map((eachButton) => {
           return (
             <>
@@ -20,25 +20,25 @@ function MovieDetail() {
         <StLi>상영시간표</StLi>
       </StUl>
       <article>
-        <StP>
+        <StSynopsis>
           ‘가모라’를 잃고 슬픔에 빠져 있던 ‘피터 퀼’이 위기에 처한 은하계와 동료를 지키기 위해 다시 한번 가디언즈 팀과
           힘을 모으고,
-        </StP>
-        <StP>성공하지 못할 경우 그들의 마지막이 될지도 모르는 미션에 나서는 이야기</StP>
+        </StSynopsis>
+        <StSynopsis>성공하지 못할 경우 그들의 마지막이 될지도 모르는 미션에 나서는 이야기</StSynopsis>
       </article>
       <StChartSection>
         <StEachChart>
           <StChartTitle>성별 예매 분포</StChartTitle>
-          <StChartImg className="donut">
+          <StDonutChart>
             <IcChart1Img />
-          </StChartImg>
+          </StDonutChart>
         </StEachChart>
         <StChartBar />
         <StEachChart>
           <StChartTitle>연령별 예매 분포</StChartTitle>
-          <StChartImg className="bar">
+          <StBarChart>
             <IcChart2Img />
-          </StChartImg>
+          </StBarChart>
         </StEachChart>
       </StChartSection>
       <IcMidadImg />
@@ -73,10 +73,10 @@ const StLi = styled.li`
 
   ${({ theme }) => theme.fonts.Body3};
   color: ${({ theme }) => theme.colors.gray80};
+`;
 
-  &.arrow {
-    margin: 0 0 0 1.5rem;
-  }
+const StArrowLi = styled(StLi)`
+  margin: 0 0 0 1.5rem;
 `;
 
 const StBar = styled.div`
@@ -86,7 +86,7 @@ const StBar = styled.div`
   background-color: ${({ theme }) => theme.colors.gray70};
 `;
 
-const StP = styled.p`
+const StSynopsis = styled.p`
   margin-bottom: 1.3rem;
 
   ${({ theme }) => theme.fonts.Body4};
@@ -121,13 +121,12 @@ const StEachChart = styled.article`
   flex-direction: column;
 `;
 
-const StChartImg = styled.div`
-  &.donut {
-    margin: 0.9rem 3.4rem 0 0;
-  }
-  &.bar {
-    margin: 0.9rem 0 0 1.3rem;
-  }
+const StDonutChart = styled.div`
+  margin: 0.9rem 3.4rem 0 0;
+`;
+
+const StBarChart = styled.div`
+  margin: 0.9rem 0 0 1.3rem;
 `;
 
 const StChartBar = styled.div`
