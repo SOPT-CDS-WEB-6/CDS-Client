@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
-import { Ic4dxImg, IcChefImg, IcGrayallButton, IcLivingImg, IcSuiteImg } from '../asset/icon';
+import { Ic4dxImg, IcChefImg, IcGrayallButton, IcLivingImg, IcSuiteImg } from '../../asset/icon';
 import { useState } from 'react';
 import SpecialCard from './SpecialCard';
-import dummySepcialDataList from '../constants/dummySpecialCard';
+import dummySepcialDataList from '../../constants/dummySpecialCard';
 
 const SpecialBox = () => {
   const specialImgList = [<IcSuiteImg />, <IcLivingImg />, <Ic4dxImg />, <IcChefImg />];

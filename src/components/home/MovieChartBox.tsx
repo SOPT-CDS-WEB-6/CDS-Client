@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
-import { IcWhiteallButton } from '../asset/icon';
+import { IcWhiteallButton } from '../../asset/icon';
 import MovieChartCard from './MovieChartCard';
 import { useEffect, useState } from 'react';
-import dummyMovieChart, { TypeMovieChart } from '../constants/DummyMovieChart';
+import dummyMovieChart, { TypeMovieChart } from '../../constants/DummyMovieChart';
 
 const MovieChartBox = () => {
   const [movieChart, setMovieChart] = useState<TypeMovieChart[]>([]);

@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { IcAdImg1, IcAdImg2, IcAdImg3 } from '../asset/icon';
+import { IcAdImg1, IcAdImg2, IcAdImg3 } from '../../asset/icon';
 
 const AdBox = () => {
   return (

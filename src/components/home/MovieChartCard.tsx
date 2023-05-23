@@ -7,7 +7,7 @@ import {
   IcMovie3Img,
   IcMovie4Img,
   IcTicketingHover,
-} from '../asset/icon';
+} from '../../asset/icon';
 import React, { FunctionComponent, SVGProps, useState } from 'react';
 
 const MovieChartCard = ({

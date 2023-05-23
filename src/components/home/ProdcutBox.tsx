@@ -10,7 +10,7 @@ import {
   IcTicketImg1,
   IcTicketImg2,
   IcTicketImg3,
-} from '../asset/icon';
+} from '../../asset/icon';
 
 const ProductBox = () => {
   const productData = [

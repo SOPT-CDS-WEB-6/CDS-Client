@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { IcBody1 } from '../asset/icon';
+import { IcBody1 } from '../../asset/icon';
 
 const MainPromotionBox = () => {
   return (

@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { IcEvent1Img, IcEvent2Img, IcEvent3Img, IcGrayallButton, IcStopButton } from '../asset/icon';
+import { IcEvent1Img, IcEvent2Img, IcEvent3Img, IcGrayallButton, IcStopButton } from '../../asset/icon';
 
 const EventBox = () => {
   const data = [

@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { IcQrImg } from '../asset/icon';
+import { IcQrImg } from '../../asset/icon';
 
 const QrBox = () => {
   return (
