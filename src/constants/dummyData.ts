@@ -1,8 +1,5 @@
 import IcMoviecard1Img from '../asset/icon/ic_Moviecard1Img.svg';
 import IcMoviecard2Img from '../asset/icon/ic_Moviecard2Img.svg';
-import IcReviewwriteButton from '../asset/icon/ic_ReviewwriteButton.svg';
-import IcRevieweditButton from '../asset/icon/ic_RevieweditButton.svg';
-import IcReviewdeleteButton from '../asset/icon/ic_ReviewdeleteButton.svg';
 
 export const DUMMY_USER = [
   {
@@ -34,7 +31,7 @@ export const DUMMY_MOVIE_DATA = [
     subName: 'HUNT',
     date: '2022.08.12 (금) 16:05 ~ 18:20',
     cinemaInfo: 'CGV수원 7관 (Laser) / 2명',
-    reviewBtn: IcReviewwriteButton,
+    reviewBtn: true,
   },
   {
     imgSrc: IcMoviecard2Img,
@@ -42,8 +39,7 @@ export const DUMMY_MOVIE_DATA = [
     subName: '-',
     date: '2022.12.24 (토) 19:20 ~ 21:30',
     cinemaInfo: 'CGV부천역 7관 10층 / 2명',
-    editBtn: IcRevieweditButton,
-    deleteBtn: IcReviewdeleteButton,
+    deleteBtn: true,
   },
   {
     imgSrc: IcMoviecard1Img,
@@ -51,7 +47,7 @@ export const DUMMY_MOVIE_DATA = [
     subName: 'HUNT',
     date: '2022.08.12 (금) 16:05 ~ 18:20',
     cinemaInfo: 'CGV수원 7관 (Laser) / 2명',
-    reviewBtn: IcReviewwriteButton,
+    reviewBtn: true,
   },
   {
     imgSrc: IcMoviecard2Img,
@@ -59,8 +55,7 @@ export const DUMMY_MOVIE_DATA = [
     subName: '-',
     date: '2022.12.24 (토) 19:20 ~ 21:30',
     cinemaInfo: 'CGV부천역 7관 10층 / 2명',
-    editBtn: IcRevieweditButton,
-    deleteBtn: IcReviewdeleteButton,
+    deleteBtn: true,
   },
   {
     imgSrc: IcMoviecard1Img,
@@ -68,7 +63,7 @@ export const DUMMY_MOVIE_DATA = [
     subName: 'HUNT',
     date: '2022.08.12 (금) 16:05 ~ 18:20',
     cinemaInfo: 'CGV수원 7관 (Laser) / 2명',
-    reviewBtn: IcReviewwriteButton,
+    reviewBtn: true,
   },
   {
     imgSrc: IcMoviecard2Img,
@@ -76,8 +71,7 @@ export const DUMMY_MOVIE_DATA = [
     subName: '-',
     date: '2022.12.24 (토) 19:20 ~ 21:30',
     cinemaInfo: 'CGV부천역 7관 10층 / 2명',
-    editBtn: IcRevieweditButton,
-    deleteBtn: IcReviewdeleteButton,
+    deleteBtn: true,
   },
   {
     imgSrc: IcMoviecard1Img,
@@ -85,7 +79,7 @@ export const DUMMY_MOVIE_DATA = [
     subName: 'HUNT',
     date: '2022.08.12 (금) 16:05 ~ 18:20',
     cinemaInfo: 'CGV수원 7관 (Laser) / 2명',
-    reviewBtn: IcReviewwriteButton,
+    reviewBtn: true,
   },
   {
     imgSrc: IcMoviecard2Img,
@@ -93,7 +87,54 @@ export const DUMMY_MOVIE_DATA = [
     subName: '-',
     date: '2022.12.24 (토) 19:20 ~ 21:30',
     cinemaInfo: 'CGV부천역 7관 10층 / 2명',
-    editBtn: IcRevieweditButton,
-    deleteBtn: IcReviewdeleteButton,
+    deleteBtn: true,
+  },
+  {
+    imgSrc: IcMoviecard1Img,
+    name: '헌트',
+    subName: 'HUNT',
+    date: '2022.08.12 (금) 16:05 ~ 18:20',
+    cinemaInfo: 'CGV수원 7관 (Laser) / 2명',
+    reviewBtn: true,
+  },
+  {
+    imgSrc: IcMoviecard2Img,
+    name: '영웅',
+    subName: '-',
+    date: '2022.12.24 (토) 19:20 ~ 21:30',
+    cinemaInfo: 'CGV부천역 7관 10층 / 2명',
+    deleteBtn: true,
+  },
+  {
+    imgSrc: IcMoviecard1Img,
+    name: '헌트',
+    subName: 'HUNT',
+    date: '2022.08.12 (금) 16:05 ~ 18:20',
+    cinemaInfo: 'CGV수원 7관 (Laser) / 2명',
+    reviewBtn: true,
+  },
+  {
+    imgSrc: IcMoviecard2Img,
+    name: '영웅',
+    subName: '-',
+    date: '2022.12.24 (토) 19:20 ~ 21:30',
+    cinemaInfo: 'CGV부천역 7관 10층 / 2명',
+    deleteBtn: true,
+  },
+  {
+    imgSrc: IcMoviecard1Img,
+    name: '헌트',
+    subName: 'HUNT',
+    date: '2022.08.12 (금) 16:05 ~ 18:20',
+    cinemaInfo: 'CGV수원 7관 (Laser) / 2명',
+    reviewBtn: true,
+  },
+  {
+    imgSrc: IcMoviecard2Img,
+    name: '영웅',
+    subName: '-',
+    date: '2022.12.24 (토) 19:20 ~ 21:30',
+    cinemaInfo: 'CGV부천역 7관 10층 / 2명',
+    deleteBtn: true,
   },
 ];
