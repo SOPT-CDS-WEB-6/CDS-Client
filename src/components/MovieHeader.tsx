@@ -5,17 +5,18 @@ import { ICAddAudience } from '../asset/icon';
 import { MovieDataInfo } from '../types/MovieData';
 
 export interface MyMovieProps {
-  dummyData: MovieDataInfo[];
+  data: MovieDataInfo[];
 }
 
 function MovieHeader(props: MyMovieProps) {
-  const { dummyData } = props;
+  const { data } = props;
+  // console.log(data[0].data);
 
   return (
     <StMyMovieHeader>
       <StHeaderTextWrapper>
         <StMyMovieTitle>내가 본 영화</StMyMovieTitle>
-        <StMyMovieNum>{dummyData.length}건</StMyMovieNum>
+        <StMyMovieNum>?건</StMyMovieNum>
       </StHeaderTextWrapper>
 
       <StHeaderBtnWrapper>

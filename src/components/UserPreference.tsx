@@ -1,21 +1,34 @@
 import { styled } from 'styled-components';
-import { DUMMY_USER } from '../constants/dummyData';
-import { DUMMY_NAV_DATA } from '../constants/dummyData';
+import { NAV_DATA } from '../constants/dummyData';
 import { IcProfileImg } from '../asset/icon';
 import { IcPencilImg } from '../asset/icon';
 import PreferenceNav from './PreferenceNav';
+import client from '../libs/axios';
+import useSWR from 'swr';
+import { NavDataInfo } from '../types/MovieData';
 
-const UserPreference = () => {
+export interface UserPreferenceProps {
+  data_1: NavDataInfo[];
+}
+
+const fetcher = (url: string) => client.get(url).then((res) => res.data);
+
+const UserPreference = (props: UserPreferenceProps) => {
+  const { data } = useSWR('/user/1', fetcher);
+  const { data_1 } = props;
+
+  // console.log(data_1[0].data);
+
   return (
     <StUserInfo>
       <StUserProfile>
         <IcProfileImg />
         <StUserName>
-          {DUMMY_USER[0].name}님 <IcPencilImg />
+          {data?.data.userName}님 <IcPencilImg />
         </StUserName>
       </StUserProfile>
 
-      {DUMMY_NAV_DATA.map((data, idx) => {
+      {NAV_DATA.map((data, idx) => {
         return <PreferenceNav data={data} key={idx} />;
       })}
     </StUserInfo>

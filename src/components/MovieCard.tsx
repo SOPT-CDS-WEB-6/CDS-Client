@@ -12,20 +12,25 @@ function MovieCard(props: MovieCardProps) {
 
   return (
     <StWatchedMovieCard>
-      <StMoviePoster src={data.imgSrc} />
+      <StMoviePoster src={data.posterLink} />
 
       <StWatchedMovieInfo>
-        <StWatchedMovieName>
-          {data.name}
+        <StWatchedMovieName>{data.title}</StWatchedMovieName>
+        <StBtnWrapper>
           <IcDeleteButton className="deleteBtn" />
-        </StWatchedMovieName>
-        <StWatchedMovieSubName>{data.subName}</StWatchedMovieSubName>
+        </StBtnWrapper>
 
-        <StWatchedInfo>{data.date}</StWatchedInfo>
-        <StWatchedInfo>{data.cinemaInfo}</StWatchedInfo>
+        <StWatchedMovieSubName>{data.originTitle ? data.originTitle : '-'}</StWatchedMovieSubName>
 
-        {data.reviewBtn ? <IcReviewwriteButton /> : <IcRevieweditButton />}
-        {data.deleteBtn ? <IcReviewdeleteButton className="deleteReviewBtn" /> : <></>}
+        <StWatchedInfo>
+          {data.startDate?.slice(0, -3)} ~ {data.endDate?.split(' ')[1].slice(0, 5)}
+        </StWatchedInfo>
+        <StWatchedInfo>
+          {data.theaterName} / {data.headcount}명
+        </StWatchedInfo>
+
+        {data.reviewed ? <IcRevieweditButton /> : <IcReviewwriteButton />}
+        {data.reviewed ? <IcReviewdeleteButton className="deleteReviewBtn" /> : <></>}
       </StWatchedMovieInfo>
     </StWatchedMovieCard>
   );
@@ -50,6 +55,17 @@ const StMoviePoster = styled.img`
   margin-left: 2.7rem;
 `;
 
+const StBtnWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 22.1rem;
+  margin: 0;
+  & > svg {
+    position: relative;
+    top: -2rem;
+  }
+`;
+
 const StWatchedMovieInfo = styled.div`
   height: 19.3rem;
   margin: 0rem 2.7rem 0rem 2.4rem;
@@ -60,17 +76,18 @@ const StWatchedMovieInfo = styled.div`
 `;
 
 const StWatchedMovieName = styled.p`
+  display: flex;
+  width: 15.2rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
   font-size: ${({ theme }) => theme.fonts.Body1};
   color: ${({ theme }) => theme.colors.black};
-
-  .deleteBtn {
-    position: relative;
-    left: 15.2rem;
-  }
 `;
 
 const StWatchedMovieSubName = styled.p`
-  margin-top: 1.1rem;
+  margin-top: -1.1rem;
   margin-bottom: 3rem;
 
   font-size: ${({ theme }) => theme.fonts.Body5};

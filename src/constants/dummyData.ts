@@ -1,13 +1,7 @@
 import IcMoviecard1Img from '../asset/icon/ic_Moviecard1Img.svg';
 import IcMoviecard2Img from '../asset/icon/ic_Moviecard2Img.svg';
 
-export const DUMMY_USER = [
-  {
-    name: '김나현',
-  },
-] as const;
-
-export const DUMMY_NAV_DATA = [
+export const NAV_DATA = [
   {
     num: 0,
     text: '기대되는 영화',

@@ -1,18 +1,23 @@
 import { styled } from 'styled-components';
-import { DUMMY_MOVIE_DATA } from '../constants/dummyData';
 import MovieHeader from './MovieHeader';
 import MovieCard from './MovieCard';
 import UserPreference from './UserPreference';
+import client from '../libs/axios';
+import useSWR from 'swr';
+
+const fetcher = (url: string) => client.get(url).then((res) => res.data);
 
 function MyMovie() {
+  const { data } = useSWR('/user/1/movielog/watched?page=1&size=6&year=2023', fetcher);
+
   return (
     <StTopWrapper>
-      <UserPreference />
+      <UserPreference data_1 = {data} />
       <StMyMovieSection>
-        <MovieHeader dummyData={DUMMY_MOVIE_DATA} />
+        <MovieHeader data={data} />
 
         <StMovieCardWrapper>
-          {DUMMY_MOVIE_DATA.map((data, idx) => {
+          {data?.data.page.map((data: object, idx: number) => {
             return <MovieCard data={data} key={idx} />;
           })}
         </StMovieCardWrapper>
