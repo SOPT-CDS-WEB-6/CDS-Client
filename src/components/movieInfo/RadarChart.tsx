@@ -1,72 +1,79 @@
 import { Radar } from 'react-chartjs-2';
 import { Chart as ChartJS, RadialLinearScale } from 'chart.js/auto';
-import type { ChartOptions } from 'chart.js';
 import { styled } from 'styled-components';
-import { radarData } from '../../constants/movieInfo';
 import useGetRadarInfo from '../../libs/hooks/useGetRadarInfo';
+import { chartOptions } from '../../constants/movieInfo';
 
 ChartJS.register(RadialLinearScale);
 
-const chartOptions: ChartOptions<'radar'> & ChartOptions = {
-  elements: {
-    //데이터 속성.
-    line: {
-      borderWidth: 2,
-      borderColor: 'rgba(255,191,0,0.5)',
-    },
-  },
-  scales: {
-    r: {
-      ticks: {
-        stepSize: 2.5,
-        display: false,
+const RadarChart = () => {
+  const { charmingPointInfo, emotionPointInfo, isError, isLoading } = useGetRadarInfo(1);
+
+  if (isError) console.log('error');
+
+  if (!isError && !isLoading) {
+    const chartDataList = [
+      {
+        labels: Object.keys(charmingPointInfo),
+        datasets: [
+          {
+            label: '매력 포인트',
+            data: Object.values(charmingPointInfo),
+            backgroundColor: 'rgba(255, 108, 61, 0.2)',
+          },
+        ],
       },
-      grid: {
-        color: 'black',
+      {
+        labels: Object.keys(emotionPointInfo),
+        datasets: [
+          {
+            label: '감정 포인트',
+            data: Object.values(emotionPointInfo),
+            backgroundColor: 'rgba(255, 108, 61, 0.2)',
+          },
+        ],
       },
-      //라벨 속성 지정.
-      pointLabels: {
-        font: {
-          size: 20,
-          weight: '700',
-        },
-        color: 'black',
-      },
-      angleLines: {
-        display: false,
-      },
-      suggestedMin: 0,
-      suggestedMax: 10,
-    },
-  },
-  //위에 생기는 데이터 속성 label 타이틀을 지워줍니다.
-  plugins: {
-    legend: {
-      display: false,
-    },
-  },
-  //기본 값은 가운데에서 펴져나가는 애니메이션 형태입니다.
-  animation: {
-    duration: 0,
-  },
+    ];
+
+    return (
+      <StRadarSection>
+        {chartDataList.map((data, idx) => (
+          <StRadarWrapper key={idx}>
+            <figcaption>{data.datasets[0].label}</figcaption>
+            <Radar data={data} options={chartOptions} />
+          </StRadarWrapper>
+        ))}
+      </StRadarSection>
+    );
+  }
 };
 
-const RadarChart = () => {
-  return (
-    <>
-      <StRadarWrapper>
-        <Radar data={radarData} options={chartOptions} />
-      </StRadarWrapper>
-    </>
-  );
-};
+const StRadarSection = styled.section`
+  display: flex;
+`;
 
 const StRadarWrapper = styled.figure`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  position: relative;
 
   width: 48.4rem;
   height: 40.2rem;
+  margin: 0;
+  padding-top: 5rem;
+
+  border: 0.1rem solid lightgray;
+
+  > figcaption {
+    position: absolute;
+    left: 3.9rem;
+    top: 4.7rem;
+
+    align-self: flex-start;
+
+    ${({ theme }) => theme.fonts.Body1};
+  }
 `;
 
 export default RadarChart;
