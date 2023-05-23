@@ -46,6 +46,8 @@ const RadarChart = () => {
       </StRadarSection>
     );
   }
+
+  return null;
 };
 
 const StRadarSection = styled.section`
