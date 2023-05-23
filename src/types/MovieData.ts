@@ -4,15 +4,23 @@ export type NavDataInfo = {
   content?: string;
   class?: string;
   idx?: number;
+  // data?: {
+  //   page?: object;
+  // }[];
 };
 
 export type MovieDataInfo = {
-  imgSrc?: string;
-  name: string;
-  subName: string;
-  date: string;
-  cinemaInfo: string;
-  reviewBtn?: boolean;
-  editBtn?: boolean;
-  deleteBtn?: boolean;
+  // data?: {
+  //   page?: object;
+  // }[];
+
+  title?: string;
+  originTitle?: string;
+  posterLink?: string;
+  headcount?: string;
+  endDate?: string;
+  reservatedAt?: string;
+  startDate?: string;
+  theaterName?: string;
+  reviewed?: boolean;
 };
