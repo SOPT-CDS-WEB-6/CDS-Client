@@ -76,8 +76,7 @@ const StWatchedMovieInfo = styled.div`
 `;
 
 const StWatchedMovieName = styled.p`
-  display: flex;
-  width: 15.2rem;
+  width: 18rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
