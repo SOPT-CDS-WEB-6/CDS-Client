@@ -2,9 +2,15 @@ import { useEffect, useState } from 'react';
 import { IcCgvLogo, IcSearchButton, IcWhiteSearchImg } from '../../asset/icon';
 import { styled } from 'styled-components';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const StickyHeader = () => {
   const [isSticky, setSticky] = useState('');
+  const navigate = useNavigate();
+
+  const clickLogoHandler = () => {
+    navigate('/');
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -22,7 +28,7 @@ const StickyHeader = () => {
 
   return (
     <StStickyHeader className={classes}>
-      <IcCgvLogo />
+      <IcCgvLogo onClick={clickLogoHandler} />
       <StStickyHeaderWrapper>
         <StStickyHeaderNavWrapper>
           {navMenu.map((menu, index) => (
@@ -107,5 +113,7 @@ const StStickyHeader = styled.header`
 
   & > svg {
     margin-right: 5.5rem;
+
+    cursor: pointer;
   }
 `;
