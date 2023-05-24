@@ -19,7 +19,7 @@ function MovieCard(props: MovieCardProps) {
       <StWatchedMovieInfo>
         <StWatchedMovieName>{data.title}</StWatchedMovieName>
         <StBtnWrapper>
-          <IcDeleteButton className="deleteBtn" />
+          <IcDeleteButton />
         </StBtnWrapper>
 
         <StWatchedMovieSubName>{data.originTitle ? data.originTitle : '-'}</StWatchedMovieSubName>
