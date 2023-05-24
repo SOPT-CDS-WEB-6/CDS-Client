@@ -11,9 +11,8 @@ export interface UserPreferenceProps {
   data_1: NavDataInfo;
 }
 
-const fetcher = (url: string) => client.get(url).then((res) => res.data);
-
 const UserPreference = (props: UserPreferenceProps) => {
+  const fetcher = (url: string) => client.get(url).then((res) => res.data);
   const { data } = useSWR('/user/1', fetcher);
   const { data_1 } = props;
 
@@ -27,7 +26,7 @@ const UserPreference = (props: UserPreferenceProps) => {
       </StUserProfile>
 
       {NAV_DATA.map((data, idx) => {
-        return <PreferenceNav data={data} key={idx} numData={data_1} idx={ idx} />;
+        return <PreferenceNav data={data} key={idx} numData={data_1} idx={idx} />;
       })}
     </StUserInfo>
   );
