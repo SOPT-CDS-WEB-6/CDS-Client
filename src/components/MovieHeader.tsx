@@ -10,6 +10,7 @@ export interface MyMovieProps {
 
 function MovieHeader(props: MyMovieProps) {
   const { data, setFetchURL } = props;
+  const wathedMovieYear = ['전체', '2023', '2022'];
   const watchedMoviesNum = data?.data?.pageInfoRes?.totalElements;
   const [selectedOption, setSelectedOption] = useState('');
 
@@ -50,9 +51,9 @@ function MovieHeader(props: MyMovieProps) {
 
       <StHeaderBtnWrapper>
         <StYearSelector onChange={handleSelectedOption}>
-          <StYearOption>전체</StYearOption>
-          <StYearOption>2023</StYearOption>
-          <StYearOption>2022</StYearOption>
+          {wathedMovieYear.map((year) => {
+            return <StYearOption>{year}</StYearOption>;
+          })}
         </StYearSelector>
         <IcGoButton style={{ width: '4.9rem' }} />
         <ICAddAudience style={{ width: '11.7rem' }} />
