@@ -51,8 +51,8 @@ function MovieHeader(props: MyMovieProps) {
 
       <StHeaderBtnWrapper>
         <StYearSelector onChange={handleSelectedOption}>
-          {wathedMovieYear.map((year) => {
-            return <StYearOption>{year}</StYearOption>;
+          {wathedMovieYear.map((year, idx) => {
+            return <StYearOption key={idx}>{year}</StYearOption>;
           })}
         </StYearSelector>
         <IcGoButton style={{ width: '4.9rem' }} />
