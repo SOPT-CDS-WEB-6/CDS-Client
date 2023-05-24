@@ -35,7 +35,8 @@ const StSideDiv = styled.div`
 const StTopWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 100vw;
+
+  width: 100%;
 `;
 
 const StMyMovieSection = styled.section`
@@ -49,6 +50,7 @@ const StMyMovieSection = styled.section`
 const StMovieCardWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
+  
   width: 89.3rem;
   margin-top: 1.85rem;
 

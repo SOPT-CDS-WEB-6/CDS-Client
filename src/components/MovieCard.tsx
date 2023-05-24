@@ -60,8 +60,10 @@ const StMoviePoster = styled.img`
 const StBtnWrapper = styled.span`
   display: flex;
   justify-content: flex-end;
+
   width: 22.1rem;
   margin: 0;
+
   & > svg {
     position: relative;
     top: -2rem;
@@ -75,24 +77,24 @@ const StWatchedMovieInfo = styled.span`
 
 const StWatchedMovieName = styled.p`
   width: 18rem;
-  text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
 
   font-size: ${({ theme }) => theme.fonts.Body1};
   color: ${({ theme }) => theme.colors.black};
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const StWatchedMovieSubName = styled.p`
   width: 18rem;
-  text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
   margin-top: -1.1rem;
   margin-bottom: 3rem;
 
   font-size: ${({ theme }) => theme.fonts.Body5};
   color: ${({ theme }) => theme.colors.gray70};
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const StWatchedInfo = styled.p`

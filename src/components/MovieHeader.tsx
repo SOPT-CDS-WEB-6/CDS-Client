@@ -29,6 +29,7 @@ function MovieHeader(props: MyMovieProps) {
 const StMyMovieHeader = styled.header`
   display: flex;
   justify-content: space-between;
+  
   width: 89.3rem;
 `;
 
