@@ -1,14 +1,17 @@
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import MovieInfoPage from './pages/MovieInfoPage';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
         {/* home */}
-        {/* movieInfo */}
+        <Route path="/movieInfo" element={<MovieInfoPage />} />
         {/* mymovie */}
         {/* inquiry */}
       </Routes>
     </BrowserRouter>
   );
 };
+
+export default Router;

@@ -1,9 +1,9 @@
-import MovieInfoPage from './pages/MovieInfoPage';
+import Router from './Router';
 
 function App() {
   return (
     <>
-      <MovieInfoPage />
+      <Router />
     </>
   );
 }
