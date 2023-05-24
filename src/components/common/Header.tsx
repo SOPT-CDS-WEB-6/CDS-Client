@@ -1,13 +1,22 @@
 import { styled } from 'styled-components';
 import { IcCardImg, IcLockIcon, IcLogoImg, IcMypageIcon, IcSearchButton, IcServiceIcon } from '../../asset/icon';
+import { useNavigate } from 'react-router-dom';
+import { ReactEventHandler } from 'react';
 
 const Header = () => {
   const nav = ['영화', '극장', '예매', '스토어', '이벤트', '혜택'];
+  const navigate = useNavigate();
+
+  const clickLogoHandler = (e: React.MouseEvent) => {
+    navigate('/');
+  };
 
   return (
     <StHeader>
       <StHeaderTobBar>
-        <IcLogoImg />
+        <StLogoContainer onClick={clickLogoHandler}>
+          <IcLogoImg />
+        </StLogoContainer>
         <StHeaderTobBarLeftSection>
           <IcCardImg />
           <StMyPageButtonWrapper>
@@ -44,6 +53,12 @@ const Header = () => {
 };
 
 export default Header;
+
+const StLogoContainer = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 const StHeaderNavSearchInput = styled.input`
   border: none;
