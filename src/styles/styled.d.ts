@@ -5,6 +5,7 @@ declare module "styled-components" {
     colors: {
       red: string;
       red2: string;
+      cgv_gradient: string;
       black: string;
       gray90: string;
       gray70: string;
