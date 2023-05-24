@@ -1,14 +1,45 @@
 import { styled } from 'styled-components';
-import { IcAllDropdown, IcGoButton, ICAddAudience } from '../asset/icon';
+import { IcGoButton, ICAddAudience } from '../asset/icon';
 import { MovieDataInfo } from '../types/MovieData';
+import { useEffect, useState } from 'react';
 
 export interface MyMovieProps {
   data: MovieDataInfo;
+  setFetchURL: React.Dispatch<React.SetStateAction<string>>;
 }
 
 function MovieHeader(props: MyMovieProps) {
-  const { data } = props;
+  const { data, setFetchURL } = props;
   const watchedMoviesNum = data?.data?.pageInfoRes?.totalElements;
+  const [selectedOption, setSelectedOption] = useState('');
+
+  useEffect(() => {
+    handleFetchURL();
+  }, [selectedOption]);
+
+  const handleFetchURL = () => {
+    switch (selectedOption) {
+      case '전체':
+        setFetchURL('/user/1/movielog/watched?page=1&size=6');
+        break;
+
+      case '2023':
+        setFetchURL('/user/1/movielog/watched?page=1&size=6&year=2023');
+        break;
+
+      case '2022':
+        setFetchURL('/user/1/movielog/watched?page=1&size=6&year=2022');
+        break;
+
+      default:
+        setFetchURL('/user/1/movielog/watched?page=1&size=6');
+        break;
+    }
+  };
+
+  const handleSelectedOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(e.target.value);
+  };
 
   return (
     <StMyMovieHeader>
@@ -18,7 +49,11 @@ function MovieHeader(props: MyMovieProps) {
       </StHeaderTextWrapper>
 
       <StHeaderBtnWrapper>
-        <IcAllDropdown style={{ width: '7rem' }} />
+        <StYearSelector onChange={handleSelectedOption}>
+          <StYearOption>전체</StYearOption>
+          <StYearOption>2023</StYearOption>
+          <StYearOption>2022</StYearOption>
+        </StYearSelector>
         <IcGoButton style={{ width: '4.9rem' }} />
         <ICAddAudience style={{ width: '11.7rem' }} />
       </StHeaderBtnWrapper>
@@ -30,6 +65,7 @@ const StMyMovieHeader = styled.header`
   display: flex;
   justify-content: space-between;
   width: 89.3rem;
+  height: 3.7rem;
 `;
 
 const StHeaderTextWrapper = styled.span`
@@ -56,6 +92,16 @@ const StHeaderBtnWrapper = styled.span`
   > svg {
     height: 3.7rem;
   }
+`;
+
+const StYearSelector = styled.select`
+  width: 7rem;
+  height: 3.7rem;
+  border: 1px solid #e3e3e3;
+`;
+
+const StYearOption = styled.option`
+  ${({ theme }) => theme.colors.gray70}
 `;
 
 export default MovieHeader;
