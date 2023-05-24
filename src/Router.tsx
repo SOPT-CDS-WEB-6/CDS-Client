@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MyMovie from './components/MyMovie';
 
 const Router = () => {
   return (
@@ -7,8 +8,11 @@ const Router = () => {
         {/* home */}
         {/* movieInfo */}
         {/* mymovie */}
+        <Route path="/movie" element={<MyMovie />} />
         {/* inquiry */}
       </Routes>
     </BrowserRouter>
   );
 };
+
+export default Router;

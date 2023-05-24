@@ -1,11 +1,7 @@
-import MyMovie from './components/MyMovie';
+import Router from './Router.tsx';
 
 function App() {
-  return (
-    <>
-      <MyMovie />
-    </>
-  );
+  return <Router />;
 }
 
 export default App;
