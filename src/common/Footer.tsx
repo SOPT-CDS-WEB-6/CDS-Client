@@ -75,6 +75,7 @@ const StFooterBottomContents = styled.section`
 `;
 
 const StFooterDataWrapper = styled.article`
+  display: grid;
   align-items: center;
 
   height: 10.6rem;
@@ -83,18 +84,15 @@ const StFooterDataWrapper = styled.article`
   font-size: 1.4rem;
   color: ${({ theme }) => theme.colors.gray70};
   letter-spacing: 0.2rem;
-  line-height: 0%;
-
-  > p {
-    margin-bottom: 0rem;
-  }
 `;
 
 const StFooterBtnWrapper = styled.article`
   display: flex;
-  align-items: end;
+  margin-top: 8.7rem;
+  margin-bottom: 1.9rem;
 
-  padding-bottom: 1.9rem;
+  width: 23.7rem;
+  height: 4rem;
 
   gap: 0.5rem;
 `;
