@@ -13,7 +13,7 @@ function MyMovie() {
 
   return (
     <StTopWrapper>
-      <UserPreference data_1={data} />
+      <UserPreference numData={data} />
       <StMyMovieSection>
         <MovieHeader data={data} setFetchURL={setFetchURL} />
 
