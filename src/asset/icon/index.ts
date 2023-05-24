@@ -7,6 +7,8 @@ export { ReactComponent as IcSearchButton } from './ic_SearchButton.svg';
 export { ReactComponent as IcServiceIcon } from './ic_ServiceIcon.svg';
 export { ReactComponent as IcTicketingFixedButton } from './ic_TicketingFixedButton.svg';
 export { ReactComponent as IcUpFixedButton } from './ic_UpFixedButton.svg';
+export { ReactComponent as IcCgvLogo } from './ic_CgvLogo.svg';
+export { ReactComponent as IcWhiteSearchImg } from './ic_WhiteSearchImg.svg';
 // home
 export { ReactComponent as Ic4dxImg } from './ic_4dxImg.svg';
 export { ReactComponent as IcAdImg1 } from './ic_AdImg1.svg';
