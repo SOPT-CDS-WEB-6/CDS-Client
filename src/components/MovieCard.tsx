@@ -58,6 +58,7 @@ const StMoviePoster = styled.img`
 const StBtnWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
+
   width: 22.1rem;
   margin: 0;
   & > svg {
