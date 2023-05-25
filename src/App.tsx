@@ -1,18 +1,11 @@
-import { styled } from 'styled-components';
-import RadarChart from './components/movieInfo/RadarChart';
+import MovieInfoPage from './pages/MovieInfoPage';
 
 function App() {
   return (
     <>
-      <RadarChart />
-      <StHeading>Vite + React</StHeading>
+      <MovieInfoPage />
     </>
   );
 }
-
-const StHeading = styled.h1`
-  ${({ theme }) => theme.fonts.Heading}
-  color: ${({ theme }) => theme.colors.red2}
-`;
 
 export default App;

@@ -1,14 +1,17 @@
-import { css, DefaultTheme } from "styled-components";
+import { css, DefaultTheme } from 'styled-components';
 
 const colors = {
-  red: "#ED3124",
-  red2: "#FF4A57",
-  black: "#000000",
-  gray90: "#323232",
-  gray70: "#737373",
-  gray40: "#AAAAAA",
-  gray20: "#E3E3E3",
-  white: "#FFFFFF",
+  red: '#ED3124',
+  red2: '#FF4A57',
+  black: '#000000',
+  blue: '#0076B1',
+  gray90: '#323232',
+  gray80: '#454545',
+  gray70: '#737373',
+  gray40: '#AAAAAA',
+  gray20: '#E3E3E3',
+  gray10: '#F6F6F6',
+  white: '#FFFFFF',
 };
 
 interface Font {
@@ -17,7 +20,7 @@ interface Font {
 
 function FONT({ size }: Font) {
   return css`
-    font-family: "Noto Sans KR";
+    font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 500;
     font-size: ${size}rem;

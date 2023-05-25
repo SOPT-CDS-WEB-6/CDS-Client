@@ -52,6 +52,11 @@ export { ReactComponent as IcSheepImg } from './ic_SheepImg.svg';
 export { ReactComponent as IcTheaterDropdown } from './ic_TheaterDropdown.svg';
 export { ReactComponent as IcUnselectButton } from './ic_UnselectButton.svg';
 // movieinfo
+export { ReactComponent as IcBrownTextBox } from './ic_BrownTextBox.svg';
+export { ReactComponent as IcStillCutImg } from './ic_StillCutImg.svg';
+export { ReactComponent as IcQuestionEgg } from './ic_QuestionEgg.svg';
+export { ReactComponent as IcInfoIcon } from './ic_InfoIcon.svg';
+export { ReactComponent as IcEggIcon } from './ic_EggIcon.svg';
 export { ReactComponent as Ic4dxLogoImg } from './ic_4dxLogoImg.svg';
 export { ReactComponent as IcAd1Img } from './ic_Ad1Img.svg';
 export { ReactComponent as IcAd2Img } from './ic_Ad2Img.svg';

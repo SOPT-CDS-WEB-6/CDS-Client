@@ -1,15 +1,18 @@
-import "styled-components";
+import 'styled-components';
 
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
       red: string;
       red2: string;
       black: string;
+      blue: string;
       gray90: string;
+      gray80: string;
       gray70: string;
       gray40: string;
       gray20: string;
+      gray10: string;
       white: string;
     };
     fonts: {
