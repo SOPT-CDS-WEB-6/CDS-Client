@@ -155,9 +155,6 @@ const StHeaderNavMenu = styled.li`
 const StHeaderNavDetailBar = styled.ul`
   position: absolute;
   display: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   left: 0;
   top: 18rem;
 
