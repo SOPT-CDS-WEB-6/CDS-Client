@@ -4,6 +4,7 @@ import MovieCard from './MovieCard';
 import UserPreference from './UserPreference';
 import useGetWatchedMovieInfo from '../hooks/useGetWatchedMovieInfo';
 
+
 function MyMovie() {
   const { data, setFetchURL, numOfCards, numOfWatchedMovie } = useGetWatchedMovieInfo(
     '/user/1/movielog/watched?page=1&size=6',

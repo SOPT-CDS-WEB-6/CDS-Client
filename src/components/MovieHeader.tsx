@@ -4,6 +4,7 @@ import { MovieDataInfo } from '../types/MovieData';
 import { useEffect, useState } from 'react';
 
 export interface MyMovieProps {
+
   data: MovieDataInfo;
   setFetchURL: React.Dispatch<React.SetStateAction<string>>;
 }
@@ -42,11 +43,13 @@ function MovieHeader(props: MyMovieProps) {
     setSelectedOption(e.target.value);
   };
 
+
   return (
     <StMyMovieHeader>
       <StHeaderTextWrapper>
         <StMyMovieTitle>내가 본 영화</StMyMovieTitle>
         <StMyMovieNum>{watchedMoviesNum}건</StMyMovieNum>
+
       </StHeaderTextWrapper>
 
       <StHeaderBtnWrapper>
