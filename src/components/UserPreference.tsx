@@ -3,25 +3,23 @@ import { NAV_DATA } from '../constants/navData';
 import { IcProfileImg } from '../asset/icon';
 import { IcPencilImg } from '../asset/icon';
 import PreferenceNav from './PreferenceNav';
-import client from '../libs/axios';
-import useSWR from 'swr';
-import { NavDataInfo } from '../types/MovieData';
+import useGetUserInfo from '../hooks/useGetUserInfo';
 
 export interface UserPreferenceProps {
-  numData: NavDataInfo;
+  numData: number;
 }
 
 const UserPreference = (props: UserPreferenceProps) => {
-  const fetcher = (url: string) => client.get(url).then((res) => res.data);
-  const { data } = useSWR('/user/1', fetcher);
   const { numData } = props;
+
+  const { userName } = useGetUserInfo();
 
   return (
     <StUserInfo>
       <StUserProfile>
         <IcProfileImg />
         <StUserName>
-          {data?.data.userName}님 <IcPencilImg />
+          {userName}님 <IcPencilImg />
         </StUserName>
       </StUserProfile>
 
@@ -37,7 +35,7 @@ export default UserPreference;
 const StUserInfo = styled.nav`
   display: flex;
   flex-direction: column;
-  
+
   width: 19.6rem;
 
   margin-top: 23.4rem;
