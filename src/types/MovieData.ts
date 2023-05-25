@@ -18,6 +18,7 @@ export type MovieDataInfo = {
     };
   };
 
+
   title?: string;
   originTitle?: string;
   posterLink?: string;

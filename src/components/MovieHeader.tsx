@@ -4,6 +4,7 @@ import { MovieDataInfo } from '../types/MovieData';
 import { useEffect, useState } from 'react';
 
 export interface MyMovieProps {
+
   data: MovieDataInfo;
   setFetchURL: React.Dispatch<React.SetStateAction<string>>;
 }
@@ -11,6 +12,7 @@ export interface MyMovieProps {
 function MovieHeader(props: MyMovieProps) {
   const { data, setFetchURL } = props;
   const wathedMovieYear = ['전체', '2023', '2022'];
+
   const watchedMoviesNum = data?.data?.pageInfoRes?.totalElements;
   const [selectedOption, setSelectedOption] = useState('');
 
@@ -41,6 +43,7 @@ function MovieHeader(props: MyMovieProps) {
   const handleSelectedOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(e.target.value);
   };
+
 
   return (
     <StMyMovieHeader>

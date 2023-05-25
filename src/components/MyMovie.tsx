@@ -6,6 +6,7 @@ import client from '../libs/axios';
 import useSWR from 'swr';
 import { useState } from 'react';
 
+
 function MyMovie() {
   const fetcher = (url: string) => client.get(url).then((res) => res.data);
   const [fetchURL, setFetchURL] = useState('/user/1/movielog/watched?page=1&size=6');

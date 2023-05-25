@@ -17,17 +17,22 @@ function MovieCard(props: MovieCardProps) {
       <StMoviePoster src={data.posterLink} />
 
       <StWatchedMovieInfo>
-        <StWatchedMovieName>
-          {data.name}
+        <StWatchedMovieName>{data.title}</StWatchedMovieName>
+        <StBtnWrapper>
           <IcDeleteButton className="deleteBtn" />
-        </StWatchedMovieName>
-        <StWatchedMovieSubName>{data.subName}</StWatchedMovieSubName>
+        </StBtnWrapper>
 
-        <StWatchedInfo>{data.date}</StWatchedInfo>
-        <StWatchedInfo>{data.cinemaInfo}</StWatchedInfo>
+        <StWatchedMovieSubName>{data.originTitle ? data.originTitle : '-'}</StWatchedMovieSubName>
 
-        {data.reviewBtn ? <IcReviewwriteButton /> : <IcRevieweditButton />}
-        {data.deleteBtn ? <IcReviewdeleteButton className="deleteReviewBtn" /> : <></>}
+        <StWatchedInfo>
+          {startTime} ~ {endTime}
+        </StWatchedInfo>
+        <StWatchedInfo>
+          {data.theaterName} / {data.headcount}명
+        </StWatchedInfo>
+
+        {data.reviewed ? <IcRevieweditButton /> : <IcReviewwriteButton />}
+        {data.reviewed && <IcReviewdeleteButton style={{ marginLeft: '1rem' }} />}
       </StWatchedMovieInfo>
     </StWatchedMovieCard>
   );
@@ -52,7 +57,22 @@ const StMoviePoster = styled.img`
   margin-left: 2.7rem;
 `;
 
-const StWatchedMovieInfo = styled.div`
+
+const StBtnWrapper = styled.span`
+
+  display: flex;
+  justify-content: flex-end;
+
+  width: 22.1rem;
+  margin: 0;
+
+  & > svg {
+    position: relative;
+    top: -2rem;
+  }
+`;
+
+const StWatchedMovieInfo = styled.span`
   height: 19.3rem;
   margin: 0rem 2.7rem 0rem 2.4rem;
 `;

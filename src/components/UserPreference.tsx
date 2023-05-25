@@ -26,6 +26,7 @@ const UserPreference = (props: UserPreferenceProps) => {
       </StUserProfile>
 
       {NAV_DATA.map((data, idx) => {
+
         return <PreferenceNav data={data} key={idx} numData={numData} idx={idx} />;
       })}
     </StUserInfo>
