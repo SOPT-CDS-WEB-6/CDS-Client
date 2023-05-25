@@ -1,8 +1,8 @@
 import useSWR from 'swr';
 import { cgvGetFetcher } from '../axios';
 
-const useGetReviewList = (page: number) => {
-  const { data, error } = useSWR(`/movie/2/review?page=${page}&size=6`, cgvGetFetcher, {
+const useGetReviewList = (movieId: number, page: number) => {
+  const { data, error } = useSWR(`/movie/${movieId}/review?page=${page}&size=6`, cgvGetFetcher, {
     errorRetryCount: 3,
   });
 

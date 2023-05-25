@@ -8,13 +8,12 @@ import ReviewLanding from './Skeleton/ReviewLanding';
 const ReviewPageNation = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { reviewList, totalPages, isError, isLoading } = useGetReviewList(currentPage);
+  const { reviewList, totalPages, isError, isLoading } = useGetReviewList(2, currentPage);
   const pageList = [...Array(totalPages)].map((_, idx) => idx + 1);
 
   const handlePageChange = (e: React.MouseEvent<HTMLButtonElement>) => {
     const pageBtn = e.target as HTMLButtonElement;
-
-    setCurrentPage((prev) => Number(pageBtn.innerText));
+    setCurrentPage(() => Number(pageBtn.innerText));
   };
 
   if (isError) {
