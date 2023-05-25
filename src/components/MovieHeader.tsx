@@ -47,6 +47,7 @@ function MovieHeader(props: MyMovieProps) {
       <StHeaderTextWrapper>
         <StMyMovieTitle>내가 본 영화</StMyMovieTitle>
         <StMyMovieNum>{watchedMoviesNum}건</StMyMovieNum>
+
       </StHeaderTextWrapper>
 
       <StHeaderBtnWrapper>

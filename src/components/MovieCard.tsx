@@ -17,22 +17,17 @@ function MovieCard(props: MovieCardProps) {
       <StMoviePoster src={data.posterLink} />
 
       <StWatchedMovieInfo>
-        <StWatchedMovieName>{data.title}</StWatchedMovieName>
-        <StBtnWrapper>
-          <IcDeleteButton />
-        </StBtnWrapper>
+        <StWatchedMovieName>
+          {data.name}
+          <IcDeleteButton className="deleteBtn" />
+        </StWatchedMovieName>
+        <StWatchedMovieSubName>{data.subName}</StWatchedMovieSubName>
 
-        <StWatchedMovieSubName>{data.originTitle ? data.originTitle : '-'}</StWatchedMovieSubName>
+        <StWatchedInfo>{data.date}</StWatchedInfo>
+        <StWatchedInfo>{data.cinemaInfo}</StWatchedInfo>
 
-        <StWatchedInfo>
-          {startTime} ~ {endTime}
-        </StWatchedInfo>
-        <StWatchedInfo>
-          {data.theaterName} / {data.headcount}명
-        </StWatchedInfo>
-
-        {data.reviewed ? <IcRevieweditButton /> : <IcReviewwriteButton />}
-        {data.reviewed && <IcReviewdeleteButton style={{ marginLeft: '1rem' }} />}
+        {data.reviewBtn ? <IcReviewwriteButton /> : <IcRevieweditButton />}
+        {data.deleteBtn ? <IcReviewdeleteButton className="deleteReviewBtn" /> : <></>}
       </StWatchedMovieInfo>
     </StWatchedMovieCard>
   );
@@ -57,38 +52,23 @@ const StMoviePoster = styled.img`
   margin-left: 2.7rem;
 `;
 
-const StBtnWrapper = styled.span`
-  display: flex;
-  justify-content: flex-end;
-
-  width: 22.1rem;
-  margin: 0;
-
-  & > svg {
-    position: relative;
-    top: -2rem;
-  }
-`;
-
-const StWatchedMovieInfo = styled.span`
+const StWatchedMovieInfo = styled.div`
   height: 19.3rem;
   margin: 0rem 2.7rem 0rem 2.4rem;
 `;
 
 const StWatchedMovieName = styled.p`
-  width: 18rem;
-  overflow: hidden;
-
   font-size: ${({ theme }) => theme.fonts.Body1};
   color: ${({ theme }) => theme.colors.black};
-  white-space: nowrap;
-  text-overflow: ellipsis;
+
+  .deleteBtn {
+    position: relative;
+    left: 15.2rem;
+  }
 `;
 
 const StWatchedMovieSubName = styled.p`
-  width: 18rem;
-  overflow: hidden;
-  margin-top: -1.1rem;
+  margin-top: 1.1rem;
   margin-bottom: 3rem;
 
   font-size: ${({ theme }) => theme.fonts.Body5};
