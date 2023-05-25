@@ -1,24 +1,27 @@
 import { styled } from 'styled-components';
 import { IcEvent1Img, IcEvent2Img, IcEvent3Img, IcGrayallButton, IcStopButton } from '../../asset/icon';
+import useGetEventList from '../../libs/hooks/useGetEventList';
+import { useEffect, useState } from 'react';
+
+interface EventProps {
+  eventNumber: number;
+  eventThumbnailLink: string;
+  startedAt: string;
+  endedAt: string;
+  eventTitle: string;
+}
 
 const EventBox = () => {
-  const data = [
-    {
-      img: IcEvent1Img,
-      title: '[CGV]5월엔 네모행 event',
-      period: '2023.05.02~2023.05.07',
-    },
-    {
-      img: IcEvent2Img,
-      title: '[극장판짱구는못말려]닌자 피규어',
-      period: '2023.04.20~2023.05.04',
-    },
-    {
-      img: IcEvent3Img,
-      title: '[슈퍼 마리오 브라더스]현장 이벤트',
-      period: '2023.04.20~2023.05.04',
-    },
-  ];
+  const [eventList, setEventList] = useState<EventProps[]>([]);
+
+  const { eventListData, error } = useGetEventList();
+
+  useEffect(() => {
+    if (eventListData) {
+      setEventList(eventListData);
+    }
+  });
+
   return (
     <StEventBoxSection>
       <StEventBoxWrapper>
@@ -30,12 +33,14 @@ const EventBox = () => {
           </StEventButtonWrapper>
         </StEventTopBar>
         <StEventCardWrapper>
-          {data.map((item) => {
+          {eventList.map((item) => {
             return (
-              <StEventCard key={item.title}>
-                <item.img />
-                <StEventCardTitleText>{item.title}</StEventCardTitleText>
-                <StEventCardPeriodText>{item.period}</StEventCardPeriodText>
+              <StEventCard key={item.eventTitle}>
+                <StEventImg src={item.eventThumbnailLink} />
+                <StEventCardTitleText>{item.eventTitle}</StEventCardTitleText>
+                <StEventCardPeriodText>
+                  {item.startedAt}~{item.endedAt}
+                </StEventCardPeriodText>
               </StEventCard>
             );
           })}
@@ -46,6 +51,13 @@ const EventBox = () => {
 };
 
 export default EventBox;
+
+const StEventImg = styled.img`
+  width: 37.8rem;
+  height: 26.3rem;
+
+  object-fit: cover;
+`;
 
 const StEventCardWrapper = styled.section`
   display: flex;
