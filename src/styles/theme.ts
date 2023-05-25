@@ -5,6 +5,7 @@ const colors = {
   red2: '#FF4A57',
   cgv_gradient: 'linear-gradient(93.78deg, #ED3124 -11.31%, #FE7156 73.6%)',
   black: '#000000',
+  blue: '#0076B1',
   gray90: '#323232',
   gray70: '#737373',
   gray40: '#AAAAAA',
