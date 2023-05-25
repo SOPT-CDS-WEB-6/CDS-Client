@@ -1,16 +1,11 @@
-import { styled } from "styled-components";
+import Footer from './common/Footer';
 
 function App() {
   return (
     <>
-      <StHeading>Vite + React</StHeading>
+      <Footer />
     </>
   );
 }
-
-const StHeading = styled.h1`
-  ${({ theme }) => theme.fonts.Heading}
-  color: ${({ theme }) => theme.colors.red2}
-`;
 
 export default App;

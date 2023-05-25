@@ -87,3 +87,6 @@ export { ReactComponent as IcPencilImg } from './ic_PencilImg.svg';
 export { ReactComponent as IcReviewdeleteButton } from './ic_ReviewdeleteButton.svg';
 export { ReactComponent as IcRevieweditButton } from './ic_RevieweditButton.svg';
 export { ReactComponent as IcReviewwriteButton } from './ic_ReviewwriteButton.svg';
+//footer
+export { ReactComponent as IcFooterDropDown } from './ic_FooterDropDown.svg';
+export { ReactComponent as IcFooterGo } from './ic_FooterGo.svg';

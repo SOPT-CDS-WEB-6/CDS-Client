@@ -1,3 +1,5 @@
+import Footer from '../common/Footer';
+
 import Header from './common/Header';
 
 const PageLayout = ({ children }: { children: React.ReactNode }) => {
@@ -6,7 +8,7 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => {
       <Header />
       {/* scroll_header */}
       {/* stickyBtn */}
-      {/* footer */}
+      <Footer />
       {children}
     </div>
   );
