@@ -4,54 +4,55 @@ import { MovieDataInfo } from '../types/MovieData';
 import { useEffect, useState } from 'react';
 
 export interface MyMovieProps {
-
   data: MovieDataInfo;
-  setFetchURL: React.Dispatch<React.SetStateAction<string>>;
   pageIdx: number;
-  setPageIdx: React.Dispatch<React.SetStateAction<number>>;
+  setFetchURL: React.Dispatch<React.SetStateAction<string>>;
+  setMovieArr: Function;
+  setTouch: Function;
+  touch: number;
 }
 
 function MovieHeader(props: MyMovieProps) {
-  const { data, setFetchURL, pageIdx, setPageIdx } = props;
+  const { data, setFetchURL, setMovieArr, touch, setTouch } = props;
   const wathedMovieYear = ['전체', '2023', '2022'];
   const watchedMoviesNum = data?.data?.pageInfoRes?.totalElements;
   const [selectedOption, setSelectedOption] = useState('');
 
   useEffect(() => {
     handleFetchURL();
-  }, [selectedOption]);
+  }, [selectedOption, touch]);
 
   const handleFetchURL = () => {
     switch (selectedOption) {
       case '전체':
-        setFetchURL(`/user/1/movielog/watched?page=${pageIdx}&size=6`);
+        setFetchURL(`/user/1/movielog/watched?page=${touch}&size=6`);
         break;
 
       case '2023':
-        setFetchURL(`/user/1/movielog/watched?page=${pageIdx}&size=6&year=2023`);
+        setFetchURL(`/user/1/movielog/watched?page=${touch}&size=6&year=2023`);
         break;
 
       case '2022':
-        setFetchURL(`/user/1/movielog/watched?page=${pageIdx}&size=6&year=2022`);
+        setFetchURL(`/user/1/movielog/watched?page=${touch}&size=6&year=2022`);
         break;
 
       default:
-        setFetchURL(`/user/1/movielog/watched?page=${pageIdx}&size=6`);
+        setFetchURL(`/user/1/movielog/watched?page=${touch}&size=6`);
         break;
     }
   };
 
   const handleSelectedOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(e.target.value);
+    setMovieArr([]);
+    setTouch(1);
   };
-
 
   return (
     <StMyMovieHeader>
       <StHeaderTextWrapper>
         <StMyMovieTitle>내가 본 영화</StMyMovieTitle>
         <StMyMovieNum>{watchedMoviesNum}건</StMyMovieNum>
-
       </StHeaderTextWrapper>
 
       <StHeaderBtnWrapper>

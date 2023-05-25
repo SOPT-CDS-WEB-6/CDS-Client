@@ -1,26 +1,54 @@
 import { styled } from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MovieHeader from './MovieHeader';
 import MovieCard from './MovieCard';
 import UserPreference from './UserPreference';
 import useGetWatchedMovieInfo from '../hooks/useGetWatchedMovieInfo';
-
 
 function MyMovie() {
   const [pageIdx, setPageIdx] = useState(1);
   const { data, setFetchURL, numOfCards, numOfWatchedMovie } = useGetWatchedMovieInfo(
     `/user/1/movielog/watched?page=${pageIdx}&size=6`,
   );
+  const [touch, setTouch] = useState(1);
+
+  const [movieArr, setMovieArr] = useState<any>([]);
+
+  const handleScroll = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
+
+    if (scrollTop + (clientHeight + 2) >= scrollHeight) {
+      setTouch(touch + 1);
+    }
+  };
+
+  useEffect(() => {
+    const newMovieArr = [...movieArr, ...numOfCards];
+    setMovieArr(newMovieArr);
+  }, [numOfCards]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
 
   return (
     <StTopWrapper>
       <UserPreference numData={numOfWatchedMovie} />
       <StMyMovieSection>
-        <MovieHeader data={data} setFetchURL={setFetchURL} pageIdx={pageIdx} setPageIdx={setPageIdx} />
-
+        <MovieHeader
+          data={data}
+          setFetchURL={setFetchURL}
+          setMovieArr={setMovieArr}
+          touch={touch}
+          pageIdx={pageIdx}
+          setTouch={setTouch}
+        />
 
         <StMovieCardWrapper>
-          {numOfCards.map((data: object, idx: number) => {
+          {movieArr.map((data: object, idx: number) => {
             return <MovieCard data={data} key={idx} />;
           })}
         </StMovieCardWrapper>
