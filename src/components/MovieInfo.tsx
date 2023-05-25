@@ -8,8 +8,7 @@ function MovieInfo() {
 
   if (!data) {
     return <div>error!</div>;
-  }
-  if (data) {
+  } else {
     return (
       <StMovieInfoBox>
         <StMoviePoster src={data.data.posterLink} />
