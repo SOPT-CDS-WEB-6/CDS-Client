@@ -3,11 +3,13 @@ import { css, DefaultTheme } from "styled-components";
 const colors = {
   red: "#ED3124",
   red2: "#FF4A57",
+  cgv_gradient: "linear-gradient(93.78deg, #ED3124 -11.31%, #FE7156 73.6%)",
   black: "#000000",
   gray90: "#323232",
   gray70: "#737373",
   gray40: "#AAAAAA",
   gray20: "#E3E3E3",
+  gray10: "#F6F6F6",
   white: "#FFFFFF",
 };
 

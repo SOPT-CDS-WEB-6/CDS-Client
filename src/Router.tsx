@@ -1,13 +1,12 @@
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MyMovie from './components/MyMovie';
-
+import Home from './pages/Home';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* home */}
+        <Route path="/" element={<Home />} />
         {/* movieInfo */}
         {/* mymovie */}
         <Route path="/my-movie" element={<MyMovie />} />
@@ -18,4 +17,3 @@ const Router = () => {
 };
 
 export default Router;
-
