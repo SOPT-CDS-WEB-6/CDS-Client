@@ -78,7 +78,7 @@ const StMovieButtonWrapper = styled.div`
   position: absolute;
   top: 13rem;
   left: 7rem;
-  z-index: 99;
+  z-index: 3;
 
   cursor: pointer;
 
