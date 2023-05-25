@@ -7,6 +7,8 @@ export { ReactComponent as IcSearchButton } from './ic_SearchButton.svg';
 export { ReactComponent as IcServiceIcon } from './ic_ServiceIcon.svg';
 export { ReactComponent as IcTicketingFixedButton } from './ic_TicketingFixedButton.svg';
 export { ReactComponent as IcUpFixedButton } from './ic_UpFixedButton.svg';
+export { ReactComponent as IcCgvLogo } from './ic_CgvLogo.svg';
+export { ReactComponent as IcWhiteSearchImg } from './ic_WhiteSearchImg.svg';
 // home
 export { ReactComponent as Ic4dxImg } from './ic_4dxImg.svg';
 export { ReactComponent as IcAdImg1 } from './ic_AdImg1.svg';
@@ -38,6 +40,9 @@ export { ReactComponent as IcTicketImg1 } from './ic_TicketImg1.svg';
 export { ReactComponent as IcTicketImg2 } from './ic_TicketImg2.svg';
 export { ReactComponent as IcTicketImg3 } from './ic_TicketImg3.svg';
 export { ReactComponent as IcWhiteallButton } from './ic_WhiteallButton.svg';
+export { ReactComponent as IcEggImg } from './ic_EggImg.svg';
+export { ReactComponent as IcTicketingHover } from './ic_TicketingHover.svg';
+export { ReactComponent as IcInfoHover } from './ic_InfoHover.svg';
 // inquiry
 export { ReactComponent as IcAddfileButton } from './ic_AddfileButton.svg';
 export { ReactComponent as IcAddfileImg } from './ic_AddfileImg.svg';
@@ -80,6 +85,11 @@ export { ReactComponent as IcTrailer1Img } from './ic_Trailer1Img.svg';
 export { ReactComponent as IcTrailer2Img } from './ic_Trailer2Img.svg';
 export { ReactComponent as IcTrailer3Img } from './ic_Trailer3Img.svg';
 export { ReactComponent as IcWriteButton } from './ic_WriteButton.svg';
+export { ReactComponent as IcProfile } from './ic_profile.svg';
+export { ReactComponent as IcThumb } from './ic_thumb.svg';
+export { ReactComponent as IcProfileGoldEgg } from './ic_ProfileGoldEgg.svg';
+export { ReactComponent as IcMoreDots } from './ic_MoreDots.svg';
+
 // mymovie
 export { ReactComponent as IcAllDropdown } from './ic_AllDropdown.svg';
 export { ReactComponent as IcDeleteButton } from './ic_DeleteButton.svg';
@@ -90,3 +100,6 @@ export { ReactComponent as IcPencilImg } from './ic_PencilImg.svg';
 export { ReactComponent as IcReviewdeleteButton } from './ic_ReviewdeleteButton.svg';
 export { ReactComponent as IcRevieweditButton } from './ic_RevieweditButton.svg';
 export { ReactComponent as IcReviewwriteButton } from './ic_ReviewwriteButton.svg';
+//footer
+export { ReactComponent as IcFooterDropDown } from './ic_FooterDropDown.svg';
+export { ReactComponent as IcFooterGo } from './ic_FooterGo.svg';
