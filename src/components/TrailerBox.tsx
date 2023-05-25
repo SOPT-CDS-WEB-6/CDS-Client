@@ -3,10 +3,10 @@ import { IcPlusButton, IcPlayButton } from '../asset/icon';
 import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 
 function TrailerBox() {
-  const TrailerList = useGetMovieInfo(4)?.response.data.trailerList;
+  const { data } = useGetMovieInfo(2);
 
-  if (TrailerList == undefined) {
-    console.log('error error');
+  if (!data) {
+    return <div>error!!</div>;
   } else
     return (
       <StTrailerBox>
@@ -18,7 +18,7 @@ function TrailerBox() {
           </StPlusButton>
         </StTrailerBar>
         <StVidBox>
-          {TrailerList.map((eachTrailer) => {
+          {data.data.trailerList.map((eachTrailer) => {
             return (
               <StEachTrailer key={eachTrailer.trailerTitle}>
                 <StTrailerVidWrapper>
@@ -27,8 +27,7 @@ function TrailerBox() {
                     <IcPlayButton />
                   </StPlayButton>
                 </StTrailerVidWrapper>
-                {/* {eachTrailer.thumbnailLink} */}
-                {/* </StTrailerVid> */}
+
                 <StVidTitleBox>
                   <StHdBox>HD</StHdBox>
                   <StVidTitle>{eachTrailer.trailerTitle}</StVidTitle>
