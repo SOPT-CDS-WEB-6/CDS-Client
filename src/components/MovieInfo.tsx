@@ -3,7 +3,7 @@ import { IcImaxImg, Ic4dxLogoImg, IcEggIcon, IcInfoIcon, IcQuestionEgg, IcMovieI
 import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 
 function MovieInfo() {
-  const { data } = useGetMovieInfo(1);
+  const { data } = useGetMovieInfo(2);
   console.log(data?.data);
 
   if (!data) {
@@ -109,7 +109,7 @@ const StMovieInfoDetailBox = styled.section`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 30rem;
+  top: 48rem;
   left: 113rem;
 `;
 
