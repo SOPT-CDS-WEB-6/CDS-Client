@@ -11,16 +11,6 @@ function useGetMovieInfo(movieNumber: number) {
     isLoading: !error && !data?.data,
     isError: error,
   };
-
-  // if (data == undefined) {
-  //   console.log('durltj dhfb');
-  // }
-  // if (data !== undefined) {
-  //   console.log(data);
-  //   return {
-  //     response: data,
-  //   };
-  // }
 }
 
 export default useGetMovieInfo;
