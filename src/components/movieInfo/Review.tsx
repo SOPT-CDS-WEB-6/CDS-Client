@@ -42,7 +42,7 @@ const StReviewItem = styled.section`
   width: 48.6rem;
   height: 25.9rem;
 
-  border: 0.1rem solid gray;
+  border: 0.1rem solid ${({ theme }) => theme.colors.gray20};
 
   > svg {
     position: absolute;
