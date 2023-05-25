@@ -1,9 +1,10 @@
-import MovieInfoPage from './pages/MovieInfoPage';
+import Router from './Router';
+import Footer from './common/Footer';
 
 function App() {
   return (
     <>
-      <MovieInfoPage />
+      <Router />
     </>
   );
 }
