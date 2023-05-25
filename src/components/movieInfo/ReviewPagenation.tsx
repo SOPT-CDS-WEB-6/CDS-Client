@@ -4,8 +4,9 @@ import { css, styled } from 'styled-components';
 import Review from './Review';
 import { ReviewInfo } from '../../types/movieInfo';
 import ReviewLanding from './Skeleton/ReviewLanding';
+import { IcMore10Button, IcMoreArrowButton } from '../../asset/icon';
 
-const ReviewPageNation = () => {
+const ReviewPagenation = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const { reviewList, totalPages, isError, isLoading } = useGetReviewList(2, currentPage);
@@ -16,6 +17,10 @@ const ReviewPageNation = () => {
     setCurrentPage(() => Number(pageBtn.innerText));
   };
 
+  const handleGoToEnd = () => {
+    setCurrentPage(() => totalPages);
+  };
+
   if (isError) {
     console.log('error');
   }
@@ -24,14 +29,6 @@ const ReviewPageNation = () => {
     return (
       <>
         <ReviewLanding />
-
-        <StPageChangeBtnWrapper>
-          {pageList.map((pageNum, idx) => (
-            <StPageBtn isCurrentPage={currentPage === pageNum} key={idx}>
-              {pageNum}
-            </StPageBtn>
-          ))}
-        </StPageChangeBtnWrapper>
       </>
     );
   }
@@ -56,6 +53,10 @@ const ReviewPageNation = () => {
             {pageNum}
           </StPageBtn>
         ))}
+        <IcMore10Button />
+        <button type="button" onClick={() => handleGoToEnd()}>
+          <IcMoreArrowButton />
+        </button>
       </StPageChangeBtnWrapper>
     </>
   );
@@ -72,6 +73,13 @@ const StPageChangeBtnWrapper = styled.div`
   gap: 1.5rem;
 
   margin-top: 6rem;
+
+  > button:last-child {
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+  }
 `;
 
 const StPageBtn = styled.button<{ isCurrentPage: boolean }>`
@@ -91,4 +99,4 @@ const StPageBtn = styled.button<{ isCurrentPage: boolean }>`
     `};
 `;
 
-export default ReviewPageNation;
+export default ReviewPagenation;
