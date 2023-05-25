@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { useState } from 'react';
 import MovieHeader from './MovieHeader';
 import MovieCard from './MovieCard';
 import UserPreference from './UserPreference';
@@ -6,15 +7,16 @@ import useGetWatchedMovieInfo from '../hooks/useGetWatchedMovieInfo';
 
 
 function MyMovie() {
+  const [pageIdx, setPageIdx] = useState(1);
   const { data, setFetchURL, numOfCards, numOfWatchedMovie } = useGetWatchedMovieInfo(
-    '/user/1/movielog/watched?page=1&size=6',
+    `/user/1/movielog/watched?page=${pageIdx}&size=6`,
   );
 
   return (
     <StTopWrapper>
       <UserPreference numData={numOfWatchedMovie} />
       <StMyMovieSection>
-        <MovieHeader data={data} setFetchURL={setFetchURL} />
+        <MovieHeader data={data} setFetchURL={setFetchURL} pageIdx={pageIdx} setPageIdx={setPageIdx} />
 
 
         <StMovieCardWrapper>

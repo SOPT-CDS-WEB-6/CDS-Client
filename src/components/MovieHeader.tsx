@@ -7,10 +7,12 @@ export interface MyMovieProps {
 
   data: MovieDataInfo;
   setFetchURL: React.Dispatch<React.SetStateAction<string>>;
+  pageIdx: number;
+  setPageIdx: React.Dispatch<React.SetStateAction<number>>;
 }
 
 function MovieHeader(props: MyMovieProps) {
-  const { data, setFetchURL } = props;
+  const { data, setFetchURL, pageIdx, setPageIdx } = props;
   const wathedMovieYear = ['전체', '2023', '2022'];
   const watchedMoviesNum = data?.data?.pageInfoRes?.totalElements;
   const [selectedOption, setSelectedOption] = useState('');
@@ -22,19 +24,19 @@ function MovieHeader(props: MyMovieProps) {
   const handleFetchURL = () => {
     switch (selectedOption) {
       case '전체':
-        setFetchURL('/user/1/movielog/watched?page=1&size=6');
+        setFetchURL(`/user/1/movielog/watched?page=${pageIdx}&size=6`);
         break;
 
       case '2023':
-        setFetchURL('/user/1/movielog/watched?page=1&size=6&year=2023');
+        setFetchURL(`/user/1/movielog/watched?page=${pageIdx}&size=6&year=2023`);
         break;
 
       case '2022':
-        setFetchURL('/user/1/movielog/watched?page=1&size=6&year=2022');
+        setFetchURL(`/user/1/movielog/watched?page=${pageIdx}&size=6&year=2022`);
         break;
 
       default:
-        setFetchURL('/user/1/movielog/watched?page=1&size=6');
+        setFetchURL(`/user/1/movielog/watched?page=${pageIdx}&size=6`);
         break;
     }
   };
@@ -68,7 +70,7 @@ function MovieHeader(props: MyMovieProps) {
 const StMyMovieHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  
+
   width: 89.3rem;
   height: 3.7rem;
 `;
