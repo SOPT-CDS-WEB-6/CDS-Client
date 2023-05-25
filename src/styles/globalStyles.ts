@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from "styled-components";
+import { createGlobalStyle, css } from 'styled-components';
 
 export const reset = css`
   html,
@@ -88,6 +88,9 @@ export const reset = css`
     padding: 0;
     border: 0;
     font-size: 62.5%;
+    @media (max-width: 1440px) {
+      font-size: 55%;
+    }
     vertical-align: baseline;
   }
 
@@ -126,7 +129,7 @@ export const reset = css`
   blockquote:after,
   q:before,
   q:after {
-    content: "";
+    content: '';
     content: none;
   }
   table {

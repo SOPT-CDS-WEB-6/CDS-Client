@@ -1,16 +1,11 @@
-import { styled } from "styled-components";
+import MovieInfoPage from './pages/MovieInfoPage';
 
 function App() {
   return (
     <>
-      <StHeading>Vite + React</StHeading>
+      <MovieInfoPage />
     </>
   );
 }
-
-const StHeading = styled.h1`
-  ${({ theme }) => theme.fonts.Heading}
-  color: ${({ theme }) => theme.colors.red2}
-`;
 
 export default App;
