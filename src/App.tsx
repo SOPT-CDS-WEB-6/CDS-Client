@@ -1,8 +1,10 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components';
+import Review from './components/movieInfo /Review';
 
 function App() {
   return (
     <>
+      <Review />
       <StHeading>Vite + React</StHeading>
     </>
   );
