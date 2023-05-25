@@ -5,6 +5,7 @@ import TrailerBox from '../components/TrailerBox';
 import StillCutBox from '../components/StillCutBox';
 import ScoreBox from '../components/ScoreBox';
 import MovieInfo from '../components/MovieInfo';
+import PageLayout from '../components/PageLayout';
 // import { useEffect, useState } from 'react';
 // import MovieInfoResponse from '../types/movieInfoResponse';
 // import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
@@ -20,23 +21,25 @@ function MovieInfoPage() {
   // }, [movieInfo]);
 
   return (
-    <StMovieInfoPage>
-      <StInfoBox>
-        <MovieInfo />
-        <StDetailBox>
-          <MovieDetail />
-          <SideAdBanner />
-        </StDetailBox>
-      </StInfoBox>
-      <StMediaBox>
-        <StPreviewBox>
-          <TrailerBox />
-          <StillCutBox />
-          <ScoreBox />
-        </StPreviewBox>
-        <StBlankBox />
-      </StMediaBox>
-    </StMovieInfoPage>
+    <PageLayout>
+      <StMovieInfoPage>
+        <StInfoBox>
+          <MovieInfo />
+          <StDetailBox>
+            <MovieDetail />
+            <SideAdBanner />
+          </StDetailBox>
+        </StInfoBox>
+        <StMediaBox>
+          <StPreviewBox>
+            <TrailerBox />
+            <StillCutBox />
+            <ScoreBox />
+          </StPreviewBox>
+          <StBlankBox />
+        </StMediaBox>
+      </StMovieInfoPage>
+    </PageLayout>
   );
 }
 
