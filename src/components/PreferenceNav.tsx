@@ -15,7 +15,7 @@ function PreferenceNav(props: PreferenceNavProps) {
   const watchedMoviesNum = numData?.data?.pageInfoRes?.totalElements;
 
   return (
-    <StInfoWrapper className={data.class}>
+    <StInfoWrapper id={data.class}>
       <StNumInfo>{idx === 1 ? watchedMoviesNum : 0}</StNumInfo>
       {data.content && <StPointerIcon>{data.content}</StPointerIcon>}
       <StTextInfo>{data.text}</StTextInfo>
@@ -33,7 +33,7 @@ const StInfoWrapper = styled.div`
   border: 0.1rem solid ${({ theme }) => theme.colors.gray40};
   border-radius: 0.5rem;
 
-  &.selected {
+  &#selected {
     background-color: ${({ theme }) => theme.colors.red2};
     color: ${({ theme }) => theme.colors.white};
   }

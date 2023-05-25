@@ -8,13 +8,13 @@ import useSWR from 'swr';
 import { NavDataInfo } from '../types/MovieData';
 
 export interface UserPreferenceProps {
-  data_1: NavDataInfo;
+  numData: NavDataInfo;
 }
 
 const UserPreference = (props: UserPreferenceProps) => {
   const fetcher = (url: string) => client.get(url).then((res) => res.data);
   const { data } = useSWR('/user/1', fetcher);
-  const { data_1 } = props;
+  const { numData } = props;
 
   return (
     <StUserInfo>
@@ -27,7 +27,7 @@ const UserPreference = (props: UserPreferenceProps) => {
 
       {NAV_DATA.map((data, idx) => {
 
-        return <PreferenceNav data={data} key={idx} numData={data_1} idx={idx} />;
+        return <PreferenceNav data={data} key={idx} numData={numData} idx={idx} />;
       })}
     </StUserInfo>
   );
@@ -38,7 +38,7 @@ export default UserPreference;
 const StUserInfo = styled.nav`
   display: flex;
   flex-direction: column;
-  
+
   width: 19.6rem;
 
   margin-top: 23.4rem;

@@ -78,19 +78,17 @@ const StWatchedMovieInfo = styled.span`
 `;
 
 const StWatchedMovieName = styled.p`
-  width: 18rem;
-  overflow: hidden;
-
   font-size: ${({ theme }) => theme.fonts.Body1};
   color: ${({ theme }) => theme.colors.black};
-  white-space: nowrap;
-  text-overflow: ellipsis;
+
+  .deleteBtn {
+    position: relative;
+    left: 15.2rem;
+  }
 `;
 
 const StWatchedMovieSubName = styled.p`
-  width: 18rem;
-  overflow: hidden;
-  margin-top: -1.1rem;
+  margin-top: 1.1rem;
   margin-bottom: 3rem;
 
   font-size: ${({ theme }) => theme.fonts.Body5};

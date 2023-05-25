@@ -4,17 +4,20 @@ import MovieCard from './MovieCard';
 import UserPreference from './UserPreference';
 import client from '../libs/axios';
 import useSWR from 'swr';
+import { useState } from 'react';
 
 
 function MyMovie() {
   const fetcher = (url: string) => client.get(url).then((res) => res.data);
-  const { data } = useSWR('/user/1/movielog/watched?page=1&size=6&year=2023', fetcher);
+  const [fetchURL, setFetchURL] = useState('/user/1/movielog/watched?page=1&size=6');
+  const { data } = useSWR(fetchURL, fetcher);
 
   return (
     <StTopWrapper>
-      <UserPreference data_1={data} />
+      <UserPreference numData={data} />
       <StMyMovieSection>
-        <MovieHeader data={data} />
+        <MovieHeader data={data} setFetchURL={setFetchURL} />
+
 
         <StMovieCardWrapper>
           {data?.data.page.map((data: object, idx: number) => {
