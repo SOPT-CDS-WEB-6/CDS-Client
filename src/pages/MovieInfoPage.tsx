@@ -32,9 +32,9 @@ function MovieInfoPage() {
         </StInfoBox>
         <StMediaBox>
           <StPreviewBox>
-            {/* <TrailerBox /> */}
-            {/* <StillCutBox /> */}
-            {/* <ScoreBox /> */}
+            {/* <TrailerBox />
+            <StillCutBox />
+            <ScoreBox /> */}
           </StPreviewBox>
           <StBlankBox />
         </StMediaBox>
