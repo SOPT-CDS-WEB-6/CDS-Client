@@ -1,5 +1,5 @@
 // header
-export { ReactComponent as IcFaqFixedButton } from './ic_CardPromotionImg.svg';
+export { ReactComponent as IcCardImg } from './ic_CardPromotionImg.svg';
 export { ReactComponent as IcLockIcon } from './ic_LockIcon.svg';
 export { ReactComponent as IcLogoImg } from './ic_LogoImg.svg';
 export { ReactComponent as IcMypageIcon } from './ic_MypageIcon.svg';
