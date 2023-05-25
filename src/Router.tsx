@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MovieInfoPage from './pages/MovieInfoPage';
-// import { useState } from 'react';
+import Home from './pages/Home';
 
 const Router = () => {
   // const [movieNumber, setMovieNumber] = useState(0)
@@ -8,7 +8,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* home */}
+        <Route path="/" element={<Home />} />
         <Route path="/movieInfo">
           <Route path=":movieId" element={<MovieInfoPage />} />
         </Route>

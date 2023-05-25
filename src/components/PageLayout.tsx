@@ -1,11 +1,16 @@
+import Footer from '../common/Footer';
+
+import Header from './common/Header';
+import StickyHeader from './common/StickyHeader';
+
 const PageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="page-layout">
-      {/* header */}
-      {/* scroll_header */}
+      <Header />
+      <StickyHeader />
       {/* stickyBtn */}
-      {/* footer */}
       {children}
+      <Footer />
     </div>
   );
 };
