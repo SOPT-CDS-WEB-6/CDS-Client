@@ -94,12 +94,8 @@ const StStickyHeaderWrapper = styled.section`
 
 const StStickyHeader = styled.header`
   display: none;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   position: fixed;
   top: 0;
-
   width: 100%;
   height: 7.6rem;
 
@@ -109,6 +105,7 @@ const StStickyHeader = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 4;
   }
 
   & > svg {
