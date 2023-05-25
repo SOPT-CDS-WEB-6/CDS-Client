@@ -107,7 +107,7 @@ const StMovieChartSection = styled.section`
 
 const StBackgroundBar = styled.div`
   position: absolute;
-  top: 59.9rem;
+  top: 77rem;
   z-index: -1;
 
   width: 100%;
