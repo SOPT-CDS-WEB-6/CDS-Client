@@ -9,7 +9,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movieInfo">
+        <Route path="/movie">
           <Route path=":movieId" element={<MovieInfoPage />} />
         </Route>
         {/* mymovie */}
