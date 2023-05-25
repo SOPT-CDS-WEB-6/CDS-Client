@@ -9,34 +9,41 @@ import {
   IcTicketingHover,
 } from '../../asset/icon';
 import React, { FunctionComponent, SVGProps, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const MovieChartCard = ({
-  svgImg,
+  movieNumber,
+  title,
+  posterLink,
+  reservationRate,
+  goldenEgg,
   chartRank,
-  movieTitle,
-  EggScore,
-  ticketRatio,
 }: {
-  svgImg: FunctionComponent<SVGProps<SVGSVGElement>>;
+  movieNumber: number;
+  title: string;
+  posterLink: string;
+  reservationRate: number;
+  goldenEgg: number;
   chartRank: number;
-  movieTitle: string;
-  EggScore: number;
-  ticketRatio: number;
 }) => {
   const [isHovered, setisHovered] = useState(false);
-  const svgImageList = [IcMovie1Img, IcMovie2Img, IcMovie3Img, IcMovie4Img];
   const toggleHover = () => {
     setisHovered(!isHovered);
   };
-  const matchingSvgComponent = svgImageList.find((svgImage) => svgImage === svgImg);
+
+  const navigate = useNavigate();
+
+  const clickMovieHandler = (e: React.MouseEvent) => {
+    navigate(`/movie/${movieNumber}`);
+  };
 
   return (
     <StMovieChartCard>
       <StDiv>
         <StPosterWrapper className={isHovered ? 'hover' : ''} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-          {matchingSvgComponent ? React.createElement(matchingSvgComponent) : <IcMovie1Img />}
+          <StPoster src={posterLink} />
           <StMovieButtonWrapper className={isHovered ? 'hover' : ''}>
-            <IcInfoHover />
+            <IcInfoHover onClick={clickMovieHandler} />
             <IcTicketingHover />
           </StMovieButtonWrapper>
           <StShadowCard>
@@ -44,19 +51,25 @@ const MovieChartCard = ({
           </StShadowCard>
         </StPosterWrapper>
       </StDiv>
-      <StMovieTitle>{movieTitle}</StMovieTitle>
+      <StMovieTitle>{title}</StMovieTitle>
       <StMovieInfo>
         <IcEggImg />
-        <StMovieInfoText>{EggScore}%</StMovieInfoText>
+        <StMovieInfoText>{goldenEgg}%</StMovieInfoText>
         <StMovieInfoVerticalBar />
         <StMovieInfoText>예매율</StMovieInfoText>
-        <StMovieInfoText>{ticketRatio}%</StMovieInfoText>
+        <StMovieInfoText>{reservationRate}%</StMovieInfoText>
       </StMovieInfo>
     </StMovieChartCard>
   );
 };
 
 export default MovieChartCard;
+
+const StPoster = styled.img`
+  width: 100%;
+  height: 35.5rem;
+  object-fit: cover;
+`;
 
 const StMovieButtonWrapper = styled.div`
   display: none;
@@ -66,6 +79,8 @@ const StMovieButtonWrapper = styled.div`
   top: 13rem;
   left: 7rem;
   z-index: 99;
+
+  cursor: pointer;
 
   &.hover {
     display: flex;
@@ -123,8 +138,8 @@ const StShadowCard = styled.div`
   left: 0;
   top: 0;
 
-  width: 26rem;
-  height: 35.5rem;
+  width: 100%;
+  height: 100%;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.09) 35%, rgba(0, 0, 0, 0.85));
 `;
 
@@ -143,7 +158,7 @@ const StPosterWrapper = styled.div`
     transform-origin: bottom left;
     transform: scaleY(1.05) scaleX(1.05);
 
-    & > svg {
+    & > img {
       filter: brightness(0.5);
       transition: transform 0.3s;
       transform-origin: bottom left;

@@ -2,15 +2,26 @@ import { styled } from 'styled-components';
 import { IcWhiteallButton } from '../../asset/icon';
 import MovieChartCard from './MovieChartCard';
 import { useEffect, useState } from 'react';
-import dummyMovieChart, { TypeMovieChart } from '../../constants/DummyMovieChart';
+import useGetMovieChart from '../../libs/hooks/useGetMovieChart';
+
+interface MovieChartProps {
+  movieNumber: number;
+  title: string;
+  posterLink: string;
+  reservationRate: number;
+  goldenEgg: number;
+}
 
 const MovieChartBox = () => {
-  const [movieChart, setMovieChart] = useState<TypeMovieChart[]>([]);
+  const [movieChart, setMovieChart] = useState<MovieChartProps[]>([]);
+
+  const { movieChartData, error, isLoading } = useGetMovieChart();
 
   useEffect(() => {
-    const movieChartData = dummyMovieChart;
-    setMovieChart(movieChartData);
-  }, []);
+    if (movieChartData) {
+      setMovieChart(movieChartData);
+    }
+  }, [movieChartData]);
 
   return (
     <StMovieChartSection>
@@ -25,8 +36,8 @@ const MovieChartBox = () => {
           <IcWhiteallButton />
         </StButtonWrapper>
         <StChartCardWrapper>
-          {movieChart.map((movieData) => {
-            return <MovieChartCard {...movieData} key={movieData.chartRank} />;
+          {movieChart.map((movieData, index) => {
+            return <MovieChartCard {...movieData} key={movieData.movieNumber} chartRank={index + 1} />;
           })}
         </StChartCardWrapper>
       </StMovieChartWrapper>
