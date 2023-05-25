@@ -26,11 +26,7 @@ const ReviewPagenation = () => {
   }
 
   if (isLoading) {
-    return (
-      <>
-        <ReviewLanding />
-      </>
-    );
+    return <ReviewLanding />;
   }
 
   return (
