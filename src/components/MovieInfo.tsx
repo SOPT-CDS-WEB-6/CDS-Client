@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IcImaxImg, Ic4dxLogoImg, IcEggIcon, IcInfoIcon, IcQuestionEgg, IcMovieImg } from '../asset/icon';
+import { IcImaxImg, Ic4dxLogoImg, IcEggIcon, IcInfoIcon, IcQuestionEgg } from '../asset/icon';
 import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 
 function MovieInfo() {
