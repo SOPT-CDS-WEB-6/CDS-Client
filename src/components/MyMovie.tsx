@@ -2,23 +2,21 @@ import { styled } from 'styled-components';
 import MovieHeader from './MovieHeader';
 import MovieCard from './MovieCard';
 import UserPreference from './UserPreference';
-import client from '../libs/axios';
-import useSWR from 'swr';
-import { useState } from 'react';
+import useGetWatchedMovieInfo from '../hooks/useGetWatchedMovieInfo';
 
 function MyMovie() {
-  const fetcher = (url: string) => client.get(url).then((res) => res.data);
-  const [fetchURL, setFetchURL] = useState('/user/1/movielog/watched?page=1&size=6');
-  const { data } = useSWR(fetchURL, fetcher);
+  const { data, setFetchURL, numOfCards, numOfWatchedMovie } = useGetWatchedMovieInfo(
+    '/user/1/movielog/watched?page=1&size=6',
+  );
 
   return (
     <StTopWrapper>
-      <UserPreference numData={data} />
+      <UserPreference numData={numOfWatchedMovie} />
       <StMyMovieSection>
         <MovieHeader data={data} setFetchURL={setFetchURL} />
 
         <StMovieCardWrapper>
-          {data?.data.page.map((data: object, idx: number) => {
+          {numOfCards.map((data: object, idx: number) => {
             return <MovieCard data={data} key={idx} />;
           })}
         </StMovieCardWrapper>
@@ -52,7 +50,7 @@ const StMyMovieSection = styled.section`
 const StMovieCardWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
-  
+
   width: 89.3rem;
   margin-top: 1.85rem;
 
