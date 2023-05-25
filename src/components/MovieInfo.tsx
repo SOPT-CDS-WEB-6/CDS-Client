@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 import { IcImaxImg, Ic4dxLogoImg, IcEggIcon, IcInfoIcon, IcQuestionEgg, IcMovieImg } from '../asset/icon';
 import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
+import { useEffect, useState } from 'react';
+import MovieInfoResponse from '../types/movieInfoResponse';
 
 function MovieInfo() {
-  const movieInfo = useGetMovieInfo(1)?.response.data;
+  // const movieInfo = useGetMovieInfo(1)?.response.data;
+  const { data, isError, isLoading } = useGetMovieInfo(1);
+  const [movieInfoData, setMovieInfoData] = useState<MovieInfoResponse[]>([]);
+
+  useEffect(() => {
+    if (data !== undefined) {
+      setMovieInfoData(data);
+    }
+  }, [data]);
 
   return (
     <StMovieInfoBox>
-      <StMoviePoster src={movieInfo?.posterLink} />
+      <StMoviePoster src={movieInfoData[2].data.posterLink} />
       {/* <IcMovieImg /> */}
       {/* </StMoviePoster> */}
       <StMovieInfo>
