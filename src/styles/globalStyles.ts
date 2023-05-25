@@ -92,6 +92,10 @@ export const reset = css`
       font-size: 55%;
     }
     vertical-align: baseline;
+
+    @media (max-width: 1440px) {
+      font-size: 55%;
+    }
   }
 
   /* HTML5 display-role reset for older browsers */
