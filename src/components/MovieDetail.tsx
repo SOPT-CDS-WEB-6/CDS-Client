@@ -7,17 +7,17 @@ function MovieDetail() {
   return (
     <StMovieDetail>
       <StUl>
-        <StArrowLi>☞</StArrowLi>
+        <StArrowLi key="화살표">☞</StArrowLi>
         {ButtonList.map((eachButton) => {
           return (
             <>
-              <StLi>{eachButton}</StLi>
+              <StLi key={eachButton}>{eachButton}</StLi>
               <StBar />
             </>
           );
         })}
 
-        <StLi>상영시간표</StLi>
+        <StLi key="상영시간표">상영시간표</StLi>
       </StUl>
       <article>
         <StSynopsis>

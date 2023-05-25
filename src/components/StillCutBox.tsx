@@ -1,12 +1,21 @@
 import styled from 'styled-components';
 import { IcPlusButton, IcStillCutImg, IcLeftarrowIcon, IcRightarrowIcon } from '../asset/icon';
+import useGetMovieStillCuts from '../libs/hooks/useGetMovieStillCut';
 
 function StillCutBox() {
+  const stillCuts = useGetMovieStillCuts(3)?.response;
+  // console.log(stillCuts);
+  const totalSlideNo = stillCuts?.data.length;
+  console.log(totalSlideNo);
+
   return (
     <StStillCutBox>
       <StStillCutBar>
         <StStillCutText>스틸컷</StStillCutText>
-        <StStillCutNo>5건</StStillCutNo>
+        <StStillCutNo>
+          {totalSlideNo}
+          {/* 5 */}건
+        </StStillCutNo>
         <StPlusButton>
           <IcPlusButton />
         </StPlusButton>
@@ -16,9 +25,9 @@ function StillCutBox() {
         <div>
           <IcLeftarrowIcon />
         </div>
-        <article>
-          <IcStillCutImg />
-        </article>
+        <StStillCutImg src={stillCuts?.data[0].stillCutLink} />
+
+        {/* <IcStillCutImg /> */}
         <div>
           <IcRightarrowIcon />
         </div>
@@ -29,6 +38,10 @@ function StillCutBox() {
 
 export default StillCutBox;
 
+const StStillCutImg = styled.img`
+  max-width: 36.6rem;
+  max-height: 65.6rem;
+`;
 const StStillCutBox = styled.section`
   display: flex;
   flex-direction: column;
@@ -76,5 +89,5 @@ const StStillCutGallery = styled.div`
   justify-content: space-between;
 
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 4.25rem;
 `;

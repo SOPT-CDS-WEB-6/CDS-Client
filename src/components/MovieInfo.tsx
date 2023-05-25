@@ -1,35 +1,62 @@
 import styled from 'styled-components';
 import { IcImaxImg, Ic4dxLogoImg, IcEggIcon, IcInfoIcon, IcQuestionEgg, IcMovieImg } from '../asset/icon';
+import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 
 function MovieInfo() {
+  const movieInfo = useGetMovieInfo(1)?.response.data;
+
   return (
     <StMovieInfoBox>
-      <StMoviePoster>
-        <IcMovieImg />
-      </StMoviePoster>
+      <StMoviePoster src={movieInfo?.posterLink} />
+      {/* <IcMovieImg /> */}
+      {/* </StMoviePoster> */}
       <StMovieInfo>
         <StTitle>
-          가디언즈 오브 갤럭시-Volume 3
+          {movieInfo?.title}
+          {/* 가디언즈 오브 갤럭시-Volume 3 */}
           <StNowShowingBox>
             <StNowShowingText>현재상영중</StNowShowingText>
           </StNowShowingBox>
         </StTitle>
-        <StEngTitle>Guardians of the Galaxy Volume 3</StEngTitle>
+        <StEngTitle>
+          {movieInfo?.originTitle}
+          {/* Guardians of the Galaxy Volume 3 */}
+        </StEngTitle>
         <StRateBox>
-          <StRate>예매율 38.0%</StRate>
+          <StRate>
+            예매율&nbsp;
+            {movieInfo?.reservationRate}%{/* 38.0% */}
+          </StRate>
           <StEggIcon>
             <IcEggIcon />
           </StEggIcon>
 
-          <StEggRate>98%</StEggRate>
+          <StEggRate>
+            {movieInfo?.goldenEgg}%{/* 98% */}
+          </StEggRate>
         </StRateBox>
         <StRowBar />
         <StMovieDetail>
-          감독 : 제임스 건 / 배우 : 크리스 프랫 , 조 샐다나 , 데이브 바티스타 , 카렌 길런 , 폼 클레멘티에프 , 빈 디젤 ,
-          브래들리 쿠퍼 , 윌 폴터
+          감독 :&nbsp;{movieInfo?.director}
+          {/* 제임스 건 */}&nbsp;/ 배우 :&nbsp;{movieInfo?.actor}
+          {/* 크리스 프랫 , 조 샐다나 , 데이브 바티스타 , 카렌 길런 , 폼 클레멘티에프 , 빈 디젤 ,
+          브래들리 쿠퍼 , 윌 폴터 */}
         </StMovieDetail>
-        <StMovieDetail>장르 : 엑션 / 기본 : 12, 150분, 미국</StMovieDetail>
-        <StMovieDetail>개봉 : 2023.05.03</StMovieDetail>
+        <StMovieDetail>
+          장르 : &nbsp;
+          {movieInfo?.genre}
+          {/* 엑션  */}
+          &nbsp;/ 기본 :&nbsp;
+          {movieInfo?.ageLimit},&nbsp;
+          {movieInfo?.duration},&nbsp;
+          {movieInfo?.nation}
+          {/* 12, 150분, 미국 */}
+        </StMovieDetail>
+        <StMovieDetail>
+          개봉 :&nbsp;
+          {movieInfo?.releasedAt}
+          {/* 2023.05.03 */}
+        </StMovieDetail>
 
         <StMovieInfoDetailBox>
           <StMovieTypeWrapper>
@@ -94,7 +121,9 @@ const StMovieInfoDetailBox = styled.section`
   left: 113rem;
 `;
 
-const StMoviePoster = styled.div`
+const StMoviePoster = styled.img`
+  width: 19.9rem;
+  height: 30.4rem;
   margin: 0 2.8rem 0 0.2rem;
 `;
 

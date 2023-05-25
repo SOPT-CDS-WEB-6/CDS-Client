@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { IcPreeggImg, IcGoldeggImg, IcBrownTextBox } from '../asset/icon';
-
+import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 function ScoreBox() {
+  const scoreData = useGetMovieInfo(4)?.response.data;
+
   return (
     <StScoreBox>
       <StTextBox>
@@ -17,7 +19,9 @@ function ScoreBox() {
           <StTextBoxText>사전기대지수</StTextBoxText>
 
           <StTitleText>Pre Egg</StTitleText>
-          <StScoreText>99%</StScoreText>
+          <StScoreText>
+            {scoreData?.preEgg}%{/* 99% */}
+          </StScoreText>
         </StIconTextBox>
         <StBar />
         <StEggIcon>
@@ -28,7 +32,9 @@ function ScoreBox() {
           <StTextBoxText>실관람평지수</StTextBoxText>
 
           <StTitleText>Golden Egg</StTitleText>
-          <StScoreText>98%</StScoreText>
+          <StScoreText>
+            {scoreData?.goldenEgg}%{/* 98% */}
+          </StScoreText>
         </StIconTextBox>
       </StEggBox>
     </StScoreBox>
