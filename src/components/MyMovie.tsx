@@ -5,14 +5,14 @@ import UserPreference from './UserPreference';
 import client from '../libs/axios';
 import useSWR from 'swr';
 
-const fetcher = (url: string) => client.get(url).then((res) => res.data);
 
 function MyMovie() {
+  const fetcher = (url: string) => client.get(url).then((res) => res.data);
   const { data } = useSWR('/user/1/movielog/watched?page=1&size=6&year=2023', fetcher);
 
   return (
     <StTopWrapper>
-      <UserPreference data_1 = {data} />
+      <UserPreference data_1={data} />
       <StMyMovieSection>
         <MovieHeader data={data} />
 
@@ -36,7 +36,8 @@ const StSideDiv = styled.div`
 const StTopWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 100vw;
+
+  width: 100%;
 `;
 
 const StMyMovieSection = styled.section`
@@ -47,9 +48,10 @@ const StMyMovieSection = styled.section`
   margin: 24.6rem 41.4rem 30.2rem 5.8rem;
 `;
 
-const StMovieCardWrapper = styled.article`
+const StMovieCardWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
+  
   width: 89.3rem;
   margin-top: 1.85rem;
 

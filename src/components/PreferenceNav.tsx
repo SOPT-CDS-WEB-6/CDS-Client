@@ -3,15 +3,21 @@ import { NavDataInfo } from '../types/MovieData';
 
 export interface PreferenceNavProps {
   data: NavDataInfo;
+  numData: NavDataInfo;
+  idx: number;
 }
 
 function PreferenceNav(props: PreferenceNavProps) {
   const { data } = props;
+  const { numData } = props;
+  const { idx } = props;
+
+  const watchedMoviesNum = numData?.data?.pageInfoRes?.totalElements;
 
   return (
     <StInfoWrapper className={data.class}>
-      <StNumInfo>{data.num}</StNumInfo>
-      {data.content ? <StPointerIcon>{data.content}</StPointerIcon> : <></>}
+      <StNumInfo>{idx === 1 ? watchedMoviesNum : 0}</StNumInfo>
+      {data.content && <StPointerIcon>{data.content}</StPointerIcon>}
       <StTextInfo>{data.text}</StTextInfo>
     </StInfoWrapper>
   );

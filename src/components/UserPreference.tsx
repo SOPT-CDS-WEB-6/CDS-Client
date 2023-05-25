@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { NAV_DATA } from '../constants/dummyData';
+import { NAV_DATA } from '../constants/navData';
 import { IcProfileImg } from '../asset/icon';
 import { IcPencilImg } from '../asset/icon';
 import PreferenceNav from './PreferenceNav';
@@ -8,16 +8,13 @@ import useSWR from 'swr';
 import { NavDataInfo } from '../types/MovieData';
 
 export interface UserPreferenceProps {
-  data_1: NavDataInfo[];
+  data_1: NavDataInfo;
 }
 
-const fetcher = (url: string) => client.get(url).then((res) => res.data);
-
 const UserPreference = (props: UserPreferenceProps) => {
+  const fetcher = (url: string) => client.get(url).then((res) => res.data);
   const { data } = useSWR('/user/1', fetcher);
   const { data_1 } = props;
-
-  // console.log(data_1[0].data);
 
   return (
     <StUserInfo>
@@ -29,7 +26,8 @@ const UserPreference = (props: UserPreferenceProps) => {
       </StUserProfile>
 
       {NAV_DATA.map((data, idx) => {
-        return <PreferenceNav data={data} key={idx} />;
+
+        return <PreferenceNav data={data} key={idx} numData={data_1} idx={idx} />;
       })}
     </StUserInfo>
   );
@@ -40,6 +38,7 @@ export default UserPreference;
 const StUserInfo = styled.nav`
   display: flex;
   flex-direction: column;
+  
   width: 19.6rem;
 
   margin-top: 23.4rem;

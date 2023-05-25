@@ -1,28 +1,31 @@
 import { styled } from 'styled-components';
-import { IcAllDropdown } from '../asset/icon';
-import { IcGoButton } from '../asset/icon';
-import { ICAddAudience } from '../asset/icon';
+import { IcAllDropdown, IcGoButton, ICAddAudience } from '../asset/icon';
 import { MovieDataInfo } from '../types/MovieData';
 
 export interface MyMovieProps {
-  data: MovieDataInfo[];
+
+  data: MovieDataInfo;
+
 }
 
 function MovieHeader(props: MyMovieProps) {
   const { data } = props;
-  // console.log(data[0].data);
+
+  const watchedMoviesNum = data?.data?.pageInfoRes?.totalElements;
+
 
   return (
     <StMyMovieHeader>
       <StHeaderTextWrapper>
         <StMyMovieTitle>내가 본 영화</StMyMovieTitle>
-        <StMyMovieNum>?건</StMyMovieNum>
+        <StMyMovieNum>{watchedMoviesNum}건</StMyMovieNum>
+
       </StHeaderTextWrapper>
 
       <StHeaderBtnWrapper>
-        <IcAllDropdown className="dropDown" />
-        <IcGoButton className="go" />
-        <ICAddAudience className="addAudience" />
+        <IcAllDropdown style={{ width: '7rem' }} />
+        <IcGoButton style={{ width: '4.9rem' }} />
+        <ICAddAudience style={{ width: '11.7rem' }} />
       </StHeaderBtnWrapper>
     </StMyMovieHeader>
   );
@@ -31,10 +34,11 @@ function MovieHeader(props: MyMovieProps) {
 const StMyMovieHeader = styled.header`
   display: flex;
   justify-content: space-between;
+  
   width: 89.3rem;
 `;
 
-const StHeaderTextWrapper = styled.div`
+const StHeaderTextWrapper = styled.span`
   display: flex;
 `;
 
@@ -49,7 +53,7 @@ const StMyMovieNum = styled.p`
   color: ${({ theme }) => theme.colors.gray70};
 `;
 
-const StHeaderBtnWrapper = styled.div`
+const StHeaderBtnWrapper = styled.span`
   display: flex;
   align-items: center;
 
@@ -57,18 +61,6 @@ const StHeaderBtnWrapper = styled.div`
 
   > svg {
     height: 3.7rem;
-  }
-
-  > .dropDown {
-    width: 7rem;
-  }
-
-  > .go {
-    width: 4.9rem;
-  }
-
-  > .addAudience {
-    width: 11.7rem;
   }
 `;
 
