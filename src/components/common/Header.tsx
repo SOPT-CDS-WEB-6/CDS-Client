@@ -116,6 +116,7 @@ const StHeaderNavOverMenuDataText = styled.span`
 
 const StHeaderNavOverMenuTitleText = styled.h2`
   ${({ theme }) => theme.fonts.Body3};
+  font-weight: 700;
 `;
 
 const StheaderSplitLine = styled.div`
@@ -145,20 +146,25 @@ const StHeaderNavOverMenu = styled.dl`
 
 const StHeaderNavMenu = styled.li`
   display: flex;
-  align-items: center;
 
   width: 20.3rem;
   height: 100%;
+  padding-top: 2.1rem;
 `;
 
 const StHeaderNavDetailBar = styled.ul`
   position: absolute;
   display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   left: 0;
   top: 18rem;
 
   width: 100%;
   height: 43.4rem;
+
+  background-color: ${({ theme }) => theme.colors.white};
 
   &.hover {
     display: flex;
