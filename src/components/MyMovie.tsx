@@ -16,6 +16,7 @@ function MyMovie() {
       <StMyMovieSection>
         <MovieHeader data={data} setFetchURL={setFetchURL} />
 
+
         <StMovieCardWrapper>
           {numOfCards.map((data: object, idx: number) => {
             return <MovieCard data={data} key={idx} />;
