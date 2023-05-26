@@ -1,49 +1,51 @@
 import styled from 'styled-components';
 import { IcMidadImg, IcChart1Img, IcChart2Img } from '../asset/icon';
+import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 
 function MovieDetail() {
   const ButtonList = ['주요정보', '트레일러', '스틸컷', '평점/리뷰'];
+  const { data } = useGetMovieInfo(3);
 
-  return (
-    <StMovieDetail>
-      <StUl>
-        <StArrowLi>☞</StArrowLi>
-        {ButtonList.map((eachButton) => {
-          return (
-            <>
-              <StLi>{eachButton}</StLi>
-              <StBar />
-            </>
-          );
-        })}
+  if (!data) {
+    return <div>error!!</div>;
+  } else {
+    return (
+      <StMovieDetail>
+        <StUl>
+          <StArrowLi>☞</StArrowLi>
+          {ButtonList.map((eachButton, index) => {
+            return (
+              <StButtonWrapper key={index}>
+                <StLi key={eachButton}>{eachButton}</StLi>
+                <StBar />
+              </StButtonWrapper>
+            );
+          })}
 
-        <StLi>상영시간표</StLi>
-      </StUl>
-      <article>
-        <StSynopsis>
-          ‘가모라’를 잃고 슬픔에 빠져 있던 ‘피터 퀼’이 위기에 처한 은하계와 동료를 지키기 위해 다시 한번 가디언즈 팀과
-          힘을 모으고,
-        </StSynopsis>
-        <StSynopsis>성공하지 못할 경우 그들의 마지막이 될지도 모르는 미션에 나서는 이야기</StSynopsis>
-      </article>
-      <StChartSection>
-        <StEachChart>
-          <StChartTitle>성별 예매 분포</StChartTitle>
-          <StDonutChart>
-            <IcChart1Img />
-          </StDonutChart>
-        </StEachChart>
-        <StChartBar />
-        <StEachChart>
-          <StChartTitle>연령별 예매 분포</StChartTitle>
-          <StBarChart>
-            <IcChart2Img />
-          </StBarChart>
-        </StEachChart>
-      </StChartSection>
-      <IcMidadImg />
-    </StMovieDetail>
-  );
+          <StLi>상영시간표</StLi>
+        </StUl>
+        <article>
+          <StSynopsis>{data.data.synopsis}</StSynopsis>
+        </article>
+        <StChartSection>
+          <StEachChart>
+            <StChartTitle>성별 예매 분포</StChartTitle>
+            <StDonutChart>
+              <IcChart1Img />
+            </StDonutChart>
+          </StEachChart>
+          <StChartBar />
+          <StEachChart>
+            <StChartTitle>연령별 예매 분포</StChartTitle>
+            <StBarChart>
+              <IcChart2Img />
+            </StBarChart>
+          </StEachChart>
+        </StChartSection>
+        <IcMidadImg />
+      </StMovieDetail>
+    );
+  }
 }
 
 export default MovieDetail;
@@ -66,6 +68,11 @@ const StUl = styled.ul`
   margin-bottom: 10.8rem;
 
   background-color: ${({ theme }) => theme.colors.gray20};
+`;
+
+const StButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const StLi = styled.li`

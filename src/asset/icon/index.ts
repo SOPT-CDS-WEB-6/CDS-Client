@@ -83,6 +83,11 @@ export { ReactComponent as IcTrailer1Img } from './ic_Trailer1Img.svg';
 export { ReactComponent as IcTrailer2Img } from './ic_Trailer2Img.svg';
 export { ReactComponent as IcTrailer3Img } from './ic_Trailer3Img.svg';
 export { ReactComponent as IcWriteButton } from './ic_WriteButton.svg';
+export { ReactComponent as IcProfile } from './ic_profile.svg';
+export { ReactComponent as IcThumb } from './ic_thumb.svg';
+export { ReactComponent as IcProfileGoldEgg } from './ic_ProfileGoldEgg.svg';
+export { ReactComponent as IcMoreDots } from './ic_MoreDots.svg';
+
 // mymovie
 export { ReactComponent as ICAddAudience } from './ic_AddAudience.svg';
 export { ReactComponent as IcAllDropdown } from './ic_AllDropdown.svg';

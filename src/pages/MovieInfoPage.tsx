@@ -5,26 +5,29 @@ import TrailerBox from '../components/TrailerBox';
 import StillCutBox from '../components/StillCutBox';
 import ScoreBox from '../components/ScoreBox';
 import MovieInfo from '../components/MovieInfo';
+import PageLayout from '../components/PageLayout';
 
 function MovieInfoPage() {
   return (
-    <StMovieInfoPage>
-      <StInfoBox>
-        <MovieInfo />
-        <StDetailBox>
-          <MovieDetail />
-          <SideAdBanner />
-        </StDetailBox>
-      </StInfoBox>
-      <StMediaBox>
-        <StPreviewBox>
-          <TrailerBox />
-          <StillCutBox />
-          <ScoreBox />
-        </StPreviewBox>
-        <StBlankBox />
-      </StMediaBox>
-    </StMovieInfoPage>
+    <PageLayout>
+      <StMovieInfoPage>
+        <StInfoBox>
+          <MovieInfo />
+          <StDetailBox>
+            <MovieDetail />
+            <SideAdBanner />
+          </StDetailBox>
+        </StInfoBox>
+        <StMediaBox>
+          <StPreviewBox>
+            <TrailerBox />
+            <StillCutBox />
+            <ScoreBox />
+          </StPreviewBox>
+          <StBlankBox />
+        </StMediaBox>
+      </StMovieInfoPage>
+    </PageLayout>
   );
 }
 

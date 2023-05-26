@@ -5,9 +5,9 @@ function SideAdBanner() {
   const SideAd = [<IcAd1Img />, <IcAd2Img />];
 
   return (
-    <StAdBanner>
-      {SideAd.map((eachAd) => {
-        return <StAd>{eachAd}</StAd>;
+    <StAdBanner key={'adBaner'}>
+      {SideAd.map((eachAd, index) => {
+        return <StAd key={index}>{eachAd}</StAd>;
       })}
     </StAdBanner>
   );
