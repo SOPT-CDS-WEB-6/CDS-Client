@@ -3,8 +3,8 @@ import { IcPlusButton } from '../asset/icon';
 import useGetMovieStillCuts from '../libs/hooks/useGetMovieStillCut';
 import NewStillCut from './NewStillCut';
 
-function StillCutBox() {
-  const { data } = useGetMovieStillCuts(3);
+function StillCutBox({ movieNumber }: { movieNumber: number }) {
+  const { data } = useGetMovieStillCuts(movieNumber);
   const totalSlideNo = data?.data.length;
 
   if (!data) {
@@ -21,7 +21,7 @@ function StillCutBox() {
         </StStillCutBar>
 
         <StStillCutGallery>
-          <NewStillCut />
+          <NewStillCut movieNumber={movieNumber} />
         </StStillCutGallery>
       </StStillCutBox>
     );

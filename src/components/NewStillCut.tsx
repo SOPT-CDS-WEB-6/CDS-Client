@@ -4,8 +4,8 @@ import useGetMovieStillCut from '../libs/hooks/useGetMovieStillCut';
 import styled from 'styled-components';
 import { IcLeftarrowIcon, IcRightarrowIcon } from '../asset/icon';
 
-export default function NewStillCut() {
-  const { data } = useGetMovieStillCut(3);
+export default function NewStillCut({ movieNumber }: { movieNumber: number }) {
+  const { data } = useGetMovieStillCut(movieNumber);
 
   if (!data) {
     return <div>error!!</div>;
@@ -30,7 +30,7 @@ export default function NewStillCut() {
               </StRightArrowButton>
             );
           }}>
-          {data?.data.map((eachStillCut, index) => {
+          {data.data.map((eachStillCut, index) => {
             return (
               <StSlide key={index}>
                 <StStillCut src={eachStillCut.stillCutLink} />

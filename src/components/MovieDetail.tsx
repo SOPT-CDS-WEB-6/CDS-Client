@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { IcMidadImg, IcChart1Img, IcChart2Img } from '../asset/icon';
 import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 
-function MovieDetail() {
+function MovieDetail({ movieNumber }: { movieNumber: number }) {
   const ButtonList = ['주요정보', '트레일러', '스틸컷', '평점/리뷰'];
-  const { data } = useGetMovieInfo(3);
+  const { data } = useGetMovieInfo(movieNumber);
 
   if (!data) {
     return <div>error!!</div>;
@@ -25,7 +25,7 @@ function MovieDetail() {
           <StLi>상영시간표</StLi>
         </StUl>
         <article>
-          <StSynopsis>{data.data.synopsis}</StSynopsis>
+          <StSynopsis>{data.synopsis}</StSynopsis>
         </article>
         <StChartSection>
           <StEachChart>

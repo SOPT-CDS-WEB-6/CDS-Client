@@ -2,51 +2,50 @@ import styled from 'styled-components';
 import { IcImaxImg, Ic4dxLogoImg, IcEggIcon, IcInfoIcon, IcQuestionEgg } from '../asset/icon';
 import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 
-function MovieInfo() {
-  const { data } = useGetMovieInfo(2);
-  console.log(data?.data);
+function MovieInfo({ movieNumber }: { movieNumber: number }) {
+  const { data } = useGetMovieInfo(movieNumber);
 
   if (!data) {
     return <div>error!</div>;
   } else {
     return (
       <StMovieInfoBox>
-        <StMoviePoster src={data.data.posterLink} />
+        <StMoviePoster src={data.posterLink} />
         <StMovieInfo>
           <StTitle>
-            {data.data.title}
+            {data.title}
             <StNowShowingBox>
               <StNowShowingText>현재상영중</StNowShowingText>
             </StNowShowingBox>
           </StTitle>
-          <StEngTitle>{data.data.originTitle}</StEngTitle>
+          <StEngTitle>{data.originTitle}</StEngTitle>
           <StRateBox>
             <StRate>
               예매율&nbsp;
-              {data.data.reservationRate}%
+              {data.reservationRate}%
             </StRate>
             <StEggIcon>
               <IcEggIcon />
             </StEggIcon>
 
-            <StEggRate>{data.data.goldenEgg}%</StEggRate>
+            <StEggRate>{data.goldenEgg}%</StEggRate>
           </StRateBox>
           <StRowBar />
           <StMovieDetail>
-            감독 :&nbsp;{data.data.director}
-            &nbsp;/ 배우 :&nbsp;{data.data.actor}
+            감독 :&nbsp;{data.director}
+            &nbsp;/ 배우 :&nbsp;{data.actor}
           </StMovieDetail>
           <StMovieDetail>
             장르 : &nbsp;
-            {data.data.genre}
+            {data.genre}
             &nbsp;/ 기본 :&nbsp;
-            {data.data.ageLimit},&nbsp;
-            {data.data.duration},&nbsp;
-            {data.data.nation}
+            {data.ageLimit},&nbsp;
+            {data.duration},&nbsp;
+            {data.nation}
           </StMovieDetail>
           <StMovieDetail>
             개봉 :&nbsp;
-            {data.data.releasedAt}
+            {data.releasedAt}
           </StMovieDetail>
 
           <StMovieInfoDetailBox>

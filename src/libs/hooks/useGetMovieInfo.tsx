@@ -7,7 +7,7 @@ function useGetMovieInfo(movieNumber: number) {
     errorRetryCount: 3,
   });
   return {
-    data: data,
+    data: data?.data,
     isLoading: !error && !data?.data,
     isError: error,
   };
