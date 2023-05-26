@@ -6,15 +6,12 @@ import StillCutBox from '../components/StillCutBox';
 import ScoreBox from '../components/ScoreBox';
 import MovieInfo from '../components/MovieInfo';
 import PageLayout from '../components/PageLayout';
-import StillCutSlider from '../components/StillCutSlider';
 
 function MovieInfoPage() {
   return (
     <PageLayout>
       <StMovieInfoPage>
         <StInfoBox>
-          {/* <StillCutSlider /> */}
-
           <MovieInfo />
           <StDetailBox>
             <MovieDetail />
@@ -24,7 +21,7 @@ function MovieInfoPage() {
         <StMediaBox>
           <StPreviewBox>
             <TrailerBox />
-            {/* <StillCutBox /> */}
+            <StillCutBox />
             <ScoreBox />
           </StPreviewBox>
           <StBlankBox />

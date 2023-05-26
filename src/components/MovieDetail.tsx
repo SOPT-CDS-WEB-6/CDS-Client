@@ -13,17 +13,17 @@ function MovieDetail() {
     return (
       <StMovieDetail>
         <StUl>
-          <StArrowLi key="화살표">☞</StArrowLi>
-          {ButtonList.map((eachButton) => {
+          <StArrowLi>☞</StArrowLi>
+          {ButtonList.map((eachButton, index) => {
             return (
-              <>
+              <StButtonWrapper key={index}>
                 <StLi key={eachButton}>{eachButton}</StLi>
                 <StBar />
-              </>
+              </StButtonWrapper>
             );
           })}
 
-          <StLi key="상영시간표">상영시간표</StLi>
+          <StLi>상영시간표</StLi>
         </StUl>
         <article>
           <StSynopsis>
@@ -75,6 +75,11 @@ const StUl = styled.ul`
   margin-bottom: 10.8rem;
 
   background-color: ${({ theme }) => theme.colors.gray20};
+`;
+
+const StButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const StLi = styled.li`
