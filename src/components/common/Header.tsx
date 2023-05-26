@@ -19,6 +19,10 @@ const Header = () => {
     navigate('/');
   };
 
+  const clickMyCgvHandler = () => {
+    navigate('/my-movie');
+  };
+
   const navMenuItem = [
     {
       title: '영화',
@@ -59,7 +63,7 @@ const Header = () => {
               <IcLockIcon />
               <span>로그아웃</span>
             </StMyPageButton>
-            <StMyPageButton>
+            <StMyPageButton onClick={clickMyCgvHandler}>
               <IcMypageIcon />
               <span>MY CGV</span>
             </StMyPageButton>
@@ -238,6 +242,9 @@ const StMyPageButton = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  cursor: pointer;
+
   & span {
     ${({ theme }) => theme.fonts.Body5};
     color: ${({ theme }) => theme.colors.gray90};
