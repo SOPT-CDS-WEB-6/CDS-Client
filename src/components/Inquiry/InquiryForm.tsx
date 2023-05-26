@@ -87,7 +87,6 @@ const InquiryForm = () => {
                 </label>
               ))}
             </td>
-            <hr />
           </tr>
 
           <tr>
