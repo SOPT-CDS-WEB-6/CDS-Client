@@ -19,7 +19,7 @@ function MovieCard(props: MovieCardProps) {
       <StWatchedMovieInfo>
         <StWatchedMovieName>{data.title}</StWatchedMovieName>
         <StBtnWrapper>
-          <IcDeleteButton className="deleteBtn" />
+          <IcDeleteButton />
         </StBtnWrapper>
 
         <StWatchedMovieSubName>{data.originTitle ? data.originTitle : '-'}</StWatchedMovieSubName>
@@ -57,9 +57,7 @@ const StMoviePoster = styled.img`
   margin-left: 2.7rem;
 `;
 
-
 const StBtnWrapper = styled.span`
-
   display: flex;
   justify-content: flex-end;
 
@@ -78,17 +76,19 @@ const StWatchedMovieInfo = styled.span`
 `;
 
 const StWatchedMovieName = styled.p`
+  width: 18rem;
+  overflow: hidden;
+
   font-size: ${({ theme }) => theme.fonts.Body1};
   color: ${({ theme }) => theme.colors.black};
-
-  .deleteBtn {
-    position: relative;
-    left: 15.2rem;
-  }
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const StWatchedMovieSubName = styled.p`
-  margin-top: 1.1rem;
+  width: 18rem;
+  overflow: hidden;
+  margin-top: -1.1rem;
   margin-bottom: 3rem;
 
   font-size: ${({ theme }) => theme.fonts.Body5};
