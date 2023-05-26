@@ -49,6 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-chartjs-2", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.2.0"],\
             ["react-dom", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:18.2.0"],\
+            ["react-responsive-carousel", "npm:3.2.23"],\
             ["react-router-dom", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:6.11.1"],\
             ["styled-components", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:6.0.0-rc.1"],\
             ["swr", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:2.1.5"],\
@@ -4139,6 +4140,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-chartjs-2", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.2.0"],\
             ["react-dom", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:18.2.0"],\
+            ["react-responsive-carousel", "npm:3.2.23"],\
             ["react-router-dom", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:6.11.1"],\
             ["styled-components", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:6.0.0-rc.1"],\
             ["swr", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:2.1.5"],\
@@ -4209,6 +4211,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/chownr-npm-2.0.0-638f1c9c61-c57cf9dd07.zip/node_modules/chownr/",\
           "packageDependencies": [\
             ["chownr", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["classnames", [\
+        ["npm:2.3.2", {\
+          "packageLocation": "./.yarn/cache/classnames-npm-2.3.2-d2fdae468d-2c62199789.zip/node_modules/classnames/",\
+          "packageDependencies": [\
+            ["classnames", "npm:2.3.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7133,6 +7144,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-easy-swipe", [\
+        ["npm:0.0.21", {\
+          "packageLocation": "./.yarn/cache/react-easy-swipe-npm-0.0.21-b711aee7dc-225f12a9dd.zip/node_modules/react-easy-swipe/",\
+          "packageDependencies": [\
+            ["react-easy-swipe", "npm:0.0.21"],\
+            ["prop-types", "npm:15.8.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-is", [\
         ["npm:16.13.1", {\
           "packageLocation": "./.yarn/cache/react-is-npm-16.13.1-a9b9382b4f-f7a19ac349.zip/node_modules/react-is/",\
@@ -7147,6 +7168,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/react-refresh-npm-0.14.0-78ef5eeb73-dc69fa8c99.zip/node_modules/react-refresh/",\
           "packageDependencies": [\
             ["react-refresh", "npm:0.14.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-responsive-carousel", [\
+        ["npm:3.2.23", {\
+          "packageLocation": "./.yarn/cache/react-responsive-carousel-npm-3.2.23-c14eae816a-8a5b915f14.zip/node_modules/react-responsive-carousel/",\
+          "packageDependencies": [\
+            ["react-responsive-carousel", "npm:3.2.23"],\
+            ["classnames", "npm:2.3.2"],\
+            ["prop-types", "npm:15.8.1"],\
+            ["react-easy-swipe", "npm:0.0.21"]\
           ],\
           "linkType": "HARD"\
         }]\

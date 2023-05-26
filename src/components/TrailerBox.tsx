@@ -1,55 +1,44 @@
 import styled from 'styled-components';
-import { IcPlusButton, IcTrailer1Img, IcTrailer2Img, IcTrailer3Img, IcPlayButton } from '../asset/icon';
+import { IcPlusButton, IcPlayButton } from '../asset/icon';
+import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 
 function TrailerBox() {
-  const TrailerList = [
-    {
-      title: '전 세계 최초 개봉!',
-      date: '2023.05.03',
-      trailer: <IcTrailer1Img />,
-    },
-    {
-      title: '전 세계 최초 개봉!',
-      date: '2023.06.03',
-      trailer: <IcTrailer2Img />,
-    },
-    {
-      title: '전 세계 최초 개봉!',
-      date: '2023.07.03',
-      trailer: <IcTrailer3Img />,
-    },
-  ];
+  const { data } = useGetMovieInfo(2);
 
-  return (
-    <StTrailerBox>
-      <StTrailerBar>
-        <StTrailerText>트레일러</StTrailerText>
-        <StTrailerNo>5건</StTrailerNo>
-        <StPlusButton>
-          <IcPlusButton />
-        </StPlusButton>
-      </StTrailerBar>
-      <StVidBox>
-        {TrailerList.map((eachTrailer) => {
-          return (
-            <StEachTrailer>
-              <StTrailerVid>
-                <StPlayButton>
-                  <IcPlayButton />
-                </StPlayButton>
-                {eachTrailer.trailer}
-              </StTrailerVid>
-              <StVidTitleBox>
-                <StHdBox>HD</StHdBox>
-                <StVidTitle>{eachTrailer.title}</StVidTitle>
-              </StVidTitleBox>
-              <StVidDate>{eachTrailer.date}</StVidDate>
-            </StEachTrailer>
-          );
-        })}
-      </StVidBox>
-    </StTrailerBox>
-  );
+  if (!data) {
+    return <div>error!!</div>;
+  } else
+    return (
+      <StTrailerBox>
+        <StTrailerBar>
+          <StTrailerText>트레일러</StTrailerText>
+          <StTrailerNo>5건</StTrailerNo>
+          <StPlusButton>
+            <IcPlusButton />
+          </StPlusButton>
+        </StTrailerBar>
+        <StVidBox>
+          {data.data.trailerList.map((eachTrailer) => {
+            return (
+              <StEachTrailer key={eachTrailer.trailerTitle}>
+                <StTrailerVidWrapper>
+                  <StTrailerVid src={eachTrailer.thumbnailLink} />
+                  <StPlayButton>
+                    <IcPlayButton />
+                  </StPlayButton>
+                </StTrailerVidWrapper>
+
+                <StVidTitleBox>
+                  <StHdBox>HD</StHdBox>
+                  <StVidTitle>{eachTrailer.trailerTitle}</StVidTitle>
+                </StVidTitleBox>
+                <StVidDate>{eachTrailer.trailerReleasedAt}</StVidDate>
+              </StEachTrailer>
+            );
+          })}
+        </StVidBox>
+      </StTrailerBox>
+    );
 }
 
 export default TrailerBox;
@@ -109,10 +98,16 @@ const StEachTrailer = styled.div`
   flex-direction: column;
 `;
 
-const StTrailerVid = styled.div`
+const StTrailerVidWrapper = styled.div`
+  position: relative;
+`;
+
+const StTrailerVid = styled.img`
   display: flex;
   justify-content: center;
-  position: relative;
+
+  width: 30.9rem;
+  height: 16.9rem;
 `;
 
 const StVidTitleBox = styled.div`
@@ -136,6 +131,11 @@ const StHdBox = styled.div`
 `;
 
 const StVidTitle = styled.p`
+  width: 26rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   ${({ theme }) => theme.fonts.Body3};
   color: ${({ theme }) => theme.colors.gray90};
 `;

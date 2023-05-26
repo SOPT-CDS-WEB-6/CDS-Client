@@ -1,66 +1,85 @@
 import styled from 'styled-components';
-import { IcImaxImg, Ic4dxLogoImg, IcEggIcon, IcInfoIcon, IcQuestionEgg, IcMovieImg } from '../asset/icon';
+import { IcImaxImg, Ic4dxLogoImg, IcEggIcon, IcInfoIcon, IcQuestionEgg } from '../asset/icon';
+import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 
 function MovieInfo() {
-  return (
-    <StMovieInfoBox>
-      <StMoviePoster>
-        <IcMovieImg />
-      </StMoviePoster>
-      <StMovieInfo>
-        <StTitle>
-          가디언즈 오브 갤럭시-Volume 3
-          <StNowShowingBox>
-            <StNowShowingText>현재상영중</StNowShowingText>
-          </StNowShowingBox>
-        </StTitle>
-        <StEngTitle>Guardians of the Galaxy Volume 3</StEngTitle>
-        <StRateBox>
-          <StRate>예매율 38.0%</StRate>
-          <StEggIcon>
-            <IcEggIcon />
-          </StEggIcon>
+  const { data } = useGetMovieInfo(2);
+  console.log(data?.data);
 
-          <StEggRate>98%</StEggRate>
-        </StRateBox>
-        <StRowBar />
-        <StMovieDetail>
-          감독 : 제임스 건 / 배우 : 크리스 프랫 , 조 샐다나 , 데이브 바티스타 , 카렌 길런 , 폼 클레멘티에프 , 빈 디젤 ,
-          브래들리 쿠퍼 , 윌 폴터
-        </StMovieDetail>
-        <StMovieDetail>장르 : 엑션 / 기본 : 12, 150분, 미국</StMovieDetail>
-        <StMovieDetail>개봉 : 2023.05.03</StMovieDetail>
+  if (!data) {
+    return <div>error!</div>;
+  } else {
+    return (
+      <StMovieInfoBox>
+        <StMoviePoster src={data.data.posterLink} />
+        <StMovieInfo>
+          <StTitle>
+            {data.data.title}
+            <StNowShowingBox>
+              <StNowShowingText>현재상영중</StNowShowingText>
+            </StNowShowingBox>
+          </StTitle>
+          <StEngTitle>{data.data.originTitle}</StEngTitle>
+          <StRateBox>
+            <StRate>
+              예매율&nbsp;
+              {data.data.reservationRate}%
+            </StRate>
+            <StEggIcon>
+              <IcEggIcon />
+            </StEggIcon>
 
-        <StMovieInfoDetailBox>
-          <StMovieTypeWrapper>
-            <StImaxIcon>
-              <IcImaxImg />
-            </StImaxIcon>
-            <Ic4dxLogoImg />
-          </StMovieTypeWrapper>
-        </StMovieInfoDetailBox>
+            <StEggRate>{data.data.goldenEgg}%</StEggRate>
+          </StRateBox>
+          <StRowBar />
+          <StMovieDetail>
+            감독 :&nbsp;{data.data.director}
+            &nbsp;/ 배우 :&nbsp;{data.data.actor}
+          </StMovieDetail>
+          <StMovieDetail>
+            장르 : &nbsp;
+            {data.data.genre}
+            &nbsp;/ 기본 :&nbsp;
+            {data.data.ageLimit},&nbsp;
+            {data.data.duration},&nbsp;
+            {data.data.nation}
+          </StMovieDetail>
+          <StMovieDetail>
+            개봉 :&nbsp;
+            {data.data.releasedAt}
+          </StMovieDetail>
 
-        <StButtonWrapper>
-          <StFreeEggBtn>
-            <StQuestionEggIcon>
-              <IcQuestionEgg />
-            </StQuestionEggIcon>
-            프리에그
-          </StFreeEggBtn>
-          <StReserveBtn>특별한 영화 경험 시작하기 🎬</StReserveBtn>
-        </StButtonWrapper>
-        <StPreEgg>
-          <StPreEggText>
-            <StInfoIcon>
-              <IcInfoIcon />
-            </StInfoIcon>
-            프리에그(Pre Egg)란?
-          </StPreEggText>
-          <StPreEggText>개봉 전 영화에 대한 기대 수치를 의미합니다.</StPreEggText>
-        </StPreEgg>
-      </StMovieInfo>
-    </StMovieInfoBox>
-  );
+          <StMovieInfoDetailBox>
+            <StMovieTypeWrapper>
+              <StImaxIcon>
+                <IcImaxImg />
+              </StImaxIcon>
+              <Ic4dxLogoImg />
+            </StMovieTypeWrapper>
+          </StMovieInfoDetailBox>
+
+          <StButtonWrapper>
+            <StFreeEggBtn>
+              <StQuestionEggIcon>
+                <IcQuestionEgg />
+              </StQuestionEggIcon>
+              프리에그
+            </StFreeEggBtn>
+            <StReserveBtn>특별한 영화 경험 시작하기 🎬</StReserveBtn>
+          </StButtonWrapper>
+          <StPreEgg>
+            <StPreEggText>
+              <StInfoIcon>
+                <IcInfoIcon />
+              </StInfoIcon>
+              프리에그(Pre Egg)란?
+            </StPreEggText>
+            <StPreEggText>개봉 전 영화에 대한 기대 수치를 의미합니다.</StPreEggText>
+          </StPreEgg>
+        </StMovieInfo>
+      </StMovieInfoBox>
+    );
+  }
 }
 
 export default MovieInfo;
@@ -90,11 +109,13 @@ const StMovieInfoDetailBox = styled.section`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 30rem;
+  top: 48rem;
   left: 113rem;
 `;
 
-const StMoviePoster = styled.div`
+const StMoviePoster = styled.img`
+  width: 19.9rem;
+  height: 30.4rem;
   margin: 0 2.8rem 0 0.2rem;
 `;
 
@@ -211,7 +232,7 @@ const StPreEgg = styled.div`
   margin-left: 4.4rem;
 `;
 
-const StPreEggText = styled.p`
+const StPreEggText = styled.div`
   display: flex;
   align-items: center;
   margin: 0 0 1.4rem 0.4rem;

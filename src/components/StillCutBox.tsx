@@ -1,30 +1,31 @@
 import styled from 'styled-components';
-import { IcPlusButton, IcStillCutImg, IcLeftarrowIcon, IcRightarrowIcon } from '../asset/icon';
+import { IcPlusButton } from '../asset/icon';
+import useGetMovieStillCuts from '../libs/hooks/useGetMovieStillCut';
+import NewStillCut from './NewStillCut';
 
 function StillCutBox() {
-  return (
-    <StStillCutBox>
-      <StStillCutBar>
-        <StStillCutText>스틸컷</StStillCutText>
-        <StStillCutNo>5건</StStillCutNo>
-        <StPlusButton>
-          <IcPlusButton />
-        </StPlusButton>
-      </StStillCutBar>
+  const { data } = useGetMovieStillCuts(3);
+  const totalSlideNo = data?.data.length;
 
-      <StStillCutGallery>
-        <div>
-          <IcLeftarrowIcon />
-        </div>
-        <article>
-          <IcStillCutImg />
-        </article>
-        <div>
-          <IcRightarrowIcon />
-        </div>
-      </StStillCutGallery>
-    </StStillCutBox>
-  );
+  if (!data) {
+    return <div>error!!</div>;
+  } else {
+    return (
+      <StStillCutBox>
+        <StStillCutBar>
+          <StStillCutText>스틸컷</StStillCutText>
+          <StStillCutNo>{totalSlideNo}건</StStillCutNo>
+          <StPlusButton>
+            <IcPlusButton />
+          </StPlusButton>
+        </StStillCutBar>
+
+        <StStillCutGallery>
+          <NewStillCut />
+        </StStillCutGallery>
+      </StStillCutBox>
+    );
+  }
 }
 
 export default StillCutBox;
@@ -71,10 +72,5 @@ const StPlusButton = styled.div`
 `;
 
 const StStillCutGallery = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   width: 100%;
-  margin-top: 5rem;
 `;

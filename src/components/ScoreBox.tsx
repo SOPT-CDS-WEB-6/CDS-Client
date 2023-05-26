@@ -1,38 +1,44 @@
 import styled from 'styled-components';
 import { IcPreeggImg, IcGoldeggImg, IcBrownTextBox } from '../asset/icon';
-
+import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 function ScoreBox() {
-  return (
-    <StScoreBox>
-      <StTextBox>
-        <StText>스토리가 탄탄하고</StText>
-        <StText>기분이 좋아지는 영화</StText>
-      </StTextBox>
-      <StEggBox>
-        <StEggIcon>
-          <IcPreeggImg />
-        </StEggIcon>
-        <StIconTextBox>
-          <IcBrownTextBox />
-          <StTextBoxText>사전기대지수</StTextBoxText>
+  const { data } = useGetMovieInfo(3);
 
-          <StTitleText>Pre Egg</StTitleText>
-          <StScoreText>99%</StScoreText>
-        </StIconTextBox>
-        <StBar />
-        <StEggIcon>
-          <IcGoldeggImg />
-        </StEggIcon>
-        <StIconTextBox>
-          <IcBrownTextBox />
-          <StTextBoxText>실관람평지수</StTextBoxText>
+  if (!data) {
+    return <div>error!!</div>;
+  } else {
+    return (
+      <StScoreBox>
+        <StTextBox>
+          <StText>스토리가 탄탄하고</StText>
+          <StText>기분이 좋아지는 영화</StText>
+        </StTextBox>
+        <StEggBox>
+          <StEggIcon>
+            <IcPreeggImg />
+          </StEggIcon>
+          <StIconTextBox>
+            <IcBrownTextBox />
+            <StTextBoxText>사전기대지수</StTextBoxText>
 
-          <StTitleText>Golden Egg</StTitleText>
-          <StScoreText>98%</StScoreText>
-        </StIconTextBox>
-      </StEggBox>
-    </StScoreBox>
-  );
+            <StTitleText>Pre Egg</StTitleText>
+            <StScoreText>{data.data.preEgg}%</StScoreText>
+          </StIconTextBox>
+          <StBar />
+          <StEggIcon>
+            <IcGoldeggImg />
+          </StEggIcon>
+          <StIconTextBox>
+            <IcBrownTextBox />
+            <StTextBoxText>실관람평지수</StTextBoxText>
+
+            <StTitleText>Golden Egg</StTitleText>
+            <StScoreText>{data.data.goldenEgg}%</StScoreText>
+          </StIconTextBox>
+        </StEggBox>
+      </StScoreBox>
+    );
+  }
 }
 
 export default ScoreBox;
