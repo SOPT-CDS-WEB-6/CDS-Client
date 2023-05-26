@@ -38,7 +38,7 @@ const StUserInfo = styled.nav`
 
   width: 19.6rem;
 
-  margin-top: 23.4rem;
+  margin-top: 4.2rem;
   margin-left: 35.9rem;
 `;
 
