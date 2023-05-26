@@ -5,7 +5,6 @@ const useGetUserInfo = () => {
   const { data } = useSWR(`/user/1`, cgvGetFetcher, {
     errorRetryCount: 3,
   });
-  console.log(data);
 
   return {
     userName: data?.data.userName,
