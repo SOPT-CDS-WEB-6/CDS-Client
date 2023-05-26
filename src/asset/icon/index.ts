@@ -56,6 +56,7 @@ export { ReactComponent as IcSendButton } from './ic_SendButton.svg';
 export { ReactComponent as IcSheepImg } from './ic_SheepImg.svg';
 export { ReactComponent as IcTheaterDropdown } from './ic_TheaterDropdown.svg';
 export { ReactComponent as IcUnselectButton } from './ic_UnselectButton.svg';
+export { ReactComponent as IcNoticeBanner } from './ic_noticeBanner.svg';
 // movieinfo
 export { ReactComponent as IcBrownTextBox } from './ic_BrownTextBox.svg';
 export { ReactComponent as IcStillCutImg } from './ic_StillCutImg.svg';
