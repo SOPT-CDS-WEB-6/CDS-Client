@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { IcCgvLogo, IcSearchButton, IcWhiteSearchImg } from '../../asset/icon';
+import { IcCgvLogo, IcWhiteSearchImg } from '../../asset/icon';
 import { styled } from 'styled-components';
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const StickyHeader = () => {
@@ -31,7 +30,7 @@ const StickyHeader = () => {
       <IcCgvLogo onClick={clickLogoHandler} />
       <StStickyHeaderWrapper>
         <StStickyHeaderNavWrapper>
-          {navMenu.map((menu, index) => (
+          {navMenu.map((menu) => (
             <StStickyHeaderNav key={menu}>{menu}</StStickyHeaderNav>
           ))}
         </StStickyHeaderNavWrapper>
