@@ -15,19 +15,21 @@ const UserInfo = () => {
       <p>
         체크(<em>*</em>)된 항목은 필수 입력 사항입니다.
       </p>
-      <StUserInfoTable>
-        <tr>
-          <th>이름</th>
-          <td>{userName}</td>
-        </tr>
-        <tr>
-          <th>휴대전화</th>
-          <td>{modifiedPhoneNumber}</td>
+      <table>
+        <StUserInfoTable>
+          <tr>
+            <th>이름</th>
+            <td>{userName}</td>
+          </tr>
+          <tr>
+            <th>휴대전화</th>
+            <td>{modifiedPhoneNumber}</td>
 
-          <th>이메일</th>
-          <td>{email}</td>
-        </tr>
-      </StUserInfoTable>
+            <th>이메일</th>
+            <td>{email}</td>
+          </tr>
+        </StUserInfoTable>
+      </table>
 
       <div>
         <StWarningComment>※ 문의에 대한 빠른 답변을 위해 회원 가입 시 입력하신 연락처를 확인해주세요.</StWarningComment>{' '}
@@ -82,7 +84,7 @@ const StUserInfoWrapper = styled.article`
   }
 `;
 
-const StUserInfoTable = styled.table`
+const StUserInfoTable = styled.tbody`
   > tr {
     display: flex;
 

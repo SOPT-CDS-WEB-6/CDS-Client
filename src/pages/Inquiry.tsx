@@ -2,24 +2,27 @@ import InquiryNav from '../components/Inquiry/InquiryNav';
 import InquiryForm from '../components/Inquiry/InquiryForm';
 import UserInfo from '../components/Inquiry/UserInfo';
 import { styled } from 'styled-components';
+import PageLayout from '../components/PageLayout';
 
 const Inquiry = () => {
   return (
     <>
-      <StInquiryWrapper>
-        <InquiryNav />
-        <StInquiryMain>
-          <StInquiryIntro>
-            <h1>이메일 문의</h1>
-            <p>자주찾는 질문에서 원하는 답변을 찾지 못하셨군요</p>
-            <p>불편사항이나 문의사항을 남겨주시면 최대한 신속하게 답변 드리겠습니다.</p>
-          </StInquiryIntro>
+      <PageLayout>
+        <StInquiryWrapper>
+          <InquiryNav />
+          <StInquiryMain>
+            <StInquiryIntro>
+              <h1>이메일 문의</h1>
+              <p>자주찾는 질문에서 원하는 답변을 찾지 못하셨군요</p>
+              <p>불편사항이나 문의사항을 남겨주시면 최대한 신속하게 답변 드리겠습니다.</p>
+            </StInquiryIntro>
 
-          <UserInfo />
+            <UserInfo />
 
-          <InquiryForm />
-        </StInquiryMain>
-      </StInquiryWrapper>
+            <InquiryForm />
+          </StInquiryMain>
+        </StInquiryWrapper>
+      </PageLayout>
     </>
   );
 };
