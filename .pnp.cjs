@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.59.5"],\
             ["@vitejs/plugin-react", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:4.0.0"],\
             ["axios", "npm:1.4.0"],\
+            ["chart.js", "npm:4.3.0"],\
             ["eslint", "npm:8.40.0"],\
             ["eslint-config-prettier", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:8.8.0"],\
             ["eslint-plugin-jsx-a11y", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:6.7.1"],\
@@ -46,6 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.2.2"],\
             ["prettier", "npm:2.8.8"],\
             ["react", "npm:18.2.0"],\
+            ["react-chartjs-2", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.2.0"],\
             ["react-dom", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:18.2.0"],\
             ["react-router-dom", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:6.11.1"],\
             ["styled-components", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:6.0.0-rc.1"],\
@@ -2907,6 +2909,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@kurkle/color", [\
+        ["npm:0.3.2", {\
+          "packageLocation": "./.yarn/cache/@kurkle-color-npm-0.3.2-98f2086013-79e97b31f8.zip/node_modules/@kurkle/color/",\
+          "packageDependencies": [\
+            ["@kurkle/color", "npm:0.3.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@nicolo-ribaudo/chokidar-2", [\
         ["npm:2.1.8-no-fsevents.3", {\
           "packageLocation": "./.yarn/cache/@nicolo-ribaudo-chokidar-2-npm-2.1.8-no-fsevents.3-79ca8bfcef-ee55cc9241.zip/node_modules/@nicolo-ribaudo/chokidar-2/",\
@@ -4114,6 +4125,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.59.5"],\
             ["@vitejs/plugin-react", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:4.0.0"],\
             ["axios", "npm:1.4.0"],\
+            ["chart.js", "npm:4.3.0"],\
             ["eslint", "npm:8.40.0"],\
             ["eslint-config-prettier", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:8.8.0"],\
             ["eslint-plugin-jsx-a11y", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:6.7.1"],\
@@ -4125,6 +4137,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:13.2.2"],\
             ["prettier", "npm:2.8.8"],\
             ["react", "npm:18.2.0"],\
+            ["react-chartjs-2", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.2.0"],\
             ["react-dom", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:18.2.0"],\
             ["react-router-dom", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:6.11.1"],\
             ["styled-components", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:6.0.0-rc.1"],\
@@ -4160,6 +4173,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/chalk-npm-5.2.0-bedd808592-03d8060277.zip/node_modules/chalk/",\
           "packageDependencies": [\
             ["chalk", "npm:5.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["chart.js", [\
+        ["npm:4.3.0", {\
+          "packageLocation": "./.yarn/cache/chart.js-npm-4.3.0-8c27842bcb-157ceaa381.zip/node_modules/chart.js/",\
+          "packageDependencies": [\
+            ["chart.js", "npm:4.3.0"],\
+            ["@kurkle/color", "npm:0.3.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7056,6 +7079,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["react", "npm:18.2.0"],\
             ["loose-envify", "npm:1.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-chartjs-2", [\
+        ["npm:5.2.0", {\
+          "packageLocation": "./.yarn/cache/react-chartjs-2-npm-5.2.0-03632f5179-ace702185b.zip/node_modules/react-chartjs-2/",\
+          "packageDependencies": [\
+            ["react-chartjs-2", "npm:5.2.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.2.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-chartjs-2-virtual-7899f7e323/0/cache/react-chartjs-2-npm-5.2.0-03632f5179-ace702185b.zip/node_modules/react-chartjs-2/",\
+          "packageDependencies": [\
+            ["react-chartjs-2", "virtual:4aba4e1481d25fd36bc0d9447c6757ef733de57c1b4d2891bd5e0021c617a1928b3d730bff47c2896e6fddc00bd480d087c88239fdbcb91453a522e4f6b2957c#npm:5.2.0"],\
+            ["@types/chart.js", null],\
+            ["@types/react", "npm:18.2.6"],\
+            ["chart.js", "npm:4.3.0"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/chart.js",\
+            "@types/react",\
+            "chart.js",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\

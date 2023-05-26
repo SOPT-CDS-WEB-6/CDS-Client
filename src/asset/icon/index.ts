@@ -5,8 +5,6 @@ export { ReactComponent as IcLogoImg } from './ic_LogoImg.svg';
 export { ReactComponent as IcMypageIcon } from './ic_MypageIcon.svg';
 export { ReactComponent as IcSearchButton } from './ic_SearchButton.svg';
 export { ReactComponent as IcServiceIcon } from './ic_ServiceIcon.svg';
-export { ReactComponent as IcTicketingFixedButton } from './ic_TicketingFixedButton.svg';
-export { ReactComponent as IcUpFixedButton } from './ic_UpFixedButton.svg';
 export { ReactComponent as IcCgvLogo } from './ic_CgvLogo.svg';
 export { ReactComponent as IcWhiteSearchImg } from './ic_WhiteSearchImg.svg';
 // home
@@ -57,6 +55,11 @@ export { ReactComponent as IcSheepImg } from './ic_SheepImg.svg';
 export { ReactComponent as IcTheaterDropdown } from './ic_TheaterDropdown.svg';
 export { ReactComponent as IcUnselectButton } from './ic_UnselectButton.svg';
 // movieinfo
+export { ReactComponent as IcBrownTextBox } from './ic_BrownTextBox.svg';
+export { ReactComponent as IcStillCutImg } from './ic_StillCutImg.svg';
+export { ReactComponent as IcQuestionEgg } from './ic_QuestionEgg.svg';
+export { ReactComponent as IcInfoIcon } from './ic_InfoIcon.svg';
+export { ReactComponent as IcEggIcon } from './ic_EggIcon.svg';
 export { ReactComponent as Ic4dxLogoImg } from './ic_4dxLogoImg.svg';
 export { ReactComponent as IcAd1Img } from './ic_Ad1Img.svg';
 export { ReactComponent as IcAd2Img } from './ic_Ad2Img.svg';
@@ -81,15 +84,23 @@ export { ReactComponent as IcTrailer2Img } from './ic_Trailer2Img.svg';
 export { ReactComponent as IcTrailer3Img } from './ic_Trailer3Img.svg';
 export { ReactComponent as IcWriteButton } from './ic_WriteButton.svg';
 // mymovie
+export { ReactComponent as ICAddAudience } from './ic_AddAudience.svg';
 export { ReactComponent as IcAllDropdown } from './ic_AllDropdown.svg';
 export { ReactComponent as IcDeleteButton } from './ic_DeleteButton.svg';
 export { ReactComponent as IcGoButton } from './ic_GoButton.svg';
 export { ReactComponent as IcMoviecard1Img } from './ic_Moviecard1Img.svg';
 export { ReactComponent as IcMoviecard2Img } from './ic_Moviecard2Img.svg';
 export { ReactComponent as IcPencilImg } from './ic_PencilImg.svg';
+export { ReactComponent as IcProfileImg } from './ic_ProfileImg.svg';
 export { ReactComponent as IcReviewdeleteButton } from './ic_ReviewdeleteButton.svg';
 export { ReactComponent as IcRevieweditButton } from './ic_RevieweditButton.svg';
 export { ReactComponent as IcReviewwriteButton } from './ic_ReviewwriteButton.svg';
 //footer
 export { ReactComponent as IcFooterDropDown } from './ic_FooterDropDown.svg';
 export { ReactComponent as IcFooterGo } from './ic_FooterGo.svg';
+
+//fixed button
+export { ReactComponent as IcFaqFixedButton } from './ic_FaqFixedButton.svg';
+export { ReactComponent as IcUpFixedButton } from './ic_UpFixedButton.svg';
+export { ReactComponent as IcTicketingFixedButton } from './ic_TicketingFixedButton.svg';
+export { ReactComponent as IcFaq } from './ic_faq.svg';

@@ -11,11 +11,11 @@ const Header = () => {
 
   const navigate = useNavigate();
 
-  const hoverNavHandler: ReactEventHandler = (e: React.MouseEvent) => {
+  const hoverNavHandler: ReactEventHandler = () => {
     setIsHover(!isHover);
   };
 
-  const clickLogoHandler = (e: React.MouseEvent) => {
+  const clickLogoHandler = () => {
     navigate('/');
   };
 

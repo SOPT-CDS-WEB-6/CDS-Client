@@ -1,14 +1,6 @@
 import { styled } from 'styled-components';
-import {
-  IcEggImg,
-  IcInfoHover,
-  IcMovie1Img,
-  IcMovie2Img,
-  IcMovie3Img,
-  IcMovie4Img,
-  IcTicketingHover,
-} from '../../asset/icon';
-import React, { FunctionComponent, SVGProps, useState } from 'react';
+import { IcEggImg, IcInfoHover, IcTicketingHover } from '../../asset/icon';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const MovieChartCard = ({
@@ -33,7 +25,7 @@ const MovieChartCard = ({
 
   const navigate = useNavigate();
 
-  const clickMovieHandler = (e: React.MouseEvent) => {
+  const clickMovieHandler = () => {
     navigate(`/movie/${movieNumber}`);
   };
 
