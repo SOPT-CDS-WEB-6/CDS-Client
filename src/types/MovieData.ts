@@ -8,7 +8,6 @@ export type NavDataInfo = {
       totalElements?: number;
     };
   };
-  numData?: object;
 };
 
 export type MovieDataInfo = {

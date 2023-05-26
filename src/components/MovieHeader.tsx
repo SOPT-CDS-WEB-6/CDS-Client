@@ -4,53 +4,54 @@ import { MovieDataInfo } from '../types/MovieData';
 import { useEffect, useState } from 'react';
 
 export interface MyMovieProps {
-
   data: MovieDataInfo;
   setFetchURL: React.Dispatch<React.SetStateAction<string>>;
+  setMovieArr: Function;
+  touchBottom: number;
+  setTouchBottom: Function;
 }
 
 function MovieHeader(props: MyMovieProps) {
-  const { data, setFetchURL } = props;
+  const { data, setFetchURL, setMovieArr, touchBottom, setTouchBottom } = props;
   const wathedMovieYear = ['전체', '2023', '2022'];
-
   const watchedMoviesNum = data?.data?.pageInfoRes?.totalElements;
   const [selectedOption, setSelectedOption] = useState('');
 
   useEffect(() => {
     handleFetchURL();
-  }, [selectedOption]);
+  }, [selectedOption, touchBottom]);
 
   const handleFetchURL = () => {
     switch (selectedOption) {
       case '전체':
-        setFetchURL('/user/1/movielog/watched?page=1&size=6');
+        setFetchURL(`/user/1/movielog/watched?page=${touchBottom}&size=6`);
         break;
 
       case '2023':
-        setFetchURL('/user/1/movielog/watched?page=1&size=6&year=2023');
+        setFetchURL(`/user/1/movielog/watched?page=${touchBottom}&size=6&year=2023`);
         break;
 
       case '2022':
-        setFetchURL('/user/1/movielog/watched?page=1&size=6&year=2022');
+        setFetchURL(`/user/1/movielog/watched?page=${touchBottom}&size=6&year=2022`);
         break;
 
       default:
-        setFetchURL('/user/1/movielog/watched?page=1&size=6');
+        setFetchURL(`/user/1/movielog/watched?page=${touchBottom}&size=6`);
         break;
     }
   };
 
   const handleSelectedOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(e.target.value);
+    setMovieArr([]);
+    setTouchBottom(1);
   };
-
 
   return (
     <StMyMovieHeader>
       <StHeaderTextWrapper>
         <StMyMovieTitle>내가 본 영화</StMyMovieTitle>
         <StMyMovieNum>{watchedMoviesNum}건</StMyMovieNum>
-
       </StHeaderTextWrapper>
 
       <StHeaderBtnWrapper>
@@ -69,7 +70,7 @@ function MovieHeader(props: MyMovieProps) {
 const StMyMovieHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  
+
   width: 89.3rem;
   height: 3.7rem;
 `;
