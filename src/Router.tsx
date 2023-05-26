@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import Inquiry from './pages/Inquiry';
 
 const Router = () => {
   return (
@@ -9,6 +10,7 @@ const Router = () => {
         {/* movieInfo */}
         {/* mymovie */}
         {/* inquiry */}
+        <Route path="/inquiry" element={<Inquiry />} />
       </Routes>
     </BrowserRouter>
   );
