@@ -7,6 +7,8 @@ import ScoreBox from '../components/ScoreBox';
 import MovieInfo from '../components/MovieInfo';
 import PageLayout from '../components/PageLayout';
 import { useParams } from 'react-router-dom';
+import RadarChart from '../components/movieInfo/RadarChart';
+import ReviewPagenation from '../components/movieInfo/ReviewPagenation';
 
 function MovieInfoPage() {
   const { movieId } = useParams();
@@ -29,6 +31,8 @@ function MovieInfoPage() {
           </StPreviewBox>
           <StBlankBox />
         </StMediaBox>
+        <RadarChart />
+        <ReviewPagenation />
       </StMovieInfoPage>
     </PageLayout>
   );
