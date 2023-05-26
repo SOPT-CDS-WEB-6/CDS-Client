@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { IcPlusButton, IcPlayButton } from '../asset/icon';
 import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
 
-function TrailerBox() {
-  const { data } = useGetMovieInfo(2);
+function TrailerBox({ movieNumber }: { movieNumber: number }) {
+  const { data } = useGetMovieInfo(movieNumber);
 
   if (!data) {
     return <div>error!!</div>;
@@ -18,7 +18,7 @@ function TrailerBox() {
           </StPlusButton>
         </StTrailerBar>
         <StVidBox>
-          {data.data.trailerList.map((eachTrailer) => {
+          {data.trailerList.map((eachTrailer) => {
             return (
               <StEachTrailer key={eachTrailer.trailerTitle}>
                 <StTrailerVidWrapper>

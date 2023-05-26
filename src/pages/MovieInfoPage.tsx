@@ -6,23 +6,26 @@ import StillCutBox from '../components/StillCutBox';
 import ScoreBox from '../components/ScoreBox';
 import MovieInfo from '../components/MovieInfo';
 import PageLayout from '../components/PageLayout';
+import { useParams } from 'react-router-dom';
 
 function MovieInfoPage() {
+  const { movieId } = useParams();
+
   return (
     <PageLayout>
       <StMovieInfoPage>
         <StInfoBox>
-          <MovieInfo />
+          <MovieInfo movieNumber={Number(movieId)} />
           <StDetailBox>
-            <MovieDetail />
+            <MovieDetail movieNumber={Number(movieId)} />
             <SideAdBanner />
           </StDetailBox>
         </StInfoBox>
         <StMediaBox>
           <StPreviewBox>
-            <TrailerBox />
-            <StillCutBox />
-            <ScoreBox />
+            <TrailerBox movieNumber={Number(movieId)} />
+            <StillCutBox movieNumber={Number(movieId)} />
+            <ScoreBox movieNumber={Number(movieId)} />
           </StPreviewBox>
           <StBlankBox />
         </StMediaBox>
