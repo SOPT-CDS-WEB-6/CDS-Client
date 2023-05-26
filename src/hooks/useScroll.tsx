@@ -8,7 +8,7 @@ const useScroll = () => {
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
 
-    if (scrollTop + (clientHeight + 0.99) >= scrollHeight) {
+    if (scrollTop + clientHeight >= scrollHeight) {
       setTouchBottom(touchBottom + 1);
     }
   };
