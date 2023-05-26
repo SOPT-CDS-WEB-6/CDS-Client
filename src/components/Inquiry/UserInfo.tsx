@@ -3,8 +3,9 @@ import useGetUserInfo from '../../libs/hooks/useGetUserInfo';
 import { IcEditButton, IcNoticeBanner } from '../../asset/icon';
 
 const UserInfo = () => {
-  const { userName, email, phoneNumber, isLoading, isError } = useGetUserInfo();
-  console.log(userName, email, phoneNumber, isLoading, isError);
+  const { userName, email, phoneNumber } = useGetUserInfo();
+
+  const modifiedPhoneNumber = phoneNumber?.replace(/(\d{3})-(\d{4})-(\d{4})/, '$1-****-$3');
 
   return (
     <StUserInfoWrapper>
@@ -18,7 +19,7 @@ const UserInfo = () => {
         </tr>
         <tr>
           <th>휴대전화</th>
-          <td>{phoneNumber}</td>
+          <td>{modifiedPhoneNumber}</td>
 
           <th>이메일</th>
           <td>{email}</td>
