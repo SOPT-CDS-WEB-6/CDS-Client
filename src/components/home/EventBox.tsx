@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { IcEvent1Img, IcEvent2Img, IcEvent3Img, IcGrayallButton, IcStopButton } from '../../asset/icon';
+import { IcGrayallButton, IcStopButton } from '../../asset/icon';
 import useGetEventList from '../../libs/hooks/useGetEventList';
 import { useEffect, useState } from 'react';
 
@@ -14,7 +14,7 @@ interface EventProps {
 const EventBox = () => {
   const [eventList, setEventList] = useState<EventProps[]>([]);
 
-  const { eventListData, error } = useGetEventList();
+  const { eventListData } = useGetEventList();
 
   useEffect(() => {
     if (eventListData) {

@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { IcMoreButton, IcPaymoneyImg, IcQrImg } from '../../asset/icon';
+import { IcMoreButton, IcPaymoneyImg } from '../../asset/icon';
 import QrBox from './QrBox';
 
 const NoticeBox = () => {

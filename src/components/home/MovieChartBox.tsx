@@ -15,7 +15,7 @@ interface MovieChartProps {
 const MovieChartBox = () => {
   const [movieChart, setMovieChart] = useState<MovieChartProps[]>([]);
 
-  const { movieChartData, error, isLoading } = useGetMovieChart();
+  const { movieChartData } = useGetMovieChart();
 
   useEffect(() => {
     if (movieChartData) {
