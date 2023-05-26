@@ -11,12 +11,16 @@ const Header = () => {
 
   const navigate = useNavigate();
 
-  const hoverNavHandler: ReactEventHandler = (e: React.MouseEvent) => {
+  const hoverNavHandler: ReactEventHandler = () => {
     setIsHover(!isHover);
   };
 
-  const clickLogoHandler = (e: React.MouseEvent) => {
+  const clickLogoHandler = () => {
     navigate('/');
+  };
+
+  const clickMyCgvHandler = () => {
+    navigate('/my-movie');
   };
 
   const navMenuItem = [
@@ -59,7 +63,7 @@ const Header = () => {
               <IcLockIcon />
               <span>로그아웃</span>
             </StMyPageButton>
-            <StMyPageButton>
+            <StMyPageButton onClick={clickMyCgvHandler}>
               <IcMypageIcon />
               <span>MY CGV</span>
             </StMyPageButton>
@@ -238,6 +242,9 @@ const StMyPageButton = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  cursor: pointer;
+
   & span {
     ${({ theme }) => theme.fonts.Body5};
     color: ${({ theme }) => theme.colors.gray90};
