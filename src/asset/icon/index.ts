@@ -5,8 +5,6 @@ export { ReactComponent as IcLogoImg } from './ic_LogoImg.svg';
 export { ReactComponent as IcMypageIcon } from './ic_MypageIcon.svg';
 export { ReactComponent as IcSearchButton } from './ic_SearchButton.svg';
 export { ReactComponent as IcServiceIcon } from './ic_ServiceIcon.svg';
-export { ReactComponent as IcTicketingFixedButton } from './ic_TicketingFixedButton.svg';
-export { ReactComponent as IcUpFixedButton } from './ic_UpFixedButton.svg';
 export { ReactComponent as IcCgvLogo } from './ic_CgvLogo.svg';
 export { ReactComponent as IcWhiteSearchImg } from './ic_WhiteSearchImg.svg';
 // home
@@ -100,3 +98,9 @@ export { ReactComponent as IcReviewwriteButton } from './ic_ReviewwriteButton.sv
 //footer
 export { ReactComponent as IcFooterDropDown } from './ic_FooterDropDown.svg';
 export { ReactComponent as IcFooterGo } from './ic_FooterGo.svg';
+
+//fixed button
+export { ReactComponent as IcFaqFixedButton } from './ic_FaqFixedButton.svg';
+export { ReactComponent as IcUpFixedButton } from './ic_UpFixedButton.svg';
+export { ReactComponent as IcTicketingFixedButton } from './ic_TicketingFixedButton.svg';
+export { ReactComponent as IcFaq } from './ic_faq.svg';
