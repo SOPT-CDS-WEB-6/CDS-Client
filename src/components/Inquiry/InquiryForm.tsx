@@ -13,6 +13,7 @@ import { postInquiryForm } from '../../libs/postFormData';
 
 const InquiryForm = () => {
   const [loadedImg, setLoadedImg] = useState<string>('');
+  const [isTheaterSelected, setIsTheaterSelected] = useState<boolean>(false);
   const [inquiryInfo, setInquiryInfo] = useState({});
 
   const handlePostInquiry = async (e: React.FormEvent) => {
@@ -25,23 +26,30 @@ const InquiryForm = () => {
     }
 
     const inquiryInfoString = JSON.stringify(inquiryInfo);
-    inquiryFormData.append('data', inquiryInfoString);
+
+    inquiryFormData.append('data', new Blob([inquiryInfoString], { type: 'application/json' }));
 
     const response = await postInquiryForm(inquiryFormData);
+    console.log(response);
 
-    if (response?.status === 200) {
+    if (response?.status === 201) {
       alert('문의가 접수되었습니다.');
     }
   };
 
   const handleValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.name === 'theater') {
-      if (e.target.value === '선택하지 않음') setInquiryInfo({ ...inquiryInfo, isTheaterSelected: false });
-      else setInquiryInfo({ ...inquiryInfo, isTheaterSelected: true });
+      if (e.target.value === '선택하지 않음') {
+        setIsTheaterSelected(false);
+        setInquiryInfo({ ...inquiryInfo, userNumber: 1, isTheaterSelected: false });
+      } else {
+        setIsTheaterSelected(true);
+        setInquiryInfo({ ...inquiryInfo, userNumber: 1, isTheaterSelected: true });
+      }
 
       return;
     }
-    setInquiryInfo({ ...inquiryInfo, [e.target.name]: e.target.value });
+    setInquiryInfo({ ...inquiryInfo, userNumber: 1, [e.target.name]: e.target.value });
   };
 
   const handleSelectTheater = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -90,13 +98,13 @@ const InquiryForm = () => {
                   <input type="radio" name="theater" value={type} onChange={(e) => handleValue(e)} /> <p>{type}</p>
                 </label>
               ))}
-              <select name="domestic" onChange={(e) => handleSelectTheater(e)}>
+              <select name="domestic" disabled={!isTheaterSelected} onChange={(e) => handleSelectTheater(e)}>
                 <option selected={true} value="국내">
                   국내
                 </option>
                 <option value="국외">국외</option>
               </select>
-              <select name="region" onChange={(e) => handleSelectTheater(e)}>
+              <select name="region" disabled={!isTheaterSelected} onChange={(e) => handleSelectTheater(e)}>
                 <option value="">지역선택</option>
                 {INQUIRY_AREAS.map((area, idx) => (
                   <option value={area} key={idx}>
@@ -104,7 +112,7 @@ const InquiryForm = () => {
                   </option>
                 ))}
               </select>
-              <select name="cinemaName" onChange={(e) => handleSelectTheater(e)}>
+              <select name="cinemaName" disabled={!isTheaterSelected} onChange={(e) => handleSelectTheater(e)}>
                 <option value="서울">영화관 선택</option>
               </select>
             </td>
