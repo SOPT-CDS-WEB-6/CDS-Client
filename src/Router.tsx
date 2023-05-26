@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MovieInfoPage from './pages/MovieInfoPage';
 import Home from './pages/Home';
 import MyMoviePage from './pages/MyMoviePage';
+import Inquiry from './pages/Inquiry';
 
 const Router = () => {
   // const [movieNumber, setMovieNumber] = useState(0)
@@ -13,9 +14,10 @@ const Router = () => {
         <Route path="/movie">
           <Route path=":movieId" element={<MovieInfoPage />} />
         </Route>
-        {/* mymovie */}
+
         <Route path="/my-movie" element={<MyMoviePage />} />
-        {/* inquiry */}
+
+        <Route path="/inquiry" element={<Inquiry />} />
       </Routes>
     </BrowserRouter>
   );
