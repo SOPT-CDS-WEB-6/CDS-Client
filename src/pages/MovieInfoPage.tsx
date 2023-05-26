@@ -6,24 +6,15 @@ import StillCutBox from '../components/StillCutBox';
 import ScoreBox from '../components/ScoreBox';
 import MovieInfo from '../components/MovieInfo';
 import PageLayout from '../components/PageLayout';
-// import { useEffect, useState } from 'react';
-// import MovieInfoResponse from '../types/movieInfoResponse';
-// import useGetMovieInfo from '../libs/hooks/useGetMovieInfo';
+import StillCutSlider from '../components/StillCutSlider';
 
 function MovieInfoPage() {
-  // const { movieInfo, isError, isLoading } = useGetMovieInfo(1);
-  // const [movieInfoData, setMovieInfoData] = useState<MovieInfoResponse[]>([]);
-
-  // useEffect(() => {
-  //   if (movieInfo) {
-  //     setMovieInfoData(movieInfo);
-  //   }
-  // }, [movieInfo]);
-
   return (
     <PageLayout>
       <StMovieInfoPage>
         <StInfoBox>
+          {/* <StillCutSlider /> */}
+
           <MovieInfo />
           <StDetailBox>
             <MovieDetail />
@@ -32,9 +23,9 @@ function MovieInfoPage() {
         </StInfoBox>
         <StMediaBox>
           <StPreviewBox>
-            {/* <TrailerBox />
-            <StillCutBox />
-            <ScoreBox /> */}
+            <TrailerBox />
+            {/* <StillCutBox /> */}
+            <ScoreBox />
           </StPreviewBox>
           <StBlankBox />
         </StMediaBox>
