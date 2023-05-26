@@ -4,8 +4,11 @@ import { IcEditButton, IcNoticeBanner } from '../../asset/icon';
 
 const UserInfo = () => {
   const { userName, email, phoneNumber } = useGetUserInfo();
+  let modifiedPhoneNumber = '';
 
-  const modifiedPhoneNumber = phoneNumber?.replace(/(\d{3})-(\d{4})-(\d{4})/, '$1-****-$3');
+  if (phoneNumber) {
+    modifiedPhoneNumber = phoneNumber?.replace(/(\d{3})-(\d{4})-(\d{4})/, '$1-****-$3');
+  }
 
   return (
     <StUserInfoWrapper>
