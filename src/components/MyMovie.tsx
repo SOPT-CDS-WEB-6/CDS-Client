@@ -6,12 +6,10 @@ import UserPreference from './UserPreference';
 import useGetWatchedMovieInfo from '../hooks/useGetWatchedMovieInfo';
 
 function MyMovie() {
-  const [pageIdx, setPageIdx] = useState(1);
   const { data, setFetchURL, numOfCards, numOfWatchedMovie } = useGetWatchedMovieInfo(
-    `/user/1/movielog/watched?page=${pageIdx}&size=6`,
+    `/user/1/movielog/watched?page=1&size=6`,
   );
-  const [touch, setTouch] = useState(1);
-
+  const [touchBottom, setTouchBottom] = useState(1);
   const [movieArr, setMovieArr] = useState<any>([]);
 
   const handleScroll = () => {
@@ -19,8 +17,8 @@ function MyMovie() {
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
 
-    if (scrollTop + (clientHeight + 2) >= scrollHeight) {
-      setTouch(touch + 1);
+    if (scrollTop + (clientHeight + 0.99) >= scrollHeight) {
+      setTouchBottom(touchBottom + 1);
     }
   };
 
@@ -42,9 +40,8 @@ function MyMovie() {
           data={data}
           setFetchURL={setFetchURL}
           setMovieArr={setMovieArr}
-          touch={touch}
-          pageIdx={pageIdx}
-          setTouch={setTouch}
+          touchBottom={touchBottom}
+          setTouchBottom={setTouchBottom}
         />
 
         <StMovieCardWrapper>

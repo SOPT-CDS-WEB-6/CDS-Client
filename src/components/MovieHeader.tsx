@@ -5,39 +5,38 @@ import { useEffect, useState } from 'react';
 
 export interface MyMovieProps {
   data: MovieDataInfo;
-  pageIdx: number;
   setFetchURL: React.Dispatch<React.SetStateAction<string>>;
   setMovieArr: Function;
-  setTouch: Function;
-  touch: number;
+  touchBottom: number;
+  setTouchBottom: Function;
 }
 
 function MovieHeader(props: MyMovieProps) {
-  const { data, setFetchURL, setMovieArr, touch, setTouch } = props;
+  const { data, setFetchURL, setMovieArr, touchBottom, setTouchBottom } = props;
   const wathedMovieYear = ['전체', '2023', '2022'];
   const watchedMoviesNum = data?.data?.pageInfoRes?.totalElements;
   const [selectedOption, setSelectedOption] = useState('');
 
   useEffect(() => {
     handleFetchURL();
-  }, [selectedOption, touch]);
+  }, [selectedOption, touchBottom]);
 
   const handleFetchURL = () => {
     switch (selectedOption) {
       case '전체':
-        setFetchURL(`/user/1/movielog/watched?page=${touch}&size=6`);
+        setFetchURL(`/user/1/movielog/watched?page=${touchBottom}&size=6`);
         break;
 
       case '2023':
-        setFetchURL(`/user/1/movielog/watched?page=${touch}&size=6&year=2023`);
+        setFetchURL(`/user/1/movielog/watched?page=${touchBottom}&size=6&year=2023`);
         break;
 
       case '2022':
-        setFetchURL(`/user/1/movielog/watched?page=${touch}&size=6&year=2022`);
+        setFetchURL(`/user/1/movielog/watched?page=${touchBottom}&size=6&year=2022`);
         break;
 
       default:
-        setFetchURL(`/user/1/movielog/watched?page=${touch}&size=6`);
+        setFetchURL(`/user/1/movielog/watched?page=${touchBottom}&size=6`);
         break;
     }
   };
@@ -45,7 +44,7 @@ function MovieHeader(props: MyMovieProps) {
   const handleSelectedOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(e.target.value);
     setMovieArr([]);
-    setTouch(1);
+    setTouchBottom(1);
   };
 
   return (
