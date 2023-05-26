@@ -9,6 +9,7 @@ import PageLayout from '../components/PageLayout';
 import { useParams } from 'react-router-dom';
 import RadarChart from '../components/movieInfo/RadarChart';
 import ReviewPagenation from '../components/movieInfo/ReviewPagenation';
+import { IcPointBanner } from '../asset/icon';
 
 function MovieInfoPage() {
   const { movieId } = useParams();
@@ -32,6 +33,7 @@ function MovieInfoPage() {
           <StBlankBox />
         </StMediaBox>
         <RadarChart />
+        <IcPointBanner />
         <ReviewPagenation />
       </StMovieInfoPage>
     </PageLayout>
@@ -70,6 +72,7 @@ const StPreviewBox = styled.section`
 
 const StMediaBox = styled.section`
   display: flex;
+  flex-direction: column;
 `;
 
 const StBlankBox = styled.section`

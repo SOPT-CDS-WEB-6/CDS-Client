@@ -62,6 +62,9 @@ const StReviewWrapper = styled.article`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 10.2rem;
+
+  width: 98rem;
 `;
 const StPageChangeBtnWrapper = styled.div`
   display: flex;

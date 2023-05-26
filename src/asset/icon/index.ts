@@ -88,6 +88,7 @@ export { ReactComponent as IcProfile } from './ic_profile.svg';
 export { ReactComponent as IcThumb } from './ic_thumb.svg';
 export { ReactComponent as IcProfileGoldEgg } from './ic_ProfileGoldEgg.svg';
 export { ReactComponent as IcMoreDots } from './ic_MoreDots.svg';
+export { ReactComponent as IcPointBanner } from './ic_PointBanner.svg';
 
 // mymovie
 export { ReactComponent as ICAddAudience } from './ic_AddAudience.svg';
