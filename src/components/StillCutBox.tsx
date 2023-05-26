@@ -1,47 +1,35 @@
 import styled from 'styled-components';
-import { IcPlusButton, IcStillCutImg, IcLeftarrowIcon, IcRightarrowIcon } from '../asset/icon';
+import { IcPlusButton } from '../asset/icon';
 import useGetMovieStillCuts from '../libs/hooks/useGetMovieStillCut';
+import NewStillCut from './NewStillCut';
 
 function StillCutBox() {
-  const stillCuts = useGetMovieStillCuts(3)?.response;
-  // console.log(stillCuts);
-  const totalSlideNo = stillCuts?.data.length;
-  console.log(totalSlideNo);
+  const { data } = useGetMovieStillCuts(3);
+  const totalSlideNo = data?.data.length;
 
-  return (
-    <StStillCutBox>
-      <StStillCutBar>
-        <StStillCutText>스틸컷</StStillCutText>
-        <StStillCutNo>
-          {totalSlideNo}
-          {/* 5 */}건
-        </StStillCutNo>
-        <StPlusButton>
-          <IcPlusButton />
-        </StPlusButton>
-      </StStillCutBar>
+  if (!data) {
+    return <div>error!!</div>;
+  } else {
+    return (
+      <StStillCutBox>
+        <StStillCutBar>
+          <StStillCutText>스틸컷</StStillCutText>
+          <StStillCutNo>{totalSlideNo}건</StStillCutNo>
+          <StPlusButton>
+            <IcPlusButton />
+          </StPlusButton>
+        </StStillCutBar>
 
-      <StStillCutGallery>
-        <div>
-          <IcLeftarrowIcon />
-        </div>
-        <StStillCutImg src={stillCuts?.data[0].stillCutLink} />
-
-        {/* <IcStillCutImg /> */}
-        <div>
-          <IcRightarrowIcon />
-        </div>
-      </StStillCutGallery>
-    </StStillCutBox>
-  );
+        <StStillCutGallery>
+          <NewStillCut />
+        </StStillCutGallery>
+      </StStillCutBox>
+    );
+  }
 }
 
 export default StillCutBox;
 
-const StStillCutImg = styled.img`
-  max-width: 36.6rem;
-  max-height: 65.6rem;
-`;
 const StStillCutBox = styled.section`
   display: flex;
   flex-direction: column;
@@ -84,10 +72,5 @@ const StPlusButton = styled.div`
 `;
 
 const StStillCutGallery = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   width: 100%;
-  margin-top: 4.25rem;
 `;

@@ -232,7 +232,7 @@ const StPreEgg = styled.div`
   margin-left: 4.4rem;
 `;
 
-const StPreEggText = styled.p`
+const StPreEggText = styled.div`
   display: flex;
   align-items: center;
   margin: 0 0 1.4rem 0.4rem;
