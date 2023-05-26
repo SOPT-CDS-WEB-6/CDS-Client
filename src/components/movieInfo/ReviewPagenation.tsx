@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import useGetReviewList from '../../libs/hooks/useGetReviewList';
 import { css, styled } from 'styled-components';
 import Review from './Review';

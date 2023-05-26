@@ -7,8 +7,7 @@ function MovieDetail() {
   const { data } = useGetMovieInfo(3);
 
   if (!data) {
-    return;
-    <div>error!!</div>;
+    return <div>error!!</div>;
   } else {
     return (
       <StMovieDetail>
@@ -26,13 +25,7 @@ function MovieDetail() {
           <StLi>상영시간표</StLi>
         </StUl>
         <article>
-          <StSynopsis>
-            {data.data.synopsis}
-            {/* ‘가모라’를 잃고 슬픔에 빠져 있던 ‘피터 퀼’이 위기에 처한 은하계와 동료를 지키기 위해 다시 한번 가디언즈 팀과
-            힘을 모으고,
-          </StSynopsis>
-          <StSynopsis>성공하지 못할 경우 그들의 마지막이 될지도 모르는 미션에 나서는 이야기 */}
-          </StSynopsis>
+          <StSynopsis>{data.data.synopsis}</StSynopsis>
         </article>
         <StChartSection>
           <StEachChart>
