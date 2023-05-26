@@ -17,8 +17,6 @@ function MyMovie() {
     setMovieArr(newMovieArr);
   }, [numOfCards]);
 
-  console.log(movieArr.length);
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
