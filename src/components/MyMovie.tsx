@@ -7,16 +7,17 @@ import useGetWatchedMovieInfo from '../hooks/useGetWatchedMovieInfo';
 import useScroll from '../hooks/useScroll';
 
 function MyMovie() {
-  const { data, setFetchURL, numOfCards, numOfWatchedMovie } = useGetWatchedMovieInfo(
-    `/user/1/movielog/watched?page=1&size=6`,
-  );
-
   const { handleScroll, movieArr, setMovieArr, touchBottom, setTouchBottom } = useScroll();
+  const { data, setFetchURL, numOfCards, numOfWatchedMovie } = useGetWatchedMovieInfo(
+    `/user/1/movielog/watched?page=${touchBottom}&size=6`,
+  );
 
   useEffect(() => {
     const newMovieArr = [...movieArr, ...numOfCards];
     setMovieArr(newMovieArr);
   }, [numOfCards]);
+
+  console.log(movieArr.length);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
