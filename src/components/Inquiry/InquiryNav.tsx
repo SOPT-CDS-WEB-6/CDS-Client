@@ -16,6 +16,9 @@ const InquiryNav = () => {
 const StNavBar = styled.ul`
   display: flex;
   flex-direction: column;
+  margin-left: 36.3rem;
+  margin-top: 4.6rem;
+  margin-right: 6.9rem;
 
   list-style: none;
 `;
