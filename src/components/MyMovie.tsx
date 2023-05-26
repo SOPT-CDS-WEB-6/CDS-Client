@@ -1,26 +1,17 @@
 import { styled } from 'styled-components';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import MovieHeader from './MovieHeader';
 import MovieCard from './MovieCard';
 import UserPreference from './UserPreference';
 import useGetWatchedMovieInfo from '../hooks/useGetWatchedMovieInfo';
+import useScroll from '../hooks/useScroll';
 
 function MyMovie() {
   const { data, setFetchURL, numOfCards, numOfWatchedMovie } = useGetWatchedMovieInfo(
     `/user/1/movielog/watched?page=1&size=6`,
   );
-  const [touchBottom, setTouchBottom] = useState(1);
-  const [movieArr, setMovieArr] = useState<any>([]);
 
-  const handleScroll = () => {
-    const scrollHeight = document.documentElement.scrollHeight;
-    const scrollTop = document.documentElement.scrollTop;
-    const clientHeight = document.documentElement.clientHeight;
-
-    if (scrollTop + (clientHeight + 0.99) >= scrollHeight) {
-      setTouchBottom(touchBottom + 1);
-    }
-  };
+  const { handleScroll, movieArr, setMovieArr, touchBottom, setTouchBottom } = useScroll();
 
   useEffect(() => {
     const newMovieArr = [...movieArr, ...numOfCards];
