@@ -2,7 +2,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import useGetMovieStillCut from '../libs/hooks/useGetMovieStillCut';
 import styled from 'styled-components';
-// import {IcStillCutImg, IcLeftarrowIcon, IcRightarrowIcon } from '../asset/icon';
+import { IcLeftarrowIcon, IcRightarrowIcon } from '../asset/icon';
 
 export default function NewStillCut() {
   const { data } = useGetMovieStillCut(3);
@@ -12,7 +12,24 @@ export default function NewStillCut() {
   } else {
     return (
       <StCarousel>
-        <Carousel showArrows={true} showIndicators={false} width={'100%'}>
+        <Carousel
+          showArrows={true}
+          showIndicators={false}
+          showStatus={false}
+          renderArrowPrev={(clickHandler) => {
+            return (
+              <StLeftArrowButton onClick={clickHandler}>
+                <IcLeftarrowIcon />
+              </StLeftArrowButton>
+            );
+          }}
+          renderArrowNext={(clickHandler) => {
+            return (
+              <StRightArrowButton onClick={clickHandler}>
+                <IcRightarrowIcon />
+              </StRightArrowButton>
+            );
+          }}>
           {data?.data.map((eachStillCut, index) => {
             return (
               <StSlide key={index}>
@@ -25,6 +42,24 @@ export default function NewStillCut() {
     );
   }
 }
+
+const StLeftArrowButton = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 999999;
+`;
+const StRightArrowButton = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+`;
 
 const StCarousel = styled.div`
   width: 100%;
