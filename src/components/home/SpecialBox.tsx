@@ -9,7 +9,7 @@ const SpecialBox = () => {
   const specialCardData = dummySepcialDataList;
   const [specialImgIndex, setspecialImgIndex] = useState(0);
 
-  const changeSpecialImg = (i: number) => (e: React.MouseEvent) => {
+  const changeSpecialImg = (i: number) => () => {
     setspecialImgIndex(i);
   };
 
