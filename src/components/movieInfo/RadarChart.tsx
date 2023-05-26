@@ -55,6 +55,9 @@ const RadarChart = () => {
 
 const StRadarSection = styled.section`
   display: flex;
+  justify-content: center;
+
+  margin-bottom: 2.4rem;
 `;
 
 const StRadarWrapper = styled.figure`
